@@ -14,7 +14,7 @@ public class LoginPage {
 
     public static void login() throws InterruptedException {
         WebDriver driver = DriverManager.getDriver();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
         driver.get("https://demo.orthopms.com/login");
 
