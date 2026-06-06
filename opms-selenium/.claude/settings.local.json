@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mvn test *)",
+      "PowerShell($mvn = \"D:\\\\apache-maven-3.9.15-bin\\\\apache-maven-3.9.15\\\\bin\\\\mvn.cmd\"; Set-Location \"C:\\\\Users\\\\Infinire_Innovative\\\\Music\\\\Selenium_PMS\"; & $mvn test 2>&1)",
+      "PowerShell(java -version 2>&1)",
+      "PowerShell(javac -version 2>&1)"
+    ]
+  }
+}
