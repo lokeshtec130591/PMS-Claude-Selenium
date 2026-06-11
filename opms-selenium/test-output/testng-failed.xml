@@ -6,9 +6,7 @@
       <class name="com.opms.tests.CreatePatientTest">
         <methods>
           <include name="setUpSuite"/>
-          <include name="testNumericFirstName"/>
           <include name="tearDownSuite"/>
-          <include name="testSpecialCharFirstName"/>
           <include name="testPatientAppearsInSearch"/>
           <include name="resetForm"/>
         </methods>

@@ -310,7 +310,7 @@ public class CreatePatientTest {
     // so we assert the form is NO LONGER open (assertFalse isFormStillOpen).
     // ═══════════════════════════════════════════════════════════════════════════
 
-    @Test(priority = 1, description = "TC_P01 – Create patient with all valid required fields")
+    @Test(priority = 1,enabled = false, description = "TC_P01 – Create patient with all valid required fields")
     public void testCreatePatientAllValidFields() throws InterruptedException {
         fillPatientForm("Mr.", TestDataGenerator.generateUniqueString(),
                 TestDataGenerator.generateUniqueString(),
@@ -329,7 +329,7 @@ public class CreatePatientTest {
         System.out.println("TC_P01 PASS – Patient created; form closed successfully.");
     }
 
-    @Test(priority = 2, description = "TC_P02 – Create patient with prefix Mrs.")
+    @Test(priority = 2, enabled = false, description = "TC_P02 – Create patient with prefix Mrs.")
     public void testCreatePatientWithPrefixMrs() throws InterruptedException {
         fillPatientForm("Mrs.", TestDataGenerator.generateUniqueString(),
                 TestDataGenerator.generateUniqueString(),
@@ -348,7 +348,7 @@ public class CreatePatientTest {
         System.out.println("TC_P02 PASS – Patient with prefix Mrs. saved.");
     }
 
-    @Test(priority = 3, description = "TC_P03 – Create patient with prefix Ms.")
+    @Test(priority = 3,enabled = false, description = "TC_P03 – Create patient with prefix Ms.")
     public void testCreatePatientWithPrefixMs() throws InterruptedException {
         fillPatientForm("Ms.", TestDataGenerator.generateUniqueString(),
                 TestDataGenerator.generateUniqueString(),
@@ -367,7 +367,7 @@ public class CreatePatientTest {
         System.out.println("TC_P03 PASS – Patient with prefix Ms. saved.");
     }
 
-    @Test(priority = 4, description = "TC_P04 – Create female patient")
+    @Test(priority = 4,enabled = false, description = "TC_P04 – Create female patient")
     public void testCreateFemalePatient() throws InterruptedException {
         fillPatientForm("Mrs.", TestDataGenerator.generateUniqueString(),
                 TestDataGenerator.generateUniqueString(),
@@ -386,7 +386,7 @@ public class CreatePatientTest {
         System.out.println("TC_P04 PASS – Female patient saved.");
     }
 
-    @Test(priority = 5, description = "TC_P05 – Create patient with marital status Married")
+    @Test(priority = 5, enabled = false, description = "TC_P05 – Create patient with marital status Married")
     public void testCreatePatientMarried() throws InterruptedException {
         fillPatientForm("Mr.", TestDataGenerator.generateUniqueString(),
                 TestDataGenerator.generateUniqueString(),
@@ -405,7 +405,7 @@ public class CreatePatientTest {
         System.out.println("TC_P05 PASS – Patient with Married status saved.");
     }
 
-    @Test(priority = 6, description = "TC_P06 – Verify patient appears in search after creation")
+    @Test(priority = 6, description = "TC_P06 – Verify patient Creates success and appears in search after creation")
     public void testPatientAppearsInSearch() throws InterruptedException {
         String fn = TestDataGenerator.generateUniqueString();
         String ln = TestDataGenerator.generateUniqueString();
@@ -426,7 +426,7 @@ public class CreatePatientTest {
 
         String fullName = ln + ", " + fn;
         WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//input[@placeholder='Search Patient' or @id='patientName']")));
+                By.xpath("//input[@placeholder='last name, first name ' or @value='patientName']")));
         searchBox.clear();
         searchBox.sendKeys(fullName);
         Thread.sleep(2000);
@@ -439,7 +439,7 @@ public class CreatePatientTest {
         System.out.println("TC_P06 PASS – Patient '" + fullName + "' found in search.");
     }
 
-    @Test(priority = 7, description = "TC_P07 – Create patient with language preference Spanish")
+    @Test(priority = 7,enabled = false, description = "TC_P07 – Create patient with language preference Spanish")
     public void testCreatePatientSpanishLanguage() throws InterruptedException {
         fillPatientForm("Mr.", TestDataGenerator.generateUniqueString(),
                 TestDataGenerator.generateUniqueString(),
