@@ -18,7 +18,7 @@ public class ContractConfigPage {
     public static void savePracticeContract(WebDriver driver, WebDriverWait wait, Actions actions)
             throws InterruptedException {
 
-        LoginPage.login();
+    //    LoginPage.login();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         WebElement practice = wait.until(ExpectedConditions.elementToBeClickable(

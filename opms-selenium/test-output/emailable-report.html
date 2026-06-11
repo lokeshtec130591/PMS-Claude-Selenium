@@ -9,19 +9,19 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">44,404</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">37,066</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.opms.tests.LoginAndCreatePatient</td><td><a href="#m0">testCreatePatient</a></td><td rowspan="1">1778767572538</td><td rowspan="1">34194</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.opms.tests.LoginAndCreatePatient</td><td><a href="#m1">testLogin</a></td><td rowspan="1">1778767562670</td><td rowspan="1">9857</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.opms.tests.LoginAndCreatePatient</td><td><a href="#m0">testSearchPatient</a></td><td rowspan="1">1781156618291</td><td rowspan="1">11552</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">com.opms.tests.LoginAndCreatePatient</td><td><a href="#m1">testCreatePatient</a></td><td rowspan="1">1781156611460</td><td rowspan="1">6828</td></tr><tr class="passedeven"><td><a href="#m2">testLogin</a></td><td rowspan="1">1781156594434</td><td rowspan="1">13197</td></tr><tr class="passedeven"><td><a href="#m3">testSelectLocation</a></td><td rowspan="1">1781156607646</td><td rowspan="1">3808</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">com.opms.tests.LoginAndCreatePatient#testCreatePatient</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//li/a[@class=&apos;nav-link&apos; and text()=&apos;Insurance&apos;]&quot;}
-  (Session info: chrome=148.0.7778.98)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+<h2>Default test</h2><h3 id="m0">com.opms.tests.LoginAndCreatePatient#testSearchPatient</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=149.0.7827.102)
 Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [142eb5a40013133df64c07ad977b1a55, findElement {value=//li/a[@class=&apos;nav-link&apos; and text()=&apos;Insurance&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.98, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53699}, goog:processID: 30236, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53699/devtoo..., se:cdpVersion: 148.0.7778.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 142eb5a40013133df64c07ad977b1a55
+Command: [9fc7955dcfdb8512694f45c2874a0171, findElement {using=xpath, value=//input[@placeholder=&apos;Search Patient&apos; or @id=&apos;patientName&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.102, chrome: {chromedriverVersion: 149.0.7827.55 (3188f8a607ae..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55183}, goog:processID: 31068, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55183/devtoo..., se:cdpVersion: 149.0.7827.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9fc7955dcfdb8512694f45c2874a0171
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -38,12 +38,10 @@ Session ID: 142eb5a40013133df64c07ad977b1a55
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at com.opms.practice.LookupPage.addInsurance(LookupPage.java:89)
-	at com.opms.practice.LookupPage.main(LookupPage.java:136)
-	at com.opms.practice.TreatmentsSetupPage.createTreatmentType(TreatmentsSetupPage.java:32)
-	at com.opms.practice.TreatmentsSetupPage.main(TreatmentsSetupPage.java:229)
-	at com.opms.pages.PatientPage.createPatient(PatientPage.java:28)
-	at com.opms.tests.LoginAndCreatePatient.testCreatePatient(LoginAndCreatePatient.java:17)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at com.opms.tests.LoginAndCreatePatient.testSearchPatient(LoginAndCreatePatient.java:148)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -73,6 +71,8 @@ Session ID: 142eb5a40013133df64c07ad977b1a55
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.opms.tests.LoginAndCreatePatient#testLogin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.opms.tests.LoginAndCreatePatient#testCreatePatient</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.opms.tests.LoginAndCreatePatient#testLogin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.opms.tests.LoginAndCreatePatient#testSelectLocation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

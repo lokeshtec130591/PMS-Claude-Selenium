@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Infinire_Innovative\AppData\Local\Temp\testng-eclipse-679876648\testng-customsuite.xml</span>
+                    <span>C:\Users\Infinire_Innovative\AppData\Local\Temp\testng-eclipse-957692530\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -103,7 +103,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.LoginAndCreatePatient" class="method navigator-link" hash-for-method="testCreatePatient">testCreatePatient</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.LoginAndCreatePatient" class="method navigator-link" hash-for-method="testSearchPatient">testSearchPatient</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -117,7 +117,17 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.LoginAndCreatePatient" class="method navigator-link" hash-for-method="testCreatePatient">testCreatePatient</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.LoginAndCreatePatient" class="method navigator-link" hash-for-method="testLogin">testLogin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.LoginAndCreatePatient" class="method navigator-link" hash-for-method="testSelectLocation">testSelectLocation</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -140,18 +150,18 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testCreatePatient">
-                  </a> <!-- testCreatePatient -->
-                  <span class="method-name">testCreatePatient</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//li/a[@class=&apos;nav-link&apos; and text()=&apos;Insurance&apos;]&quot;}
-  (Session info: chrome=148.0.7778.98)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+                  <a name="testSearchPatient">
+                  </a> <!-- testSearchPatient -->
+                  <span class="method-name">testSearchPatient</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=149.0.7827.102)
 Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [142eb5a40013133df64c07ad977b1a55, findElement {value=//li/a[@class=&apos;nav-link&apos; and text()=&apos;Insurance&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.98, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53699}, goog:processID: 30236, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53699/devtoo..., se:cdpVersion: 148.0.7778.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 142eb5a40013133df64c07ad977b1a55
+Command: [9fc7955dcfdb8512694f45c2874a0171, findElement {using=xpath, value=//input[@placeholder=&apos;Search Patient&apos; or @id=&apos;patientName&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.102, chrome: {chromedriverVersion: 149.0.7827.55 (3188f8a607ae..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55183}, goog:processID: 31068, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55183/devtoo..., se:cdpVersion: 149.0.7827.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9fc7955dcfdb8512694f45c2874a0171
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -168,12 +178,10 @@ Session ID: 142eb5a40013133df64c07ad977b1a55
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at com.opms.practice.LookupPage.addInsurance(LookupPage.java:89)
-	at com.opms.practice.LookupPage.main(LookupPage.java:136)
-	at com.opms.practice.TreatmentsSetupPage.createTreatmentType(TreatmentsSetupPage.java:32)
-	at com.opms.practice.TreatmentsSetupPage.main(TreatmentsSetupPage.java:229)
-	at com.opms.pages.PatientPage.createPatient(PatientPage.java:28)
-	at com.opms.tests.LoginAndCreatePatient.testCreatePatient(LoginAndCreatePatient.java:17)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at com.opms.tests.LoginAndCreatePatient.testSearchPatient(LoginAndCreatePatient.java:148)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -204,6 +212,8 @@ Session ID: 142eb5a40013133df64c07ad977b1a55
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 
 </div> <!-- stack-trace -->
+                  <em>
+(Search for the newly created patient and verify)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -216,9 +226,29 @@ Session ID: 142eb5a40013133df64c07ad977b1a55
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="testCreatePatient">
+                  </a> <!-- testCreatePatient -->
+                  <span class="method-name">testCreatePatient</span>
+                  <em>
+(Create a new patient with valid details)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="testLogin">
                   </a> <!-- testLogin -->
                   <span class="method-name">testLogin</span>
+                  <em>
+(Login with valid credentials)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSelectLocation">
+                  </a> <!-- testSelectLocation -->
+                  <span class="method-name">testSelectLocation</span>
+                  <em>
+(Select practice location from dropdown)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -226,7 +256,7 @@ Session ID: 142eb5a40013133df64c07ad977b1a55
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Infinire_Innovative\AppData\Local\Temp\testng-eclipse-679876648\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Infinire_Innovative\AppData\Local\Temp\testng-eclipse-957692530\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -275,20 +305,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testCreatePatient')
+data.setCell(0, 1, 'testLogin')
 data.setCell(0, 2, 'com.opms.tests.LoginAndCreatePatient')
-data.setCell(0, 3, 34194);
+data.setCell(0, 3, 13197);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testLogin')
+data.setCell(1, 1, 'testSearchPatient')
 data.setCell(1, 2, 'com.opms.tests.LoginAndCreatePatient')
-data.setCell(1, 3, 9857);
+data.setCell(1, 3, 11552);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testCreatePatient')
+data.setCell(2, 2, 'com.opms.tests.LoginAndCreatePatient')
+data.setCell(2, 3, 6828);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testSelectLocation')
+data.setCell(3, 2, 'com.opms.tests.LoginAndCreatePatient')
+data.setCell(3, 3, 3808);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 44 seconds</span>
+              <span class="suite-total-time">Total running time: 35 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -315,19 +353,31 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">com.opms.tests.LoginAndCreatePatient</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testLogin</span>
-                <span class="method-start">0 ms</span>
+                <span class="method-start">1492 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testSelectLocation</span>
+                <span class="method-start">14704 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCreatePatient</span>
+                <span class="method-start">18518 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">testCreatePatient</span>
-                <span class="method-start">9868 ms</span>
+                <span class="method-name">testSearchPatient</span>
+                <span class="method-start">25349 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">44068 ms</span>
+                <span class="method-start">36906 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
