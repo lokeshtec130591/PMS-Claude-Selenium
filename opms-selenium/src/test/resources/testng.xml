@@ -8,6 +8,12 @@
         </classes>
     </test>
 
+    <test name="Create Patient Tests" preserve-order="true">
+        <classes>
+            <class name="com.opms.tests.CreatePatientTest"/>
+        </classes>
+    </test>
+
     <test name="Login and Create Patient" preserve-order="true">
         <classes>
             <class name="com.opms.tests.LoginAndCreatePatient"/>

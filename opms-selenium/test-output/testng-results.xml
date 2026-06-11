@@ -1,71 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
+<testng-results ignored="0" total="21" passed="18" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-06-11T11:13:12 IST" name="Default suite" finished-at="2026-06-11T11:13:49 IST" duration-ms="37066">
+  <suite started-at="2026-06-11T15:50:49 IST" name="Default suite" finished-at="2026-06-11T15:54:44 IST" duration-ms="235204">
     <groups>
     </groups>
-    <test started-at="2026-06-11T11:13:12 IST" name="Default test" finished-at="2026-06-11T11:13:49 IST" duration-ms="37066">
-      <class name="com.opms.tests.LoginAndCreatePatient">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.opms.tests.LoginAndCreatePatient@2e385cce]" started-at="2026-06-11T11:13:12 IST" name="setUp" finished-at="2026-06-11T11:13:14 IST" duration-ms="1480" status="PASS">
+    <test started-at="2026-06-11T15:50:49 IST" name="Default test" finished-at="2026-06-11T15:54:44 IST" duration-ms="235204">
+      <class name="com.opms.tests.CreatePatientTest">
+        <test-method is-config="true" signature="setUpSuite()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:50:49 IST" name="setUpSuite" finished-at="2026-06-11T15:51:15 IST" duration-ms="26219" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="testLogin()[pri:1, instance:com.opms.tests.LoginAndCreatePatient@2e385cce]" started-at="2026-06-11T11:13:14 IST" name="testLogin" description="Login with valid credentials" finished-at="2026-06-11T11:13:27 IST" duration-ms="13197" status="PASS">
+        </test-method> <!-- setUpSuite -->
+        <test-method is-config="true" signature="resetForm()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:51:15 IST" name="resetForm" finished-at="2026-06-11T15:51:17 IST" duration-ms="2253" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method signature="testSelectLocation()[pri:2, instance:com.opms.tests.LoginAndCreatePatient@2e385cce]" started-at="2026-06-11T11:13:27 IST" name="testSelectLocation" description="Select practice location from dropdown" finished-at="2026-06-11T11:13:31 IST" depends-on-methods="com.opms.tests.LoginAndCreatePatient.testLogin" duration-ms="3808" status="PASS">
+        </test-method> <!-- resetForm -->
+        <test-method signature="testCreatePatientAllValidFields()[pri:1, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:51:17 IST" name="testCreatePatientAllValidFields" description="TC_P01 – Create patient with all valid required fields" finished-at="2026-06-11T15:51:25 IST" duration-ms="7345" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSelectLocation -->
-        <test-method signature="testCreatePatient()[pri:3, instance:com.opms.tests.LoginAndCreatePatient@2e385cce]" started-at="2026-06-11T11:13:31 IST" name="testCreatePatient" description="Create a new patient with valid details" finished-at="2026-06-11T11:13:38 IST" depends-on-methods="com.opms.tests.LoginAndCreatePatient.testSelectLocation" duration-ms="6828" status="PASS">
+        </test-method> <!-- testCreatePatientAllValidFields -->
+        <test-method is-config="true" signature="resetForm()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:51:25 IST" name="resetForm" finished-at="2026-06-11T15:51:27 IST" duration-ms="2227" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testCreatePatient -->
-        <test-method signature="testSearchPatient()[pri:4, instance:com.opms.tests.LoginAndCreatePatient@2e385cce]" started-at="2026-06-11T11:13:38 IST" name="testSearchPatient" description="Search for the newly created patient and verify" finished-at="2026-06-11T11:13:49 IST" depends-on-methods="com.opms.tests.LoginAndCreatePatient.testCreatePatient" duration-ms="11552" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
+        </test-method> <!-- resetForm -->
+        <test-method signature="testCreatePatientWithPrefixMrs()[pri:2, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:51:27 IST" name="testCreatePatientWithPrefixMrs" description="TC_P02 – Create patient with prefix Mrs." finished-at="2026-06-11T15:51:35 IST" duration-ms="7558" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreatePatientWithPrefixMrs -->
+        <test-method is-config="true" signature="resetForm()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:51:35 IST" name="resetForm" finished-at="2026-06-11T15:51:37 IST" duration-ms="2252" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetForm -->
+        <test-method signature="testCreatePatientWithPrefixMs()[pri:3, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:51:37 IST" name="testCreatePatientWithPrefixMs" description="TC_P03 – Create patient with prefix Ms." finished-at="2026-06-11T15:51:45 IST" duration-ms="7620" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreatePatientWithPrefixMs -->
+        <test-method is-config="true" signature="resetForm()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:51:45 IST" name="resetForm" finished-at="2026-06-11T15:51:47 IST" duration-ms="2271" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetForm -->
+        <test-method signature="testCreateFemalePatient()[pri:4, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:51:47 IST" name="testCreateFemalePatient" description="TC_P04 – Create female patient" finished-at="2026-06-11T15:51:54 IST" duration-ms="7257" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateFemalePatient -->
+        <test-method is-config="true" signature="resetForm()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:51:54 IST" name="resetForm" finished-at="2026-06-11T15:51:56 IST" duration-ms="2256" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetForm -->
+        <test-method signature="testCreatePatientMarried()[pri:5, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:51:56 IST" name="testCreatePatientMarried" description="TC_P05 – Create patient with marital status Married" finished-at="2026-06-11T15:52:04 IST" duration-ms="7342" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreatePatientMarried -->
+        <test-method is-config="true" signature="resetForm()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:52:04 IST" name="resetForm" finished-at="2026-06-11T15:52:06 IST" duration-ms="2238" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetForm -->
+        <test-method signature="testPatientAppearsInSearch()[pri:6, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:52:06 IST" name="testPatientAppearsInSearch" description="TC_P06 – Verify patient appears in search after creation" finished-at="2026-06-11T15:52:28 IST" duration-ms="22588" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[invalid session id: session deleted as the browser has closed the connection
-from disconnected: not connected to DevTools
-  (Session info: chrome=149.0.7827.102)
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //input[@placeholder='Search Patient' or @id='patientName'] (tried for 15 second(s) with 500 milliseconds interval)
 Build info: version: '4.18.1', revision: 'b1d3319b48'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9fc7955dcfdb8512694f45c2874a0171, findElement {using=xpath, value=//input[@placeholder='Search Patient' or @id='patientName']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.102, chrome: {chromedriverVersion: 149.0.7827.55 (3188f8a607ae..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55183}, goog:processID: 31068, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55183/devtoo..., se:cdpVersion: 149.0.7827.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9fc7955dcfdb8512694f45c2874a0171]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.102, chrome: {chromedriverVersion: 149.0.7827.55 (3188f8a607ae..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53055}, goog:processID: 25972, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53055/devtoo..., se:cdpVersion: 149.0.7827.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fe7e475521224d294ed99a077511c708]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
-from disconnected: not connected to DevTools
-  (Session info: chrome=149.0.7827.102)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@placeholder='Search Patient' or @id='patientName'] (tried for 15 second(s) with 500 milliseconds interval)
 Build info: version: '4.18.1', revision: 'b1d3319b48'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9fc7955dcfdb8512694f45c2874a0171, findElement {using=xpath, value=//input[@placeholder='Search Patient' or @id='patientName']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.102, chrome: {chromedriverVersion: 149.0.7827.55 (3188f8a607ae..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55183}, goog:processID: 31068, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55183/devtoo..., se:cdpVersion: 149.0.7827.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9fc7955dcfdb8512694f45c2874a0171
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-at com.opms.tests.LoginAndCreatePatient.testSearchPatient(LoginAndCreatePatient.java:148)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.102, chrome: {chromedriverVersion: 149.0.7827.55 (3188f8a607ae..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53055}, goog:processID: 25972, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53055/devtoo..., se:cdpVersion: 149.0.7827.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fe7e475521224d294ed99a077511c708
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at com.opms.tests.CreatePatientTest.testPatientAppearsInSearch(CreatePatientTest.java:428)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -96,15 +105,217 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSearchPatient -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.opms.tests.LoginAndCreatePatient@2e385cce]" started-at="2026-06-11T11:13:49 IST" name="tearDown" finished-at="2026-06-11T11:13:49 IST" duration-ms="134" status="PASS">
+        </test-method> <!-- testPatientAppearsInSearch -->
+        <test-method is-config="true" signature="resetForm()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:52:28 IST" name="resetForm" finished-at="2026-06-11T15:52:31 IST" duration-ms="2227" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.opms.tests.LoginAndCreatePatient -->
+        </test-method> <!-- resetForm -->
+        <test-method signature="testCreatePatientSpanishLanguage()[pri:7, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:52:31 IST" name="testCreatePatientSpanishLanguage" description="TC_P07 – Create patient with language preference Spanish" finished-at="2026-06-11T15:52:38 IST" duration-ms="7217" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreatePatientSpanishLanguage -->
+        <test-method is-config="true" signature="resetForm()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:52:38 IST" name="resetForm" finished-at="2026-06-11T15:52:40 IST" duration-ms="2285" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetForm -->
+        <test-method signature="testSubmitBlankForm()[pri:8, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:52:40 IST" name="testSubmitBlankForm" description="TC_N01 – Submit form with all fields blank" finished-at="2026-06-11T15:52:44 IST" duration-ms="4218" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSubmitBlankForm -->
+        <test-method is-config="true" signature="resetForm()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:52:44 IST" name="resetForm" finished-at="2026-06-11T15:52:48 IST" duration-ms="3379" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetForm -->
+        <test-method signature="testMissingFirstName()[pri:9, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:52:48 IST" name="testMissingFirstName" description="TC_N02 – Submit without First Name" finished-at="2026-06-11T15:52:54 IST" duration-ms="6274" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMissingFirstName -->
+        <test-method is-config="true" signature="resetForm()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:52:54 IST" name="resetForm" finished-at="2026-06-11T15:52:57 IST" duration-ms="3320" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetForm -->
+        <test-method signature="testMissingLastName()[pri:10, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:52:57 IST" name="testMissingLastName" description="TC_N03 – Submit without Last Name" finished-at="2026-06-11T15:53:04 IST" duration-ms="6364" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMissingLastName -->
+        <test-method is-config="true" signature="resetForm()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:53:04 IST" name="resetForm" finished-at="2026-06-11T15:53:07 IST" duration-ms="3362" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetForm -->
+        <test-method signature="testMissingDOB()[pri:11, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:53:07 IST" name="testMissingDOB" description="TC_N04 – Submit without Date of Birth" finished-at="2026-06-11T15:53:13 IST" duration-ms="5451" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMissingDOB -->
+        <test-method is-config="true" signature="resetForm()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:53:13 IST" name="resetForm" finished-at="2026-06-11T15:53:16 IST" duration-ms="3295" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetForm -->
+        <test-method signature="testMissingPhone()[pri:12, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:53:16 IST" name="testMissingPhone" description="TC_N05 – Submit without Phone Number" finished-at="2026-06-11T15:53:22 IST" duration-ms="6139" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMissingPhone -->
+        <test-method is-config="true" signature="resetForm()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:53:22 IST" name="resetForm" finished-at="2026-06-11T15:53:25 IST" duration-ms="3294" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetForm -->
+        <test-method signature="testInvalidEmailFormat()[pri:13, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:53:25 IST" name="testInvalidEmailFormat" description="TC_N06 – Submit with invalid email format (no @)" finished-at="2026-06-11T15:53:32 IST" duration-ms="6191" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalidEmailFormat -->
+        <test-method is-config="true" signature="resetForm()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:53:32 IST" name="resetForm" finished-at="2026-06-11T15:53:35 IST" duration-ms="3309" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetForm -->
+        <test-method signature="testInvalidEmailMissingDomain()[pri:14, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:53:35 IST" name="testInvalidEmailMissingDomain" description="TC_N07 – Submit with email missing domain" finished-at="2026-06-11T15:53:41 IST" duration-ms="5970" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalidEmailMissingDomain -->
+        <test-method is-config="true" signature="resetForm()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:53:41 IST" name="resetForm" finished-at="2026-06-11T15:53:44 IST" duration-ms="3394" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetForm -->
+        <test-method signature="testShortPhoneNumber()[pri:15, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:53:44 IST" name="testShortPhoneNumber" description="TC_N08 – Submit with phone number less than 10 digits" finished-at="2026-06-11T15:53:50 IST" duration-ms="5935" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testShortPhoneNumber -->
+        <test-method is-config="true" signature="resetForm()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:53:50 IST" name="resetForm" finished-at="2026-06-11T15:53:53 IST" duration-ms="3306" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetForm -->
+        <test-method signature="testAlphaInPhoneNumber()[pri:16, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:53:53 IST" name="testAlphaInPhoneNumber" description="TC_N09 – Submit with letters in phone number field" finished-at="2026-06-11T15:53:59 IST" duration-ms="6006" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAlphaInPhoneNumber -->
+        <test-method is-config="true" signature="resetForm()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:53:59 IST" name="resetForm" finished-at="2026-06-11T15:54:03 IST" duration-ms="3465" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetForm -->
+        <test-method signature="testFutureDOB()[pri:17, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:54:03 IST" name="testFutureDOB" description="TC_N10 – Submit with future date as Date of Birth" finished-at="2026-06-11T15:54:09 IST" duration-ms="5999" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFutureDOB -->
+        <test-method is-config="true" signature="resetForm()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:54:09 IST" name="resetForm" finished-at="2026-06-11T15:54:12 IST" duration-ms="3374" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetForm -->
+        <test-method signature="testNumericFirstName()[pri:18, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:54:12 IST" name="testNumericFirstName" description="TC_N11 – Submit with numbers in First Name" finished-at="2026-06-11T15:54:18 IST" duration-ms="5861" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[TC_N11 FAIL – Form should stay open when numbers in First Name. expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: TC_N11 FAIL – Form should stay open when numbers in First Name. expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at com.opms.tests.CreatePatientTest.testNumericFirstName(CreatePatientTest.java:674)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNumericFirstName -->
+        <test-method is-config="true" signature="resetForm()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:54:18 IST" name="resetForm" finished-at="2026-06-11T15:54:20 IST" duration-ms="2222" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetForm -->
+        <test-method signature="testSpecialCharFirstName()[pri:19, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:54:20 IST" name="testSpecialCharFirstName" description="TC_N12 – Submit with special characters in First Name" finished-at="2026-06-11T15:54:26 IST" duration-ms="5910" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[TC_N12 FAIL – Form should stay open for special characters in First Name. expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: TC_N12 FAIL – Form should stay open for special characters in First Name. expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at com.opms.tests.CreatePatientTest.testSpecialCharFirstName(CreatePatientTest.java:694)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSpecialCharFirstName -->
+        <test-method is-config="true" signature="resetForm()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:54:26 IST" name="resetForm" finished-at="2026-06-11T15:54:29 IST" duration-ms="2257" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetForm -->
+        <test-method signature="testMissingGender()[pri:20, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:54:29 IST" name="testMissingGender" description="TC_N13 – Submit without selecting Gender" finished-at="2026-06-11T15:54:34 IST" duration-ms="5953" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMissingGender -->
+        <test-method is-config="true" signature="resetForm()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:54:34 IST" name="resetForm" finished-at="2026-06-11T15:54:38 IST" duration-ms="3333" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetForm -->
+        <test-method signature="testWhitespaceFirstName()[pri:21, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:54:38 IST" name="testWhitespaceFirstName" description="TC_N14 – Submit with whitespace-only First Name" finished-at="2026-06-11T15:54:44 IST" duration-ms="6047" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testWhitespaceFirstName -->
+        <test-method is-config="true" signature="tearDownSuite()[pri:0, instance:com.opms.tests.CreatePatientTest@449a4f23]" started-at="2026-06-11T15:54:44 IST" name="tearDownSuite" finished-at="2026-06-11T15:54:44 IST" duration-ms="301" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSuite -->
+      </class> <!-- com.opms.tests.CreatePatientTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

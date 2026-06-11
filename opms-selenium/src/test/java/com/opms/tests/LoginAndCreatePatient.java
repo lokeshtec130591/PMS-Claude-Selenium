@@ -109,9 +109,14 @@ public class LoginAndCreatePatient {
         suffix.sendKeys("BBB");
         suffix.sendKeys(Keys.TAB);
 
-        // Date of Birth
-        WebElement dob = driver.findElement(By.xpath("//input[@id='datepicker-1']"));
-        dob.sendKeys("13051995");
+        // Date of Birth — label-based XPath avoids dynamic datepicker ID
+        WebElement dob = driver.findElement(By.xpath(
+            "//label[contains(text(),'Date of Birth')]" +
+            "/ancestor::div[contains(@class,'form-group')]" +
+            "//input[@placeholder='MM/DD/YYYY']"));
+        dob.click();
+        Thread.sleep(500);
+        dob.sendKeys("05131995");  // MMDDYYYY — all at once; Kendo auto-advances per segment
         dob.sendKeys(Keys.TAB);
 
         // Contact details
@@ -123,12 +128,11 @@ public class LoginAndCreatePatient {
         driver.findElement(By.xpath("//label[@for='patientLanguagePreference_English']")).click();
         driver.findElement(By.xpath("//label[@for='patientMaritalStatus_Single']")).click();
 
-        // Dentist
+        // Dentist — directly target the exact option span
         driver.findElement(By.xpath("//ng-select[@placeholder='Select Dentist']")).click();
-        wait.until(ExpectedConditions.presenceOfElementLocated(
-                By.xpath("//div[contains(@class,'ng-option')]")))
-            .findElement(By.xpath(
-                "//span[text()='Johnny Bairstow (Orthopedic Dental Tooth Surgery CLinic)']"))
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+            "//div[contains(@class,'ng-option')]" +
+            "//span[text()='Johnny Bairstow (Orthopedic Dental Tooth Surgery CLinic)']")))
             .click();
 
         // Save

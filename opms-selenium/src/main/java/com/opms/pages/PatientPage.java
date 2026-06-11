@@ -66,7 +66,10 @@ public class PatientPage {
         suffix.sendKeys(Keys.TAB);
 
         WebElement dob = driver.findElement(By.xpath("//input[@id='datepicker-1']"));
-        dob.sendKeys("13051995");
+        dob.click();
+        dob.sendKeys("05");    // MM
+        dob.sendKeys("13");    // DD
+        dob.sendKeys("1995");  // YYYY
         dob.sendKeys(Keys.TAB);
 
         driver.findElement(By.xpath("//input[@id='Primary Phone']")).sendKeys("5485654785");
