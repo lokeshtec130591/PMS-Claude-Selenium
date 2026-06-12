@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>13/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Jun 12 13:20:52 IST 2026</td>
+<td>Started on:</td><td>Fri Jun 12 18:46:55 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>114 seconds (114326 ms)</td>
+<tr><td>Total time:</td><td>35 seconds (35534 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,32 +76,12 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.opms.tests.LookupTest.testAddNewLocationAllFields()'><b>testAddNewLocationAllFields</b><br>Test class: com.opms.tests.LookupTest<br>Test method: TC_LK_P04 – Add a new location with all required fields and save</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;ng-placeholder&quot;&gt;...&lt;/div&gt; is not clickable at point (1393, 290). Other element would receive the click: &lt;div class=&quot;pcoded-main-container right_sidebar_opened&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=149.0.7827.102)
-Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [bc352165fe4e03ea9e418ccedaf1cc54, clickElement {id=f.C2EF8DC88FC8B74360A50B877C8BA8FE.d.1B507803256DE52124BB510C4AEED729.e.12688}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.102, chrome: {chromedriverVersion: 149.0.7827.115 (daf70f9ddee..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62203}, goog:processID: 13940, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62203/devtoo..., se:cdpVersion: 149.0.7827.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (bc352165fe4e03ea9e418ccedaf1cc54)] -&gt; xpath: //div[@class=&apos;ng-placeholder&apos; and text()=&apos;Select State&apos;]]
-Session ID: bc352165fe4e03ea9e418ccedaf1cc54
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at com.opms.tests.LookupTest.selectDropdownOption(LookupTest.java:130)
-	at com.opms.tests.LookupTest.testAddNewLocationAllFields(LookupTest.java:209)
+<td title='com.opms.tests.CreatePatientTest.testCreateMinorPatientWithAddressAndPrimaryContact()'><b>testCreateMinorPatientWithAddressAndPrimaryContact</b><br>Test class: com.opms.tests.CreatePatientTest<br>Test method: TC_P08 – Create minor patient (DOB < 18) with Address Info and Primary Contact details</td>
+<td><div><pre>java.lang.AssertionError: TC_P08 FAIL – Form should close after saving minor patient with Address Information and Primary Contact details. expected [false] but found [true]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertFalse(Assert.java:79)
+	at com.opms.tests.CreatePatientTest.testCreateMinorPatientWithAddressAndPrimaryContact(CreatePatientTest.java:872)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -130,32 +110,12 @@ Session ID: bc352165fe4e03ea9e418ccedaf1cc54
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace590406624", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace590406624'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;ng-placeholder&quot;&gt;...&lt;/div&gt; is not clickable at point (1393, 290). Other element would receive the click: &lt;div class=&quot;pcoded-main-container right_sidebar_opened&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=149.0.7827.102)
-Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [bc352165fe4e03ea9e418ccedaf1cc54, clickElement {id=f.C2EF8DC88FC8B74360A50B877C8BA8FE.d.1B507803256DE52124BB510C4AEED729.e.12688}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.102, chrome: {chromedriverVersion: 149.0.7827.115 (daf70f9ddee..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62203}, goog:processID: 13940, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62203/devtoo..., se:cdpVersion: 149.0.7827.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (bc352165fe4e03ea9e418ccedaf1cc54)] -&gt; xpath: //div[@class=&apos;ng-placeholder&apos; and text()=&apos;Select State&apos;]]
-Session ID: bc352165fe4e03ea9e418ccedaf1cc54
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at com.opms.tests.LookupTest.selectDropdownOption(LookupTest.java:130)
-	at com.opms.tests.LookupTest.testAddNewLocationAllFields(LookupTest.java:209)
+</pre></div><a href='#' onClick='toggleBox("stack-trace271514713", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace271514713'><pre>java.lang.AssertionError: TC_P08 FAIL – Form should close after saving minor patient with Address Information and Primary Contact details. expected [false] but found [true]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertFalse(Assert.java:79)
+	at com.opms.tests.CreatePatientTest.testCreateMinorPatientWithAddressAndPrimaryContact(CreatePatientTest.java:872)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -185,194 +145,8 @@ Session ID: bc352165fe4e03ea9e418ccedaf1cc54
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>6</td>
-<td>com.opms.tests.LookupTest@1ed4ae0f</td></tr>
-<tr>
-<td title='com.opms.tests.LookupTest.testAddNewInsuranceAllFields()'><b>testAddNewInsuranceAllFields</b><br>Test class: com.opms.tests.LookupTest<br>Test method: TC_LK_P08 – Add a new insurance company with all required fields and save</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;ng-placeholder&quot;&gt;...&lt;/div&gt; is not clickable at point (1393, 305). Other element would receive the click: &lt;div class=&quot;pcoded-main-container right_sidebar_opened&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=149.0.7827.102)
-Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [bc352165fe4e03ea9e418ccedaf1cc54, clickElement {id=f.C2EF8DC88FC8B74360A50B877C8BA8FE.d.1B507803256DE52124BB510C4AEED729.e.35812}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.102, chrome: {chromedriverVersion: 149.0.7827.115 (daf70f9ddee..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62203}, goog:processID: 13940, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62203/devtoo..., se:cdpVersion: 149.0.7827.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (bc352165fe4e03ea9e418ccedaf1cc54)] -&gt; xpath: //div[@class=&apos;ng-placeholder&apos; and text()=&apos;Select State&apos;]]
-Session ID: bc352165fe4e03ea9e418ccedaf1cc54
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at com.opms.tests.LookupTest.selectDropdownOption(LookupTest.java:130)
-	at com.opms.tests.LookupTest.testAddNewInsuranceAllFields(LookupTest.java:364)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:819)
-	at org.testng.TestRunner.run(TestRunner.java:619)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-	at org.testng.TestNG.runSuites(TestNG.java:1134)
-	at org.testng.TestNG.run(TestNG.java:1101)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace915540950", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace915540950'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;ng-placeholder&quot;&gt;...&lt;/div&gt; is not clickable at point (1393, 305). Other element would receive the click: &lt;div class=&quot;pcoded-main-container right_sidebar_opened&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=149.0.7827.102)
-Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [bc352165fe4e03ea9e418ccedaf1cc54, clickElement {id=f.C2EF8DC88FC8B74360A50B877C8BA8FE.d.1B507803256DE52124BB510C4AEED729.e.35812}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.102, chrome: {chromedriverVersion: 149.0.7827.115 (daf70f9ddee..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62203}, goog:processID: 13940, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62203/devtoo..., se:cdpVersion: 149.0.7827.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (bc352165fe4e03ea9e418ccedaf1cc54)] -&gt; xpath: //div[@class=&apos;ng-placeholder&apos; and text()=&apos;Select State&apos;]]
-Session ID: bc352165fe4e03ea9e418ccedaf1cc54
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at com.opms.tests.LookupTest.selectDropdownOption(LookupTest.java:130)
-	at com.opms.tests.LookupTest.testAddNewInsuranceAllFields(LookupTest.java:364)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:819)
-	at org.testng.TestRunner.run(TestRunner.java:619)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-	at org.testng.TestNG.runSuites(TestNG.java:1134)
-	at org.testng.TestNG.run(TestNG.java:1101)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>6</td>
-<td>com.opms.tests.LookupTest@1ed4ae0f</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.opms.tests.LookupTest.testLookupPageLoads()'><b>testLookupPageLoads</b><br>Test class: com.opms.tests.LookupTest<br>Test method: TC_LK_P01 – Lookup page loads; location search field and form are visible</td>
-<td></td>
-<td>5</td>
-<td>com.opms.tests.LookupTest@1ed4ae0f</td></tr>
-<tr>
-<td title='com.opms.tests.LookupTest.testSaveInsuranceWithoutName()'><b>testSaveInsuranceWithoutName</b><br>Test class: com.opms.tests.LookupTest<br>Test method: TC_LK_N05 – Save insurance without Company Name; expect validation error</td>
-<td></td>
-<td>7</td>
-<td>com.opms.tests.LookupTest@1ed4ae0f</td></tr>
-<tr>
-<td title='com.opms.tests.LookupTest.testSearchExistingLocation()'><b>testSearchExistingLocation</b><br>Test class: com.opms.tests.LookupTest<br>Test method: TC_LK_P02 – Search for the existing test location 'Mumbai'</td>
-<td></td>
-<td>6</td>
-<td>com.opms.tests.LookupTest@1ed4ae0f</td></tr>
-<tr>
-<td title='com.opms.tests.LookupTest.testSaveInsuranceInvalidPhone()'><b>testSaveInsuranceInvalidPhone</b><br>Test class: com.opms.tests.LookupTest<br>Test method: TC_LK_N06 – Save insurance with letters in phone number; expect validation error</td>
-<td></td>
-<td>7</td>
-<td>com.opms.tests.LookupTest@1ed4ae0f</td></tr>
-<tr>
-<td title='com.opms.tests.LookupTest.testSearchExistingInsurance()'><b>testSearchExistingInsurance</b><br>Test class: com.opms.tests.LookupTest<br>Test method: TC_LK_P06 – Search for the existing test insurance company</td>
-<td></td>
-<td>6</td>
-<td>com.opms.tests.LookupTest@1ed4ae0f</td></tr>
-<tr>
-<td title='com.opms.tests.LookupTest.testInsurancePageLoads()'><b>testInsurancePageLoads</b><br>Test class: com.opms.tests.LookupTest<br>Test method: TC_LK_P05 – Insurance page loads; search field and form are visible</td>
-<td></td>
-<td>4</td>
-<td>com.opms.tests.LookupTest@1ed4ae0f</td></tr>
-<tr>
-<td title='com.opms.tests.LookupTest.testSearchNonExistentInsurance()'><b>testSearchNonExistentInsurance</b><br>Test class: com.opms.tests.LookupTest<br>Test method: TC_LK_N07 – Search for non-existent insurance; expect no results</td>
-<td></td>
-<td>6</td>
-<td>com.opms.tests.LookupTest@1ed4ae0f</td></tr>
-<tr>
-<td title='com.opms.tests.LookupTest.testSaveLocationWithoutAddress()'><b>testSaveLocationWithoutAddress</b><br>Test class: com.opms.tests.LookupTest<br>Test method: TC_LK_N02 – Save location without Address Line 1; expect validation error</td>
-<td></td>
-<td>7</td>
-<td>com.opms.tests.LookupTest@1ed4ae0f</td></tr>
-<tr>
-<td title='com.opms.tests.LookupTest.testInsuranceFormFieldsVisible()'><b>testInsuranceFormFieldsVisible</b><br>Test class: com.opms.tests.LookupTest<br>Test method: TC_LK_P07 – All insurance form fields are visible and editable</td>
-<td></td>
-<td>4</td>
-<td>com.opms.tests.LookupTest@1ed4ae0f</td></tr>
-<tr>
-<td title='com.opms.tests.LookupTest.testSaveLocationWithoutName()'><b>testSaveLocationWithoutName</b><br>Test class: com.opms.tests.LookupTest<br>Test method: TC_LK_N01 – Save location without Location Name; expect validation error</td>
-<td></td>
-<td>7</td>
-<td>com.opms.tests.LookupTest@1ed4ae0f</td></tr>
-<tr>
-<td title='com.opms.tests.LookupTest.testLocationFormFieldsVisible()'><b>testLocationFormFieldsVisible</b><br>Test class: com.opms.tests.LookupTest<br>Test method: TC_LK_P03 – All location form fields are visible and editable</td>
-<td></td>
-<td>4</td>
-<td>com.opms.tests.LookupTest@1ed4ae0f</td></tr>
-<tr>
-<td title='com.opms.tests.LookupTest.testSaveLocationInvalidZipCode()'><b>testSaveLocationInvalidZipCode</b><br>Test class: com.opms.tests.LookupTest<br>Test method: TC_LK_N03 – Save location with letters in Zip Code; expect validation error</td>
-<td></td>
-<td>7</td>
-<td>com.opms.tests.LookupTest@1ed4ae0f</td></tr>
-<tr>
-<td title='com.opms.tests.LookupTest.testSearchNonExistentLocation()'><b>testSearchNonExistentLocation</b><br>Test class: com.opms.tests.LookupTest<br>Test method: TC_LK_N04 – Search for non-existent location; expect no results</td>
-<td></td>
-<td>6</td>
-<td>com.opms.tests.LookupTest@1ed4ae0f</td></tr>
+<td>11</td>
+<td>com.opms.tests.CreatePatientTest@2eae8e6e</td></tr>
 </table><p>
 </body>
 </html>

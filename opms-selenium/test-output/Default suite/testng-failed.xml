@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.opms.tests.LookupTest">
+      <class name="com.opms.tests.CreatePatientTest">
         <methods>
-          <include name="testAddNewLocationAllFields"/>
-          <include name="testAddNewInsuranceAllFields"/>
           <include name="setUpSuite"/>
           <include name="tearDownSuite"/>
+          <include name="testCreateMinorPatientWithAddressAndPrimaryContact"/>
+          <include name="resetForm"/>
         </methods>
-      </class> <!-- com.opms.tests.LookupTest -->
+      </class> <!-- com.opms.tests.CreatePatientTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

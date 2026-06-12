@@ -310,7 +310,7 @@ public class CreatePatientTest {
     // so we assert the form is NO LONGER open (assertFalse isFormStillOpen).
     // ═══════════════════════════════════════════════════════════════════════════
 
-    @Test(priority = 1,enabled = false, description = "TC_P01 – Create patient with all valid required fields")
+    @Test(priority = 1, description = "TC_P01 – Create patient with all valid required fields")
     public void testCreatePatientAllValidFields() throws InterruptedException {
         fillPatientForm("Mr.", TestDataGenerator.generateUniqueString(),
                 TestDataGenerator.generateUniqueString(),
@@ -329,7 +329,7 @@ public class CreatePatientTest {
         System.out.println("TC_P01 PASS – Patient created; form closed successfully.");
     }
 
-    @Test(priority = 2, enabled = false, description = "TC_P02 – Create patient with prefix Mrs.")
+    @Test(priority = 2, description = "TC_P02 – Create patient with prefix Mrs.")
     public void testCreatePatientWithPrefixMrs() throws InterruptedException {
         fillPatientForm("Mrs.", TestDataGenerator.generateUniqueString(),
                 TestDataGenerator.generateUniqueString(),
@@ -348,7 +348,7 @@ public class CreatePatientTest {
         System.out.println("TC_P02 PASS – Patient with prefix Mrs. saved.");
     }
 
-    @Test(priority = 3,enabled = false, description = "TC_P03 – Create patient with prefix Ms.")
+    @Test(priority = 3, description = "TC_P03 – Create patient with prefix Ms.")
     public void testCreatePatientWithPrefixMs() throws InterruptedException {
         fillPatientForm("Ms.", TestDataGenerator.generateUniqueString(),
                 TestDataGenerator.generateUniqueString(),
@@ -367,7 +367,7 @@ public class CreatePatientTest {
         System.out.println("TC_P03 PASS – Patient with prefix Ms. saved.");
     }
 
-    @Test(priority = 4,enabled = false, description = "TC_P04 – Create female patient")
+    @Test(priority = 4, description = "TC_P04 – Create female patient")
     public void testCreateFemalePatient() throws InterruptedException {
         fillPatientForm("Mrs.", TestDataGenerator.generateUniqueString(),
                 TestDataGenerator.generateUniqueString(),
@@ -386,7 +386,7 @@ public class CreatePatientTest {
         System.out.println("TC_P04 PASS – Female patient saved.");
     }
 
-    @Test(priority = 5, enabled = false, description = "TC_P05 – Create patient with marital status Married")
+    @Test(priority = 5, description = "TC_P05 – Create patient with marital status Married")
     public void testCreatePatientMarried() throws InterruptedException {
         fillPatientForm("Mr.", TestDataGenerator.generateUniqueString(),
                 TestDataGenerator.generateUniqueString(),
@@ -405,7 +405,7 @@ public class CreatePatientTest {
         System.out.println("TC_P05 PASS – Patient with Married status saved.");
     }
 
-    @Test(priority = 6, description = "TC_P06 – Verify patient Creates success and appears in search after creation")
+    @Test(priority = 6, description = "TC_P06 – Verify patient appears in search after creation")
     public void testPatientAppearsInSearch() throws InterruptedException {
         String fn = TestDataGenerator.generateUniqueString();
         String ln = TestDataGenerator.generateUniqueString();
@@ -426,7 +426,7 @@ public class CreatePatientTest {
 
         String fullName = ln + ", " + fn;
         WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//input[@placeholder='last name, first name ' or @value='patientName']")));
+                By.xpath("//input[@placeholder='Search Patient' or @id='patientName']")));
         searchBox.clear();
         searchBox.sendKeys(fullName);
         Thread.sleep(2000);
@@ -439,7 +439,7 @@ public class CreatePatientTest {
         System.out.println("TC_P06 PASS – Patient '" + fullName + "' found in search.");
     }
 
-    @Test(priority = 7,enabled = false, description = "TC_P07 – Create patient with language preference Spanish")
+    @Test(priority = 7, description = "TC_P07 – Create patient with language preference Spanish")
     public void testCreatePatientSpanishLanguage() throws InterruptedException {
         fillPatientForm("Mr.", TestDataGenerator.generateUniqueString(),
                 TestDataGenerator.generateUniqueString(),
@@ -658,9 +658,47 @@ public class CreatePatientTest {
         System.out.println("TC_N10 PASS – Error: " + getFieldValidationMessage("datepicker-1"));
     }
 
-   
+    @Test(priority = 18, description = "TC_N11 – Submit with numbers in First Name")
+    public void testNumericFirstName() throws InterruptedException {
+        fillPatientForm("Mr.", "12345",
+                TestDataGenerator.generateUniqueString(),
+                TestDataGenerator.generateDOB(),
+                TestDataGenerator.generatePhoneNumber(),
+                TestDataGenerator.generateUniqueEmail(),
+                "Male", "English", "Single",
+                "Johnny Bairstow (Orthopedic Dental Tooth Surgery CLinic)");
 
-    @Test(priority = 18, description = "TC_N11 – Submit without selecting Gender")
+        clickSave();
+        Thread.sleep(2000);
+
+        Assert.assertTrue(isFormStillOpen(),
+                "TC_N11 FAIL – Form should stay open when numbers in First Name.");
+        Assert.assertTrue(isValidationErrorVisible(),
+                "TC_N11 FAIL – Validation error should appear on First Name field.");
+        System.out.println("TC_N11 PASS – Error: " + getFieldValidationMessage("First Name"));
+    }
+
+    @Test(priority = 19, description = "TC_N12 – Submit with special characters in First Name")
+    public void testSpecialCharFirstName() throws InterruptedException {
+        fillPatientForm("Mr.", "@#$%^&*()",
+                TestDataGenerator.generateUniqueString(),
+                TestDataGenerator.generateDOB(),
+                TestDataGenerator.generatePhoneNumber(),
+                TestDataGenerator.generateUniqueEmail(),
+                "Male", "English", "Single",
+                "Johnny Bairstow (Orthopedic Dental Tooth Surgery CLinic)");
+
+        clickSave();
+        Thread.sleep(2000);
+
+        Assert.assertTrue(isFormStillOpen(),
+                "TC_N12 FAIL – Form should stay open for special characters in First Name.");
+        Assert.assertTrue(isValidationErrorVisible(),
+                "TC_N12 FAIL – Validation error should appear on First Name field.");
+        System.out.println("TC_N12 PASS – Error: " + getFieldValidationMessage("First Name"));
+    }
+
+    @Test(priority = 20, description = "TC_N13 – Submit without selecting Gender")
     public void testMissingGender() throws InterruptedException {
         fillPatientForm("Mr.", TestDataGenerator.generateUniqueString(),
                 TestDataGenerator.generateUniqueString(),
@@ -680,7 +718,164 @@ public class CreatePatientTest {
         System.out.println("TC_N13 PASS – Missing Gender correctly blocked.");
     }
 
-    @Test(priority = 19, description = "TC_N12 – Submit with whitespace-only First Name")
+    // ═══════════════════════════════════════════════════════════════════════════
+    // MINOR PATIENT – ADDRESS + PRIMARY CONTACT
+    // When DOB makes the patient under 18, the form reveals an Address Information
+    // section and a Primary Contact (guardian) section.
+    //
+    // Address Information fields (unique IDs — no scoping needed):
+    //   id="Address Line 1", id="Address Line 2", id="City",
+    //   ng-select[@bindlabel='stateName'], id="Zip Code"
+    //
+    // Primary Contact fields (shared IDs with patient — scoped via card header):
+    //   PC card anchor: //div[contains(@class,'card') and .//h5[contains(text(),'Primary Contact')]]
+    //   id="First Name", id="Last Name"  → scoped to PC card
+    //   id="datepicker-2" (dynamic)      → placeholder='MM/DD/YYYY' scoped to PC card
+    //   id="Email Address"               → scoped to PC card
+    //   id="patientContactGender_Male/Female/Other"  → unique IDs (vs patientGender_*)
+    //   id="Primary phone"  (lowercase p) → unique (vs patient's "Primary Phone")
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    private static final String PC_CARD =
+        "//div[contains(@class,'card') and .//h5[contains(text(),'Primary Contact')]]";
+
+    /** Fill Address Information section fields. */
+    private void fillAddressSection(String addr1, String addr2,
+                                     String city, String state, String zip)
+            throws InterruptedException {
+        if (addr1 != null)
+            driver.findElement(By.id("Address Line 1")).sendKeys(addr1);
+        if (addr2 != null)
+            driver.findElement(By.id("Address Line 2")).sendKeys(addr2);
+        if (city != null)
+            driver.findElement(By.id("City")).sendKeys(city);
+        if (state != null) {
+            // ng-select[@bindlabel='stateName'] is unique on the Add Patient form
+            driver.findElement(By.xpath("//ng-select[@bindlabel='stateName']")).click();
+            wait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//div[contains(@class,'ng-option')]//span[text()='" + state + "']")))
+                .click();
+            Thread.sleep(300);
+        }
+        if (zip != null)
+            driver.findElement(By.id("Zip Code")).sendKeys(zip);
+    }
+
+    /**
+     * Fill Primary Contact (guardian) section.
+     * Fields with duplicate IDs are scoped to the PC card via PC_CARD ancestor XPath.
+     * DOB format: MMDDYYYY (Kendo datepicker, single sendKeys call).
+     */
+    private void fillPrimaryContactSection(String firstName, String lastName,
+                                            String dob, String email,
+                                            String gender, String phone)
+            throws InterruptedException {
+        // Scroll PC section into view before interacting to avoid click interception
+        WebElement pcCard = driver.findElement(By.xpath(PC_CARD));
+        js.executeScript("arguments[0].scrollIntoView({block:'center'});", pcCard);
+        Thread.sleep(500);
+
+        if (firstName != null) {
+            // Scope by PC card to avoid collision with patient's First Name field
+            WebElement fn = driver.findElement(By.xpath(PC_CARD + "//input[@id='First Name']"));
+            fn.clear();
+            fn.sendKeys(firstName);
+        }
+
+        if (lastName != null) {
+            WebElement ln = driver.findElement(By.xpath(PC_CARD + "//input[@id='Last Name']"));
+            ln.clear();
+            ln.sendKeys(lastName);
+        }
+
+        if (dob != null) {
+            // The PC DOB datepicker ID is dynamic (increments each time the form opens).
+            // Find the SECOND MM/DD/YYYY input on the page — patient DOB is first, PC DOB is second.
+            List<WebElement> datepickers = driver.findElements(
+                    By.xpath("//input[@placeholder='MM/DD/YYYY']"));
+            // datepickers.get(0) = patient DOB, datepickers.get(1) = PC DOB
+            WebElement pcDob = datepickers.get(datepickers.size() - 1);
+            js.executeScript("arguments[0].scrollIntoView({block:'center'});", pcDob);
+            Thread.sleep(400);
+            js.executeScript("arguments[0].click();", pcDob);
+            Thread.sleep(500);
+            pcDob.sendKeys(dob);        // MMDDYYYY — Kendo auto-advances MM→DD→YYYY
+            pcDob.sendKeys(Keys.TAB);
+            Thread.sleep(400);
+        }
+
+        if (email != null) {
+            WebElement em = driver.findElement(By.xpath(PC_CARD + "//input[@id='Email Address']"));
+            em.clear();
+            em.sendKeys(email);
+        }
+
+        if (gender != null) {
+            WebElement genderEl = driver.findElement(By.xpath(
+                    "//input[@id='patientContactGender_" + gender + "']"));
+            js.executeScript("arguments[0].scrollIntoView({block:'center'});", genderEl);
+            Thread.sleep(200);
+            js.executeScript("arguments[0].click();", genderEl);
+        }
+
+        if (phone != null) {
+            // Try id="Primary phone" (lowercase p); fall back to label-scoped XPath in PC card
+            List<WebElement> phoneFields = driver.findElements(By.id("Primary phone"));
+            WebElement ph;
+            if (!phoneFields.isEmpty()) {
+                ph = phoneFields.get(0);
+            } else {
+                ph = driver.findElement(By.xpath(PC_CARD + "//input[contains(@id,'phone') or contains(@id,'Phone')]"));
+            }
+            js.executeScript("arguments[0].scrollIntoView({block:'center'});", ph);
+            Thread.sleep(200);
+            ph.clear();
+            ph.sendKeys(phone);
+        }
+    }
+
+    @Test(priority = 22,
+          description = "TC_P08 – Create minor patient (DOB < 18) with Address Info and Primary Contact details")
+    public void testCreateMinorPatientWithAddressAndPrimaryContact()
+            throws InterruptedException {
+
+        // ── Patient demographics (DOB = 03/15/2010 → age ~16, under 18) ─────
+        fillPatientForm("Mr.", TestDataGenerator.generateUniqueString(),
+                TestDataGenerator.generateUniqueString(),
+                "03152010",   // MMDDYYYY — minor DOB triggers address & primary contact sections
+                TestDataGenerator.generatePhoneNumber(),
+                TestDataGenerator.generateUniqueEmail(),
+                "Male", "English", "Single",
+                "Johnny Bairstow (Orthopedic Dental Tooth Surgery CLinic)");
+
+        // ── Address Information section ───────────────────────────────────────
+        fillAddressSection(
+                "123 Minor Test Street",  // Address Line 1
+                "Apt 4B",                 // Address Line 2
+                "Chicago",                // City
+                "Illinois",               // State (ng-select option text)
+                "60601");                 // Zip Code
+
+        // ── Primary Contact section (parent / guardian) ───────────────────────
+        fillPrimaryContactSection(
+                TestDataGenerator.generateUniqueString(),   // PC First Name
+                TestDataGenerator.generateUniqueString(),   // PC Last Name
+                "05201980",                                  // PC DOB — parent (MMDDYYYY)
+                TestDataGenerator.generateUniqueEmail(),    // PC Email Address
+                "Female",                                    // PC Gender
+                TestDataGenerator.generatePhoneNumber());   // PC Primary phone
+
+        clickSave();
+        Thread.sleep(3000);
+        dismissErrorDialog();
+
+        Assert.assertFalse(isFormStillOpen(),
+                "TC_P08 FAIL – Form should close after saving minor patient with " +
+                "Address Information and Primary Contact details.");
+        System.out.println("TC_P08 PASS – Minor patient with Address Info and Primary Contact saved successfully.");
+    }
+
+    @Test(priority = 21, description = "TC_N14 – Submit with whitespace-only First Name")
     public void testWhitespaceFirstName() throws InterruptedException {
         fillPatientForm("Mr.", "     ",
                 TestDataGenerator.generateUniqueString(),
