@@ -21,19 +21,16 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 /**
- * Positive and negative tests for the Lookup page (Location) and Insurance page.
+ * Tests for the Lookup (Location) and Insurance sections inside Practice Configuration.
  *
- * Navigation:
- *   Location  → sidebar "Lookup"   → //span[text()='Lookup']
- *   Insurance → sidebar "Insurance" → //span[text()='Insurance']
+ * Navigation flow:
+ *   Login → click Practice Configuration → click "Lookup"   → Location form visible directly
+ *   Login → click Practice Configuration → click "Insurance" → Insurance form visible directly
  *
- * Location fields confirmed from LookupPage.java:
- *   id="Location Name", id="Tax ID(TIN)", id="Address Line 1", id="City",
- *   id="Zip Code", id="Office Phone", ng-select State/Timezone/Doctor
- *
- * Insurance fields:
- *   id="Insurance Company Name", placeholder="Phone",
- *   id="Address Line 1", id="City", id="Zip Code", ng-select State
+ * Lookup menu XPath (inside Practice Config left sidebar):
+ *   //span[@class='pcoded-mtext ...' and text()='Lookup']
+ * Insurance menu XPath (inside Practice Config left sidebar):
+ *   //span[@class='pcoded-mtext ...' and text()='Insurance']
  */
 public class LookupTest {
 
@@ -42,7 +39,7 @@ public class LookupTest {
     private Actions            actions;
     private JavascriptExecutor js;
 
-    private static final String MENU_XPATH =
+    private static final String PCODED_MTEXT =
         "//span[@class='pcoded-mtext d-flex justify-content-center text-wrap text-center lh-sm' and text()='%s']";
 
     // ── One-time setup ────────────────────────────────────────────────────────
@@ -66,7 +63,7 @@ public class LookupTest {
         System.out.println("LookupTest: browser closed.");
     }
 
-    // ── Helpers ───────────────────────────────────────────────────────────────
+    // ── Navigation helpers ────────────────────────────────────────────────────
 
     private void dismissErrorDialog() {
         try {
@@ -78,13 +75,34 @@ public class LookupTest {
         } catch (Exception ignored) {}
     }
 
-    private void navigateToMenu(String menuText) throws InterruptedException {
+    /**
+     * Step 1: click Practice Configuration in the main nav.
+     * Step 2: click the given sub-menu item (e.g. "Lookup" or "Insurance")
+     *         in the Practice Config left sidebar.
+     * The form for that section is then directly visible — no further sub-menu needed.
+     */
+    private void navigateToPracticeConfigSection(String sectionName) throws InterruptedException {
         dismissErrorDialog();
-        WebElement menu = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath(String.format(MENU_XPATH, menuText))));
-        menu.click();
+
+        // Scroll to top so the fixed navbar does not intercept the click
+        js.executeScript("window.scrollTo(0, 0);");
+        Thread.sleep(300);
+
+        // Step 1 – open Practice Configuration via JS click (avoids fixed-header interception)
+        WebElement practiceLink = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//a[contains(@title,'Practice configuration')]")));
+        js.executeScript("arguments[0].click();", practiceLink);
         Thread.sleep(2000);
         dismissErrorDialog();
+
+        // Step 2 – click the section in the sidebar (Lookup or Insurance)
+        WebElement sectionMenu = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath(String.format(PCODED_MTEXT, sectionName))));
+        sectionMenu.click();
+        Thread.sleep(2000);
+        dismissErrorDialog();
+
+        System.out.println("LookupTest: navigated to Practice Config → " + sectionName);
     }
 
     private void clickSaveButton() throws InterruptedException {
@@ -118,22 +136,25 @@ public class LookupTest {
     }
 
     // ═══════════════════════════════════════════════════════════════════════════
-    // LOCATION – POSITIVE TEST CASES
+    // LOCATION TESTS  (Practice Config → Lookup)
     // ═══════════════════════════════════════════════════════════════════════════
 
-    @Test(priority = 1, description = "TC_LK_P01 – Lookup page loads and location search field is visible")
+    @Test(priority = 1, description = "TC_LK_P01 – Lookup page loads; location search field and form are visible")
     public void testLookupPageLoads() throws InterruptedException {
-        navigateToMenu("Lookup");
+        navigateToPracticeConfigSection("Lookup");
 
         Assert.assertTrue(
                 driver.findElement(By.xpath("//input[@placeholder='search location']")).isDisplayed(),
                 "TC_LK_P01 FAIL – Location search field should be visible on Lookup page.");
-        System.out.println("TC_LK_P01 PASS – Lookup page loaded; location search visible.");
+        Assert.assertTrue(
+                driver.findElement(By.xpath("//input[@id='Location Name']")).isDisplayed(),
+                "TC_LK_P01 FAIL – Location Name form field should be visible on Lookup page.");
+        System.out.println("TC_LK_P01 PASS – Lookup page loaded; search field and form are visible.");
     }
 
     @Test(priority = 2, description = "TC_LK_P02 – Search for the existing test location 'Mumbai'")
     public void testSearchExistingLocation() throws InterruptedException {
-        navigateToMenu("Lookup");
+        navigateToPracticeConfigSection("Lookup");
 
         WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//input[@placeholder='search location']")));
@@ -145,12 +166,37 @@ public class LookupTest {
                 "//div[@class='d-flex flex-column']//span[contains(text(),'" + LookupPage.location + "')]"));
         Assert.assertFalse(results.isEmpty(),
                 "TC_LK_P02 FAIL – Existing location '" + LookupPage.location + "' should appear in search results.");
-        System.out.println("TC_LK_P02 PASS – Existing location found in search: " + LookupPage.location);
+        System.out.println("TC_LK_P02 PASS – Existing location found: " + LookupPage.location);
     }
 
-    @Test(priority = 3, description = "TC_LK_P03 – Add a new location with all required fields")
+    @Test(priority = 3, description = "TC_LK_P03 – All location form fields are visible and editable")
+    public void testLocationFormFieldsVisible() throws InterruptedException {
+        navigateToPracticeConfigSection("Lookup");
+
+        Assert.assertTrue(
+            driver.findElement(By.xpath("//input[@id='Location Name']")).isDisplayed(),
+            "TC_LK_P03 FAIL – Location Name field not visible.");
+        Assert.assertTrue(
+            driver.findElement(By.xpath("//input[@id='Tax ID(TIN)']")).isDisplayed(),
+            "TC_LK_P03 FAIL – Tax ID field not visible.");
+        Assert.assertTrue(
+            driver.findElement(By.xpath("//input[@id='Address Line 1']")).isDisplayed(),
+            "TC_LK_P03 FAIL – Address Line 1 field not visible.");
+        Assert.assertTrue(
+            driver.findElement(By.xpath("//input[@id='City']")).isDisplayed(),
+            "TC_LK_P03 FAIL – City field not visible.");
+        Assert.assertTrue(
+            driver.findElement(By.xpath("//input[@id='Zip Code']")).isDisplayed(),
+            "TC_LK_P03 FAIL – Zip Code field not visible.");
+        Assert.assertTrue(
+            driver.findElement(By.xpath("//input[@id='Office Phone']")).isDisplayed(),
+            "TC_LK_P03 FAIL – Office Phone field not visible.");
+        System.out.println("TC_LK_P03 PASS – All location form fields are visible.");
+    }
+
+    @Test(priority = 4, description = "TC_LK_P04 – Add a new location with all required fields and save")
     public void testAddNewLocationAllFields() throws InterruptedException {
-        navigateToMenu("Lookup");
+        navigateToPracticeConfigSection("Lookup");
 
         String uniqueName = "AutoLoc " + TestDataGenerator.generateUniqueString();
 
@@ -173,44 +219,16 @@ public class LookupTest {
         clickSaveButton();
 
         Assert.assertFalse(isErrorVisible(),
-                "TC_LK_P03 FAIL – No validation error should appear when all location fields are valid.");
-        System.out.println("TC_LK_P03 PASS – New location '" + uniqueName + "' added successfully.");
+                "TC_LK_P04 FAIL – No validation error should appear when all location fields are valid.");
+        System.out.println("TC_LK_P04 PASS – New location '" + uniqueName + "' saved successfully.");
     }
 
-    @Test(priority = 4, description = "TC_LK_P04 – Location form fields are all present and editable")
-    public void testLocationFormFieldsVisible() throws InterruptedException {
-        navigateToMenu("Lookup");
+    // ── Location Negative Tests ───────────────────────────────────────────────
 
-        Assert.assertTrue(
-            driver.findElement(By.xpath("//input[@id='Location Name']")).isDisplayed(),
-            "TC_LK_P04 FAIL – Location Name field not visible.");
-        Assert.assertTrue(
-            driver.findElement(By.xpath("//input[@id='Tax ID(TIN)']")).isDisplayed(),
-            "TC_LK_P04 FAIL – Tax ID field not visible.");
-        Assert.assertTrue(
-            driver.findElement(By.xpath("//input[@id='Address Line 1']")).isDisplayed(),
-            "TC_LK_P04 FAIL – Address Line 1 field not visible.");
-        Assert.assertTrue(
-            driver.findElement(By.xpath("//input[@id='City']")).isDisplayed(),
-            "TC_LK_P04 FAIL – City field not visible.");
-        Assert.assertTrue(
-            driver.findElement(By.xpath("//input[@id='Zip Code']")).isDisplayed(),
-            "TC_LK_P04 FAIL – Zip Code field not visible.");
-        Assert.assertTrue(
-            driver.findElement(By.xpath("//input[@id='Office Phone']")).isDisplayed(),
-            "TC_LK_P04 FAIL – Office Phone field not visible.");
-        System.out.println("TC_LK_P04 PASS – All location form fields are visible.");
-    }
-
-    // ═══════════════════════════════════════════════════════════════════════════
-    // LOCATION – NEGATIVE TEST CASES
-    // ═══════════════════════════════════════════════════════════════════════════
-
-    @Test(priority = 5, description = "TC_LK_N01 – Save location without Location Name (required field)")
+    @Test(priority = 5, description = "TC_LK_N01 – Save location without Location Name; expect validation error")
     public void testSaveLocationWithoutName() throws InterruptedException {
-        navigateToMenu("Lookup");
+        navigateToPracticeConfigSection("Lookup");
 
-        // Fill all fields except the name
         driver.findElement(By.xpath("//input[@id='Tax ID(TIN)']")).sendKeys("12-3456789");
         driver.findElement(By.xpath("//input[@id='Address Line 1']")).sendKeys("100 Test Street");
         driver.findElement(By.xpath("//input[@id='City']")).sendKeys("TestCity");
@@ -224,9 +242,9 @@ public class LookupTest {
         System.out.println("TC_LK_N01 PASS – Missing Location Name correctly blocked.");
     }
 
-    @Test(priority = 6, description = "TC_LK_N02 – Save location without Address Line 1")
+    @Test(priority = 6, description = "TC_LK_N02 – Save location without Address Line 1; expect validation error")
     public void testSaveLocationWithoutAddress() throws InterruptedException {
-        navigateToMenu("Lookup");
+        navigateToPracticeConfigSection("Lookup");
 
         driver.findElement(By.xpath("//input[@id='Location Name']"))
               .sendKeys("NoAddr " + TestDataGenerator.generateUniqueString());
@@ -236,13 +254,13 @@ public class LookupTest {
         clickSaveButton();
 
         Assert.assertTrue(isErrorVisible(),
-                "TC_LK_N02 FAIL – Validation error should appear when Address is missing.");
-        System.out.println("TC_LK_N02 PASS – Missing Address blocked.");
+                "TC_LK_N02 FAIL – Validation error should appear when Address Line 1 is missing.");
+        System.out.println("TC_LK_N02 PASS – Missing Address Line 1 correctly blocked.");
     }
 
-    @Test(priority = 7, description = "TC_LK_N03 – Save location with invalid zip code (letters)")
+    @Test(priority = 7, description = "TC_LK_N03 – Save location with letters in Zip Code; expect validation error")
     public void testSaveLocationInvalidZipCode() throws InterruptedException {
-        navigateToMenu("Lookup");
+        navigateToPracticeConfigSection("Lookup");
 
         driver.findElement(By.xpath("//input[@id='Location Name']"))
               .sendKeys("ZipTest " + TestDataGenerator.generateUniqueString());
@@ -254,12 +272,12 @@ public class LookupTest {
 
         Assert.assertTrue(isErrorVisible(),
                 "TC_LK_N03 FAIL – Letters in Zip Code should be rejected.");
-        System.out.println("TC_LK_N03 PASS – Invalid Zip Code (letters) blocked.");
+        System.out.println("TC_LK_N03 PASS – Invalid Zip Code (letters) correctly blocked.");
     }
 
-    @Test(priority = 8, description = "TC_LK_N04 – Search for non-existent location returns no result")
+    @Test(priority = 8, description = "TC_LK_N04 – Search for non-existent location; expect no results")
     public void testSearchNonExistentLocation() throws InterruptedException {
-        navigateToMenu("Lookup");
+        navigateToPracticeConfigSection("Lookup");
 
         String randomName = "NONEXIST_" + TestDataGenerator.generateUniqueString();
         WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
@@ -276,22 +294,25 @@ public class LookupTest {
     }
 
     // ═══════════════════════════════════════════════════════════════════════════
-    // INSURANCE – POSITIVE TEST CASES
+    // INSURANCE TESTS  (Practice Config → Insurance)
     // ═══════════════════════════════════════════════════════════════════════════
 
-    @Test(priority = 9, description = "TC_LK_P05 – Insurance page loads and insurance search field is visible")
+    @Test(priority = 9, description = "TC_LK_P05 – Insurance page loads; search field and form are visible")
     public void testInsurancePageLoads() throws InterruptedException {
-        navigateToMenu("Insurance");
+        navigateToPracticeConfigSection("Insurance");
 
         Assert.assertTrue(
                 driver.findElement(By.xpath("//input[@placeholder='search insurance']")).isDisplayed(),
-                "TC_LK_P05 FAIL – Insurance search field should be visible on Insurance page.");
-        System.out.println("TC_LK_P05 PASS – Insurance page loaded; search field visible.");
+                "TC_LK_P05 FAIL – Insurance search field should be visible.");
+        Assert.assertTrue(
+                driver.findElement(By.xpath("//input[@id='Insurance Company Name']")).isDisplayed(),
+                "TC_LK_P05 FAIL – Insurance Company Name form field should be visible.");
+        System.out.println("TC_LK_P05 PASS – Insurance page loaded; search field and form are visible.");
     }
 
     @Test(priority = 10, description = "TC_LK_P06 – Search for the existing test insurance company")
     public void testSearchExistingInsurance() throws InterruptedException {
-        navigateToMenu("Insurance");
+        navigateToPracticeConfigSection("Insurance");
 
         WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//input[@placeholder='search insurance']")));
@@ -306,9 +327,31 @@ public class LookupTest {
         System.out.println("TC_LK_P06 PASS – Existing insurance found: " + LookupPage.insurance);
     }
 
-    @Test(priority = 11, description = "TC_LK_P07 – Add a new insurance company with all required fields")
+    @Test(priority = 11, description = "TC_LK_P07 – All insurance form fields are visible and editable")
+    public void testInsuranceFormFieldsVisible() throws InterruptedException {
+        navigateToPracticeConfigSection("Insurance");
+
+        Assert.assertTrue(
+            driver.findElement(By.xpath("//input[@id='Insurance Company Name']")).isDisplayed(),
+            "TC_LK_P07 FAIL – Insurance Company Name field not visible.");
+        Assert.assertTrue(
+            driver.findElement(By.xpath("//input[@placeholder='Phone']")).isDisplayed(),
+            "TC_LK_P07 FAIL – Phone field not visible.");
+        Assert.assertTrue(
+            driver.findElement(By.xpath("//input[@id='Address Line 1']")).isDisplayed(),
+            "TC_LK_P07 FAIL – Address Line 1 field not visible.");
+        Assert.assertTrue(
+            driver.findElement(By.xpath("//input[@id='City']")).isDisplayed(),
+            "TC_LK_P07 FAIL – City field not visible.");
+        Assert.assertTrue(
+            driver.findElement(By.xpath("//input[@id='Zip Code']")).isDisplayed(),
+            "TC_LK_P07 FAIL – Zip Code field not visible.");
+        System.out.println("TC_LK_P07 PASS – All insurance form fields are visible.");
+    }
+
+    @Test(priority = 12, description = "TC_LK_P08 – Add a new insurance company with all required fields and save")
     public void testAddNewInsuranceAllFields() throws InterruptedException {
-        navigateToMenu("Insurance");
+        navigateToPracticeConfigSection("Insurance");
 
         String uniqueName = "AutoIns " + TestDataGenerator.generateUniqueString();
 
@@ -325,39 +368,15 @@ public class LookupTest {
         clickSaveButton();
 
         Assert.assertFalse(isErrorVisible(),
-                "TC_LK_P07 FAIL – No error should appear when all insurance fields are valid.");
-        System.out.println("TC_LK_P07 PASS – New insurance '" + uniqueName + "' added successfully.");
+                "TC_LK_P08 FAIL – No error should appear when all insurance fields are valid.");
+        System.out.println("TC_LK_P08 PASS – New insurance '" + uniqueName + "' saved successfully.");
     }
 
-    @Test(priority = 12, description = "TC_LK_P08 – Insurance form fields are all present and editable")
-    public void testInsuranceFormFieldsVisible() throws InterruptedException {
-        navigateToMenu("Insurance");
+    // ── Insurance Negative Tests ──────────────────────────────────────────────
 
-        Assert.assertTrue(
-            driver.findElement(By.xpath("//input[@id='Insurance Company Name']")).isDisplayed(),
-            "TC_LK_P08 FAIL – Insurance Company Name field not visible.");
-        Assert.assertTrue(
-            driver.findElement(By.xpath("//input[@placeholder='Phone']")).isDisplayed(),
-            "TC_LK_P08 FAIL – Phone field not visible.");
-        Assert.assertTrue(
-            driver.findElement(By.xpath("//input[@id='Address Line 1']")).isDisplayed(),
-            "TC_LK_P08 FAIL – Address Line 1 field not visible.");
-        Assert.assertTrue(
-            driver.findElement(By.xpath("//input[@id='City']")).isDisplayed(),
-            "TC_LK_P08 FAIL – City field not visible.");
-        Assert.assertTrue(
-            driver.findElement(By.xpath("//input[@id='Zip Code']")).isDisplayed(),
-            "TC_LK_P08 FAIL – Zip Code field not visible.");
-        System.out.println("TC_LK_P08 PASS – All insurance form fields are visible.");
-    }
-
-    // ═══════════════════════════════════════════════════════════════════════════
-    // INSURANCE – NEGATIVE TEST CASES
-    // ═══════════════════════════════════════════════════════════════════════════
-
-    @Test(priority = 13, description = "TC_LK_N05 – Save insurance without company name (required field)")
+    @Test(priority = 13, description = "TC_LK_N05 – Save insurance without Company Name; expect validation error")
     public void testSaveInsuranceWithoutName() throws InterruptedException {
-        navigateToMenu("Insurance");
+        navigateToPracticeConfigSection("Insurance");
 
         driver.findElement(By.xpath("//input[@placeholder='Phone']")).sendKeys("(312) 555-0201");
         driver.findElement(By.xpath("//input[@id='Address Line 1']")).sendKeys("200 Test Ave");
@@ -368,12 +387,12 @@ public class LookupTest {
 
         Assert.assertTrue(isErrorVisible(),
                 "TC_LK_N05 FAIL – Validation error should appear when Insurance Company Name is blank.");
-        System.out.println("TC_LK_N05 PASS – Missing Insurance Company Name blocked.");
+        System.out.println("TC_LK_N05 PASS – Missing Insurance Company Name correctly blocked.");
     }
 
-    @Test(priority = 14, description = "TC_LK_N06 – Save insurance with invalid phone number (letters)")
+    @Test(priority = 14, description = "TC_LK_N06 – Save insurance with letters in phone number; expect validation error")
     public void testSaveInsuranceInvalidPhone() throws InterruptedException {
-        navigateToMenu("Insurance");
+        navigateToPracticeConfigSection("Insurance");
 
         driver.findElement(By.xpath("//input[@id='Insurance Company Name']"))
               .sendKeys("PhoneTest " + TestDataGenerator.generateUniqueString());
@@ -386,12 +405,12 @@ public class LookupTest {
 
         Assert.assertTrue(isErrorVisible(),
                 "TC_LK_N06 FAIL – Letters in phone number should be rejected.");
-        System.out.println("TC_LK_N06 PASS – Invalid phone number (letters) blocked.");
+        System.out.println("TC_LK_N06 PASS – Invalid phone number (letters) correctly blocked.");
     }
 
-    @Test(priority = 15, description = "TC_LK_N07 – Search for non-existent insurance returns no result")
+    @Test(priority = 15, description = "TC_LK_N07 – Search for non-existent insurance; expect no results")
     public void testSearchNonExistentInsurance() throws InterruptedException {
-        navigateToMenu("Insurance");
+        navigateToPracticeConfigSection("Insurance");
 
         String randomName = "NONEXIST_" + TestDataGenerator.generateUniqueString();
         WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(

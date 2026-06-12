@@ -70,9 +70,7 @@ public class ContractConfigTest {
         dismissErrorDialog();
 
         WebElement contractTab = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//ul[contains(@class,'nav-tabs')]//a[normalize-space(text())='Contract']"
-                       + " | //app-practice-configuration//li/a[contains(@class,'nav-link') and normalize-space(text())='Contract']"
-                       + " | //div[contains(@class,'practice')]//li/a[normalize-space(text())='Contract']")));
+                By.xpath("//li/a[@class='nav-link' and text()='Contract']")));
         actions.moveToElement(contractTab).click().perform();
         Thread.sleep(2000);
         dismissErrorDialog();

@@ -1,79 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="14" passed="8" failed="6" skipped="0">
+<testng-results ignored="0" total="15" passed="13" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-06-11T19:15:36 IST" name="Default suite" finished-at="2026-06-11T19:17:36 IST" duration-ms="119832">
+  <suite started-at="2026-06-12T13:20:52 IST" name="Default suite" finished-at="2026-06-12T13:22:47 IST" duration-ms="114326">
     <groups>
     </groups>
-    <test started-at="2026-06-11T19:15:36 IST" name="Default test" finished-at="2026-06-11T19:17:36 IST" duration-ms="119832">
-      <class name="com.opms.tests.ContractConfigTest">
-        <test-method is-config="true" signature="setUpSuite()[pri:0, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:15:36 IST" name="setUpSuite" finished-at="2026-06-11T19:15:54 IST" duration-ms="17300" status="PASS">
+    <test started-at="2026-06-12T13:20:52 IST" name="Default test" finished-at="2026-06-12T13:22:47 IST" duration-ms="114326">
+      <class name="com.opms.tests.LookupTest">
+        <test-method is-config="true" signature="setUpSuite()[pri:0, instance:com.opms.tests.LookupTest@1ed4ae0f]" started-at="2026-06-12T13:20:52 IST" name="setUpSuite" finished-at="2026-06-12T13:21:11 IST" duration-ms="18978" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpSuite -->
-        <test-method is-config="true" signature="navigateToContractTab()[pri:0, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:15:54 IST" name="navigateToContractTab" finished-at="2026-06-11T19:15:59 IST" duration-ms="4889" status="PASS">
+        <test-method signature="testLookupPageLoads()[pri:1, instance:com.opms.tests.LookupTest@1ed4ae0f]" started-at="2026-06-12T13:21:11 IST" name="testLookupPageLoads" description="TC_LK_P01 – Lookup page loads; location search field and form are visible" finished-at="2026-06-12T13:21:17 IST" duration-ms="5139" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- navigateToContractTab -->
-        <test-method signature="testSaveValidContractConfig()[pri:1, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:15:59 IST" name="testSaveValidContractConfig" description="TC_CC_P01 – Update all fields with valid standard values and save" finished-at="2026-06-11T19:16:04 IST" duration-ms="5290" status="PASS">
+        </test-method> <!-- testLookupPageLoads -->
+        <test-method signature="testSearchExistingLocation()[pri:2, instance:com.opms.tests.LookupTest@1ed4ae0f]" started-at="2026-06-12T13:21:17 IST" name="testSearchExistingLocation" description="TC_LK_P02 – Search for the existing test location &#039;Mumbai&#039;" finished-at="2026-06-12T13:21:23 IST" duration-ms="6507" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSaveValidContractConfig -->
-        <test-method is-config="true" signature="navigateToContractTab()[pri:0, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:16:04 IST" name="navigateToContractTab" finished-at="2026-06-11T19:16:08 IST" duration-ms="4435" status="PASS">
+        </test-method> <!-- testSearchExistingLocation -->
+        <test-method signature="testLocationFormFieldsVisible()[pri:3, instance:com.opms.tests.LookupTest@1ed4ae0f]" started-at="2026-06-12T13:21:23 IST" name="testLocationFormFieldsVisible" description="TC_LK_P03 – All location form fields are visible and editable" finished-at="2026-06-12T13:21:28 IST" duration-ms="4809" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- navigateToContractTab -->
-        <test-method signature="testUpdateRecommendedDownPayment()[pri:2, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:16:08 IST" name="testUpdateRecommendedDownPayment" description="TC_CC_P02 – Update Recommended Down Payment to a higher value and save" finished-at="2026-06-11T19:16:11 IST" duration-ms="3098" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testUpdateRecommendedDownPayment -->
-        <test-method is-config="true" signature="navigateToContractTab()[pri:0, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:16:11 IST" name="navigateToContractTab" finished-at="2026-06-11T19:16:16 IST" duration-ms="4415" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigateToContractTab -->
-        <test-method signature="testUpdateInterestRate()[pri:3, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:16:16 IST" name="testUpdateInterestRate" description="TC_CC_P03 – Update Interest Percentage to a new valid value and save" finished-at="2026-06-11T19:16:19 IST" duration-ms="3026" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testUpdateInterestRate -->
-        <test-method is-config="true" signature="navigateToContractTab()[pri:0, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:16:19 IST" name="navigateToContractTab" finished-at="2026-06-11T19:16:23 IST" duration-ms="4430" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigateToContractTab -->
-        <test-method signature="testUpdateFinancingMonths()[pri:4, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:16:23 IST" name="testUpdateFinancingMonths" description="TC_CC_P04 – Update Financing Months Past Treatment and save" finished-at="2026-06-11T19:16:26 IST" duration-ms="3071" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testUpdateFinancingMonths -->
-        <test-method is-config="true" signature="navigateToContractTab()[pri:0, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:16:26 IST" name="navigateToContractTab" finished-at="2026-06-11T19:16:31 IST" duration-ms="4461" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigateToContractTab -->
-        <test-method signature="testUpdateInterestToZero()[pri:5, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:16:31 IST" name="testUpdateInterestToZero" description="TC_CC_P05 – Update Interest Percentage to 0 (interest-free) and save" finished-at="2026-06-11T19:16:34 IST" duration-ms="2991" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testUpdateInterestToZero -->
-        <test-method is-config="true" signature="navigateToContractTab()[pri:0, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:16:34 IST" name="navigateToContractTab" finished-at="2026-06-11T19:16:38 IST" duration-ms="4339" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigateToContractTab -->
-        <test-method signature="testContractConfigFieldsVisible()[pri:6, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:16:38 IST" name="testContractConfigFieldsVisible" description="TC_CC_P06 – Verify all contract config fields are visible and editable" finished-at="2026-06-11T19:16:38 IST" duration-ms="134" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testContractConfigFieldsVisible -->
-        <test-method is-config="true" signature="navigateToContractTab()[pri:0, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:16:38 IST" name="navigateToContractTab" finished-at="2026-06-11T19:16:43 IST" duration-ms="4434" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigateToContractTab -->
-        <test-method signature="testClearRecommendedDownPayment()[pri:7, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:16:43 IST" name="testClearRecommendedDownPayment" description="TC_CC_N01 – Clear Recommended Down Payment and save; expect validation error" finished-at="2026-06-11T19:16:46 IST" duration-ms="2852" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        </test-method> <!-- testLocationFormFieldsVisible -->
+        <test-method signature="testAddNewLocationAllFields()[pri:4, instance:com.opms.tests.LookupTest@1ed4ae0f]" started-at="2026-06-12T13:21:28 IST" name="testAddNewLocationAllFields" description="TC_LK_P04 – Add a new location with all required fields and save" finished-at="2026-06-12T13:21:34 IST" duration-ms="6525" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[TC_CC_N01 FAIL – Validation error should appear when Recommended Down Payment is cleared. expected [true] but found [false]]]>
+              <![CDATA[element click intercepted: Element <div class="ng-placeholder">...</div> is not clickable at point (1393, 290). Other element would receive the click: <div class="pcoded-main-container right_sidebar_opened">...</div>
+  (Session info: chrome=149.0.7827.102)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bc352165fe4e03ea9e418ccedaf1cc54, clickElement {id=f.C2EF8DC88FC8B74360A50B877C8BA8FE.d.1B507803256DE52124BB510C4AEED729.e.12688}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.102, chrome: {chromedriverVersion: 149.0.7827.115 (daf70f9ddee..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62203}, goog:processID: 13940, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62203/devtoo..., se:cdpVersion: 149.0.7827.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (bc352165fe4e03ea9e418ccedaf1cc54)] -> xpath: //div[@class='ng-placeholder' and text()='Select State']]
+Session ID: bc352165fe4e03ea9e418ccedaf1cc54]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: TC_CC_N01 FAIL – Validation error should appear when Recommended Down Payment is cleared. expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertTrue(Assert.java:57)
-at com.opms.tests.ContractConfigTest.testClearRecommendedDownPayment(ContractConfigTest.java:255)
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <div class="ng-placeholder">...</div> is not clickable at point (1393, 290). Other element would receive the click: <div class="pcoded-main-container right_sidebar_opened">...</div>
+  (Session info: chrome=149.0.7827.102)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bc352165fe4e03ea9e418ccedaf1cc54, clickElement {id=f.C2EF8DC88FC8B74360A50B877C8BA8FE.d.1B507803256DE52124BB510C4AEED729.e.12688}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.102, chrome: {chromedriverVersion: 149.0.7827.115 (daf70f9ddee..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62203}, goog:processID: 13940, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62203/devtoo..., se:cdpVersion: 149.0.7827.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (bc352165fe4e03ea9e418ccedaf1cc54)] -> xpath: //div[@class='ng-placeholder' and text()='Select State']]
+Session ID: bc352165fe4e03ea9e418ccedaf1cc54
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at com.opms.tests.LookupTest.selectDropdownOption(LookupTest.java:130)
+at com.opms.tests.LookupTest.testAddNewLocationAllFields(LookupTest.java:209)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -104,25 +92,77 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testClearRecommendedDownPayment -->
-        <test-method is-config="true" signature="navigateToContractTab()[pri:0, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:16:46 IST" name="navigateToContractTab" finished-at="2026-06-11T19:16:50 IST" duration-ms="4382" status="PASS">
+        </test-method> <!-- testAddNewLocationAllFields -->
+        <test-method signature="testSaveLocationWithoutName()[pri:5, instance:com.opms.tests.LookupTest@1ed4ae0f]" started-at="2026-06-12T13:21:34 IST" name="testSaveLocationWithoutName" description="TC_LK_N01 – Save location without Location Name; expect validation error" finished-at="2026-06-12T13:21:42 IST" duration-ms="7472" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- navigateToContractTab -->
-        <test-method signature="testClearMinimumDownPayment()[pri:8, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:16:50 IST" name="testClearMinimumDownPayment" description="TC_CC_N02 – Clear Minimum Down Payment and save; expect validation error" finished-at="2026-06-11T19:16:53 IST" duration-ms="2820" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        </test-method> <!-- testSaveLocationWithoutName -->
+        <test-method signature="testSaveLocationWithoutAddress()[pri:6, instance:com.opms.tests.LookupTest@1ed4ae0f]" started-at="2026-06-12T13:21:42 IST" name="testSaveLocationWithoutAddress" description="TC_LK_N02 – Save location without Address Line 1; expect validation error" finished-at="2026-06-12T13:21:49 IST" duration-ms="7361" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSaveLocationWithoutAddress -->
+        <test-method signature="testSaveLocationInvalidZipCode()[pri:7, instance:com.opms.tests.LookupTest@1ed4ae0f]" started-at="2026-06-12T13:21:49 IST" name="testSaveLocationInvalidZipCode" description="TC_LK_N03 – Save location with letters in Zip Code; expect validation error" finished-at="2026-06-12T13:21:57 IST" duration-ms="7392" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSaveLocationInvalidZipCode -->
+        <test-method signature="testSearchNonExistentLocation()[pri:8, instance:com.opms.tests.LookupTest@1ed4ae0f]" started-at="2026-06-12T13:21:57 IST" name="testSearchNonExistentLocation" description="TC_LK_N04 – Search for non-existent location; expect no results" finished-at="2026-06-12T13:22:03 IST" duration-ms="6391" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchNonExistentLocation -->
+        <test-method signature="testInsurancePageLoads()[pri:9, instance:com.opms.tests.LookupTest@1ed4ae0f]" started-at="2026-06-12T13:22:03 IST" name="testInsurancePageLoads" description="TC_LK_P05 – Insurance page loads; search field and form are visible" finished-at="2026-06-12T13:22:08 IST" duration-ms="4780" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInsurancePageLoads -->
+        <test-method signature="testSearchExistingInsurance()[pri:10, instance:com.opms.tests.LookupTest@1ed4ae0f]" started-at="2026-06-12T13:22:08 IST" name="testSearchExistingInsurance" description="TC_LK_P06 – Search for the existing test insurance company" finished-at="2026-06-12T13:22:14 IST" duration-ms="6469" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchExistingInsurance -->
+        <test-method signature="testInsuranceFormFieldsVisible()[pri:11, instance:com.opms.tests.LookupTest@1ed4ae0f]" started-at="2026-06-12T13:22:14 IST" name="testInsuranceFormFieldsVisible" description="TC_LK_P07 – All insurance form fields are visible and editable" finished-at="2026-06-12T13:22:19 IST" duration-ms="4938" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInsuranceFormFieldsVisible -->
+        <test-method signature="testAddNewInsuranceAllFields()[pri:12, instance:com.opms.tests.LookupTest@1ed4ae0f]" started-at="2026-06-12T13:22:19 IST" name="testAddNewInsuranceAllFields" description="TC_LK_P08 – Add a new insurance company with all required fields and save" finished-at="2026-06-12T13:22:26 IST" duration-ms="6240" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[TC_CC_N02 FAIL – Validation error should appear when Minimum Down Payment is cleared. expected [true] but found [false]]]>
+              <![CDATA[element click intercepted: Element <div class="ng-placeholder">...</div> is not clickable at point (1393, 305). Other element would receive the click: <div class="pcoded-main-container right_sidebar_opened">...</div>
+  (Session info: chrome=149.0.7827.102)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bc352165fe4e03ea9e418ccedaf1cc54, clickElement {id=f.C2EF8DC88FC8B74360A50B877C8BA8FE.d.1B507803256DE52124BB510C4AEED729.e.35812}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.102, chrome: {chromedriverVersion: 149.0.7827.115 (daf70f9ddee..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62203}, goog:processID: 13940, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62203/devtoo..., se:cdpVersion: 149.0.7827.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (bc352165fe4e03ea9e418ccedaf1cc54)] -> xpath: //div[@class='ng-placeholder' and text()='Select State']]
+Session ID: bc352165fe4e03ea9e418ccedaf1cc54]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: TC_CC_N02 FAIL – Validation error should appear when Minimum Down Payment is cleared. expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertTrue(Assert.java:57)
-at com.opms.tests.ContractConfigTest.testClearMinimumDownPayment(ContractConfigTest.java:265)
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <div class="ng-placeholder">...</div> is not clickable at point (1393, 305). Other element would receive the click: <div class="pcoded-main-container right_sidebar_opened">...</div>
+  (Session info: chrome=149.0.7827.102)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bc352165fe4e03ea9e418ccedaf1cc54, clickElement {id=f.C2EF8DC88FC8B74360A50B877C8BA8FE.d.1B507803256DE52124BB510C4AEED729.e.35812}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.102, chrome: {chromedriverVersion: 149.0.7827.115 (daf70f9ddee..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62203}, goog:processID: 13940, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62203/devtoo..., se:cdpVersion: 149.0.7827.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (bc352165fe4e03ea9e418ccedaf1cc54)] -> xpath: //div[@class='ng-placeholder' and text()='Select State']]
+Session ID: bc352165fe4e03ea9e418ccedaf1cc54
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at com.opms.tests.LookupTest.selectDropdownOption(LookupTest.java:130)
+at com.opms.tests.LookupTest.testAddNewInsuranceAllFields(LookupTest.java:364)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -153,227 +193,27 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testClearMinimumDownPayment -->
-        <test-method is-config="true" signature="navigateToContractTab()[pri:0, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:16:53 IST" name="navigateToContractTab" finished-at="2026-06-11T19:16:57 IST" duration-ms="4468" status="PASS">
+        </test-method> <!-- testAddNewInsuranceAllFields -->
+        <test-method signature="testSaveInsuranceWithoutName()[pri:13, instance:com.opms.tests.LookupTest@1ed4ae0f]" started-at="2026-06-12T13:22:26 IST" name="testSaveInsuranceWithoutName" description="TC_LK_N05 – Save insurance without Company Name; expect validation error" finished-at="2026-06-12T13:22:33 IST" duration-ms="7204" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- navigateToContractTab -->
-        <test-method signature="testClearRecommendedMonthlyPayment()[pri:9, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:16:57 IST" name="testClearRecommendedMonthlyPayment" description="TC_CC_N03 – Clear Recommended Monthly Payment and save; expect validation error" finished-at="2026-06-11T19:17:00 IST" duration-ms="2915" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[TC_CC_N03 FAIL – Validation error should appear when Recommended Monthly Payment is cleared. expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: TC_CC_N03 FAIL – Validation error should appear when Recommended Monthly Payment is cleared. expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertTrue(Assert.java:57)
-at com.opms.tests.ContractConfigTest.testClearRecommendedMonthlyPayment(ContractConfigTest.java:275)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:819)
-at org.testng.TestRunner.run(TestRunner.java:619)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-at org.testng.TestNG.runSuites(TestNG.java:1134)
-at org.testng.TestNG.run(TestNG.java:1101)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        </test-method> <!-- testSaveInsuranceWithoutName -->
+        <test-method signature="testSaveInsuranceInvalidPhone()[pri:14, instance:com.opms.tests.LookupTest@1ed4ae0f]" started-at="2026-06-12T13:22:33 IST" name="testSaveInsuranceInvalidPhone" description="TC_LK_N06 – Save insurance with letters in phone number; expect validation error" finished-at="2026-06-12T13:22:40 IST" duration-ms="7433" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testClearRecommendedMonthlyPayment -->
-        <test-method is-config="true" signature="navigateToContractTab()[pri:0, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:17:00 IST" name="navigateToContractTab" finished-at="2026-06-11T19:17:05 IST" duration-ms="4429" status="PASS">
+        </test-method> <!-- testSaveInsuranceInvalidPhone -->
+        <test-method signature="testSearchNonExistentInsurance()[pri:15, instance:com.opms.tests.LookupTest@1ed4ae0f]" started-at="2026-06-12T13:22:40 IST" name="testSearchNonExistentInsurance" description="TC_LK_N07 – Search for non-existent insurance; expect no results" finished-at="2026-06-12T13:22:46 IST" duration-ms="6301" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- navigateToContractTab -->
-        <test-method signature="testClearLowestMonthlyPayment()[pri:10, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:17:05 IST" name="testClearLowestMonthlyPayment" description="TC_CC_N04 – Clear Lowest Monthly Payment and save; expect validation error" finished-at="2026-06-11T19:17:08 IST" duration-ms="2846" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[TC_CC_N04 FAIL – Validation error should appear when Lowest Monthly Payment is cleared. expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: TC_CC_N04 FAIL – Validation error should appear when Lowest Monthly Payment is cleared. expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertTrue(Assert.java:57)
-at com.opms.tests.ContractConfigTest.testClearLowestMonthlyPayment(ContractConfigTest.java:285)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:819)
-at org.testng.TestRunner.run(TestRunner.java:619)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-at org.testng.TestNG.runSuites(TestNG.java:1134)
-at org.testng.TestNG.run(TestNG.java:1101)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testClearLowestMonthlyPayment -->
-        <test-method is-config="true" signature="navigateToContractTab()[pri:0, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:17:08 IST" name="navigateToContractTab" finished-at="2026-06-11T19:17:12 IST" duration-ms="4390" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigateToContractTab -->
-        <test-method signature="testClearInterestPercentage()[pri:11, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:17:12 IST" name="testClearInterestPercentage" description="TC_CC_N05 – Clear Interest Percentage and save; expect validation error" finished-at="2026-06-11T19:17:15 IST" duration-ms="2812" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[TC_CC_N05 FAIL – Validation error should appear when Interest Percentage is cleared. expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: TC_CC_N05 FAIL – Validation error should appear when Interest Percentage is cleared. expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertTrue(Assert.java:57)
-at com.opms.tests.ContractConfigTest.testClearInterestPercentage(ContractConfigTest.java:295)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:819)
-at org.testng.TestRunner.run(TestRunner.java:619)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-at org.testng.TestNG.runSuites(TestNG.java:1134)
-at org.testng.TestNG.run(TestNG.java:1101)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testClearInterestPercentage -->
-        <test-method is-config="true" signature="navigateToContractTab()[pri:0, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:17:15 IST" name="navigateToContractTab" finished-at="2026-06-11T19:17:19 IST" duration-ms="4394" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigateToContractTab -->
-        <test-method signature="testClearFinancingMonths()[pri:12, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:17:19 IST" name="testClearFinancingMonths" description="TC_CC_N06 – Clear Financing Months Past Treatment and save; expect validation error" finished-at="2026-06-11T19:17:22 IST" duration-ms="2847" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[TC_CC_N06 FAIL – Validation error should appear when Financing Months is cleared. expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: TC_CC_N06 FAIL – Validation error should appear when Financing Months is cleared. expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertTrue(Assert.java:57)
-at com.opms.tests.ContractConfigTest.testClearFinancingMonths(ContractConfigTest.java:305)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:819)
-at org.testng.TestRunner.run(TestRunner.java:619)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-at org.testng.TestNG.runSuites(TestNG.java:1134)
-at org.testng.TestNG.run(TestNG.java:1101)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testClearFinancingMonths -->
-        <test-method is-config="true" signature="navigateToContractTab()[pri:0, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:17:22 IST" name="navigateToContractTab" finished-at="2026-06-11T19:17:26 IST" duration-ms="4384" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigateToContractTab -->
-        <test-method signature="testLettersInDownPayment()[pri:13, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:17:26 IST" name="testLettersInDownPayment" description="TC_CC_N07 – Replace Recommended Down Payment with letters; expect validation error" finished-at="2026-06-11T19:17:29 IST" duration-ms="2587" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLettersInDownPayment -->
-        <test-method is-config="true" signature="navigateToContractTab()[pri:0, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:17:29 IST" name="navigateToContractTab" finished-at="2026-06-11T19:17:33 IST" duration-ms="4448" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigateToContractTab -->
-        <test-method signature="testNegativeInterestRate()[pri:14, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:17:33 IST" name="testNegativeInterestRate" description="TC_CC_N08 – Replace Interest Percentage with a negative value; expect validation error" finished-at="2026-06-11T19:17:36 IST" duration-ms="2518" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testNegativeInterestRate -->
-        <test-method is-config="true" signature="tearDownSuite()[pri:0, instance:com.opms.tests.ContractConfigTest@2a265ea9]" started-at="2026-06-11T19:17:36 IST" name="tearDownSuite" finished-at="2026-06-11T19:17:36 IST" duration-ms="297" status="PASS">
+        </test-method> <!-- testSearchNonExistentInsurance -->
+        <test-method is-config="true" signature="tearDownSuite()[pri:0, instance:com.opms.tests.LookupTest@1ed4ae0f]" started-at="2026-06-12T13:22:46 IST" name="tearDownSuite" finished-at="2026-06-12T13:22:47 IST" duration-ms="274" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownSuite -->
-      </class> <!-- com.opms.tests.ContractConfigTest -->
+      </class> <!-- com.opms.tests.LookupTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
