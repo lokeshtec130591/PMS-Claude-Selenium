@@ -3,14 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.opms.tests.CreatePatientTest">
+      <class name="com.opms.tests.ContractConfigTest">
         <methods>
-          <include name="setUpSuite"/>
+          <include name="testClearRecommendedDownPayment"/>
           <include name="tearDownSuite"/>
-          <include name="testPatientAppearsInSearch"/>
-          <include name="resetForm"/>
+          <include name="testClearFinancingMonths"/>
+          <include name="setUpSuite"/>
+          <include name="navigateToContractTab"/>
+          <include name="testClearRecommendedMonthlyPayment"/>
+          <include name="testClearLowestMonthlyPayment"/>
+          <include name="testClearInterestPercentage"/>
+          <include name="testClearMinimumDownPayment"/>
         </methods>
-      </class> <!-- com.opms.tests.CreatePatientTest -->
+      </class> <!-- com.opms.tests.ContractConfigTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

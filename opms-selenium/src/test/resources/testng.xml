@@ -8,15 +8,33 @@
         </classes>
     </test>
 
-    <test name="Create Patient Tests" preserve-order="true">
+    <test name="Contract Config Tests" preserve-order="true">
         <classes>
-            <class name="com.opms.tests.CreatePatientTest"/>
+            <class name="com.opms.tests.ContractConfigTest"/>
+        </classes>
+    </test>
+
+    <test name="Lookup Tests" preserve-order="true">
+        <classes>
+            <class name="com.opms.tests.LookupTest"/>
+        </classes>
+    </test>
+
+    <test name="Treatments Setup Tests" preserve-order="true">
+        <classes>
+            <class name="com.opms.tests.TreatmentsSetupTest"/>
         </classes>
     </test>
 
     <test name="Login and Create Patient" preserve-order="true">
         <classes>
             <class name="com.opms.tests.LoginAndCreatePatient"/>
+        </classes>
+    </test>
+
+    <test name="Create Patient Tests" preserve-order="true">
+        <classes>
+            <class name="com.opms.tests.CreatePatientTest"/>
         </classes>
     </test>
 

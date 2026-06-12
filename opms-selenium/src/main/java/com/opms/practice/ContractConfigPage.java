@@ -28,9 +28,7 @@ public class ContractConfigPage {
         // Wait for the practice config page to load, then click the Contract tab inside it
         Thread.sleep(3000);
         WebElement contractMenu = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//app-practice-configuration//li/a[contains(@class,'nav-link') and normalize-space(text())='Contract']"
-                        + " | //div[contains(@class,'practice')]//li/a[contains(@class,'nav-link') and normalize-space(text())='Contract']"
-                        + " | //ul[contains(@class,'nav-tabs')]//a[normalize-space(text())='Contract']")));
+                By.xpath("//li/a[@class='nav-link' and text()='Contract']")));
         actions.moveToElement(contractMenu).click().perform();
 
         Thread.sleep(4000);
