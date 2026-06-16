@@ -21,7 +21,7 @@ public class LookupPage {
     public static void addLocation(WebDriver driver, String location, Actions actions)
             throws InterruptedException {
 
-    //    ContractConfigPage.main(null);
+        ContractConfigPage.main(null);
 
         WebElement clickLocationMenu = driver.findElement(By.xpath(
                 "//span[@class='pcoded-mtext d-flex justify-content-center text-wrap text-center lh-sm' and text()='Lookup']"));

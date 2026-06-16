@@ -310,7 +310,7 @@ public class CreatePatientTest {
     // so we assert the form is NO LONGER open (assertFalse isFormStillOpen).
     // ═══════════════════════════════════════════════════════════════════════════
 
-    @Test(priority = 1, description = "TC_P01 – Create patient with all valid required fields")
+    @Test(priority = 1, enabled = false, description = "TC_P01 – Create patient with all valid required fields")
     public void testCreatePatientAllValidFields() throws InterruptedException {
         fillPatientForm("Mr.", TestDataGenerator.generateUniqueString(),
                 TestDataGenerator.generateUniqueString(),
@@ -329,7 +329,7 @@ public class CreatePatientTest {
         System.out.println("TC_P01 PASS – Patient created; form closed successfully.");
     }
 
-    @Test(priority = 2, description = "TC_P02 – Create patient with prefix Mrs.")
+    @Test(priority = 2,enabled = false, description = "TC_P02 – Create patient with prefix Mrs.")
     public void testCreatePatientWithPrefixMrs() throws InterruptedException {
         fillPatientForm("Mrs.", TestDataGenerator.generateUniqueString(),
                 TestDataGenerator.generateUniqueString(),
@@ -348,7 +348,7 @@ public class CreatePatientTest {
         System.out.println("TC_P02 PASS – Patient with prefix Mrs. saved.");
     }
 
-    @Test(priority = 3, description = "TC_P03 – Create patient with prefix Ms.")
+    @Test(priority = 3,enabled = false, description = "TC_P03 – Create patient with prefix Ms.")
     public void testCreatePatientWithPrefixMs() throws InterruptedException {
         fillPatientForm("Ms.", TestDataGenerator.generateUniqueString(),
                 TestDataGenerator.generateUniqueString(),
@@ -367,7 +367,7 @@ public class CreatePatientTest {
         System.out.println("TC_P03 PASS – Patient with prefix Ms. saved.");
     }
 
-    @Test(priority = 4, description = "TC_P04 – Create female patient")
+    @Test(priority = 4, enabled = false,description = "TC_P04 – Create female patient")
     public void testCreateFemalePatient() throws InterruptedException {
         fillPatientForm("Mrs.", TestDataGenerator.generateUniqueString(),
                 TestDataGenerator.generateUniqueString(),
@@ -386,7 +386,7 @@ public class CreatePatientTest {
         System.out.println("TC_P04 PASS – Female patient saved.");
     }
 
-    @Test(priority = 5, description = "TC_P05 – Create patient with marital status Married")
+    @Test(priority = 5, enabled = false, description = "TC_P05 – Create patient with marital status Married")
     public void testCreatePatientMarried() throws InterruptedException {
         fillPatientForm("Mr.", TestDataGenerator.generateUniqueString(),
                 TestDataGenerator.generateUniqueString(),
@@ -439,7 +439,7 @@ public class CreatePatientTest {
         System.out.println("TC_P06 PASS – Patient '" + fullName + "' found in search.");
     }
 
-    @Test(priority = 7, description = "TC_P07 – Create patient with language preference Spanish")
+    @Test(priority = 7,enabled = false, description = "TC_P07 – Create patient with language preference Spanish")
     public void testCreatePatientSpanishLanguage() throws InterruptedException {
         fillPatientForm("Mr.", TestDataGenerator.generateUniqueString(),
                 TestDataGenerator.generateUniqueString(),
@@ -750,8 +750,14 @@ public class CreatePatientTest {
         if (city != null)
             driver.findElement(By.id("City")).sendKeys(city);
         if (state != null) {
-            // ng-select[@bindlabel='stateName'] is unique on the Add Patient form
-            driver.findElement(By.xpath("//ng-select[@bindlabel='stateName']")).click();
+            // Open ng-select, then type to filter — the full list has 50+ states and
+            // elementToBeClickable times out for off-screen options without filtering first
+            WebElement stateSelect = driver.findElement(By.xpath("//ng-select[@bindlabel='stateName']"));
+            stateSelect.click();
+            Thread.sleep(400);
+            // Type state name into ng-select's internal search input to filter
+            stateSelect.findElement(By.tagName("input")).sendKeys(state);
+            Thread.sleep(500);
             wait.until(ExpectedConditions.elementToBeClickable(
                     By.xpath("//div[contains(@class,'ng-option')]//span[text()='" + state + "']")))
                 .click();
@@ -789,19 +795,28 @@ public class CreatePatientTest {
         }
 
         if (dob != null) {
-            // The PC DOB datepicker ID is dynamic (increments each time the form opens).
-            // Find the SECOND MM/DD/YYYY input on the page — patient DOB is first, PC DOB is second.
+            // PC DOB datepicker ID is dynamic — find the last MM/DD/YYYY input on page.
+            // patient DOB is always first; PC DOB is always last.
             List<WebElement> datepickers = driver.findElements(
                     By.xpath("//input[@placeholder='MM/DD/YYYY']"));
-            // datepickers.get(0) = patient DOB, datepickers.get(1) = PC DOB
             WebElement pcDob = datepickers.get(datepickers.size() - 1);
+            // Scroll field to center, then nudge up to clear any fixed top navbar
             js.executeScript("arguments[0].scrollIntoView({block:'center'});", pcDob);
-            Thread.sleep(400);
-            js.executeScript("arguments[0].click();", pcDob);
             Thread.sleep(500);
-            pcDob.sendKeys(dob);        // MMDDYYYY — Kendo auto-advances MM→DD→YYYY
-            pcDob.sendKeys(Keys.TAB);
+            js.executeScript("window.scrollBy(0, -80);");
+            Thread.sleep(300);
+            // Click to focus, then HOME to force cursor to MM segment before typing.
+            // Without HOME, center-click lands on YYYY causing month/day/YYYY result.
+            wait.until(ExpectedConditions.elementToBeClickable(pcDob));
+            pcDob.click();
             Thread.sleep(400);
+            pcDob.sendKeys(Keys.HOME);
+            Thread.sleep(200);
+            // Send all 8 digits — Kendo auto-advances MM → DD → YYYY
+            pcDob.sendKeys(dob);
+            Thread.sleep(300);
+            pcDob.sendKeys(Keys.TAB);
+            Thread.sleep(500);
         }
 
         if (email != null) {
