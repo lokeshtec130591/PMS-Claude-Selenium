@@ -56,8 +56,8 @@ public class TreatmentsSetupTest {
     private Actions            actions;
     private JavascriptExecutor js;
 
-    private static final String SIDEBAR_TREATMENT =
-        "//span[@class='pcoded-mtext d-flex justify-content-center text-wrap text-center lh-sm' and text()='Treatment']";
+    private static final String PCODED_MTEXT =
+            "//span[@class='pcoded-mtext d-flex justify-content-center text-wrap text-center lh-sm' and text()='%s']";
 
     // ── One-time setup ────────────────────────────────────────────────────────
 
@@ -91,15 +91,32 @@ public class TreatmentsSetupTest {
             }
         } catch (Exception ignored) {}
     }
-
-    private void navigateToTreatmentMenu() throws InterruptedException {
+    
+    private void navigateToPracticeConfigSection(String sectionName) throws InterruptedException {
         dismissErrorDialog();
-        WebElement menu = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath(SIDEBAR_TREATMENT)));
-        menu.click();
+
+        // Scroll to top so the fixed navbar does not intercept the click
+        js.executeScript("window.scrollTo(0, 0);");
+        Thread.sleep(300);
+
+        // Step 1 – open Practice Configuration via JS click (avoids fixed-header interception)
+        WebElement practiceLink = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//a[contains(@title,'Practice configuration')]")));
+        js.executeScript("arguments[0].click();", practiceLink);
         Thread.sleep(2000);
         dismissErrorDialog();
+
+        // Step 2 – click the section in the sidebar (Lookup or Insurance)
+        WebElement sectionMenu = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath(String.format(PCODED_MTEXT, sectionName))));
+        sectionMenu.click();
+        Thread.sleep(2000);
+        dismissErrorDialog();
+
+        System.out.println("TreatmentsSetupTest: navigated to Practice Config → " + sectionName);
     }
+
+    
 
     private void clickTab(String tabText) throws InterruptedException {
         WebElement tab = wait.until(ExpectedConditions.elementToBeClickable(
@@ -135,7 +152,7 @@ public class TreatmentsSetupTest {
 
     @Test(priority = 1, description = "TC_TS_P01 – Treatment Setup page loads; Treatment Type tab visible")
     public void testTreatmentPageLoads() throws InterruptedException {
-        navigateToTreatmentMenu();
+    	navigateToPracticeConfigSection("Treatment");
 
         Assert.assertTrue(
                 driver.findElement(By.xpath("//div/input[@placeholder='search']")).isDisplayed(),
@@ -145,7 +162,7 @@ public class TreatmentsSetupTest {
 
     @Test(priority = 2, description = "TC_TS_P02 – Search for the existing test treatment type")
     public void testSearchExistingTreatmentType() throws InterruptedException {
-        navigateToTreatmentMenu();
+        navigateToPracticeConfigSection("Treatment");
 
         WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//div/input[@placeholder='search']")));
@@ -163,7 +180,7 @@ public class TreatmentsSetupTest {
 
     @Test(priority = 3, description = "TC_TS_P03 – Add a new treatment type with valid name and description")
     public void testAddNewTreatmentType() throws InterruptedException {
-        navigateToTreatmentMenu();
+        navigateToPracticeConfigSection("Treatment");
 
         String typeName = "AutoType " + TestDataGenerator.generateUniqueString();
 
@@ -184,7 +201,7 @@ public class TreatmentsSetupTest {
 
     @Test(priority = 4, description = "TC_TS_N01 – Save treatment type without name (required field)")
     public void testSaveTreatmentTypeWithoutName() throws InterruptedException {
-        navigateToTreatmentMenu();
+        navigateToPracticeConfigSection("Treatment");
 
         // Leave Type Name blank; fill description only
         driver.findElement(By.xpath("//input[@id='Description']")).sendKeys("No name description");
@@ -198,7 +215,7 @@ public class TreatmentsSetupTest {
 
     @Test(priority = 5, description = "TC_TS_N02 – Search for non-existent treatment type returns no result")
     public void testSearchNonExistentTreatmentType() throws InterruptedException {
-        navigateToTreatmentMenu();
+        navigateToPracticeConfigSection("Treatment");
 
         String randomName = "NONEXIST_" + TestDataGenerator.generateUniqueString();
         WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
@@ -220,7 +237,7 @@ public class TreatmentsSetupTest {
 
     @Test(priority = 6, description = "TC_TS_P04 – Search for the existing test treatment option")
     public void testSearchExistingTreatmentOption() throws InterruptedException {
-        navigateToTreatmentMenu();
+        navigateToPracticeConfigSection("Treatment");
         clickTab("Treatment Option");
 
         WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
@@ -239,7 +256,7 @@ public class TreatmentsSetupTest {
 
     @Test(priority = 7, description = "TC_TS_P05 – Add a new treatment option with all required fields")
     public void testAddNewTreatmentOption() throws InterruptedException {
-        navigateToTreatmentMenu();
+        navigateToPracticeConfigSection("Treatment");
         clickTab("Treatment Option");
 
         String optionName = "AutoOpt " + TestDataGenerator.generateUniqueString();
@@ -265,7 +282,7 @@ public class TreatmentsSetupTest {
 
     @Test(priority = 8, description = "TC_TS_N03 – Save treatment option without Treatment Name")
     public void testSaveTreatmentOptionWithoutName() throws InterruptedException {
-        navigateToTreatmentMenu();
+        navigateToPracticeConfigSection("Treatment");
         clickTab("Treatment Option");
 
         driver.findElement(By.xpath("//input[@id='Provider Fee']")).sendKeys("1500.00");
@@ -282,7 +299,7 @@ public class TreatmentsSetupTest {
 
     @Test(priority = 9, description = "TC_TS_N04 – Save treatment option without Provider Fee")
     public void testSaveTreatmentOptionWithoutFee() throws InterruptedException {
-        navigateToTreatmentMenu();
+        navigateToPracticeConfigSection("Treatment");
         clickTab("Treatment Option");
 
         driver.findElement(By.xpath("//input[@id='Treatment Name']"))
@@ -304,7 +321,7 @@ public class TreatmentsSetupTest {
 
     @Test(priority = 10, description = "TC_TS_P06 – Search for the existing test treatment expense")
     public void testSearchExistingTreatmentExpense() throws InterruptedException {
-        navigateToTreatmentMenu();
+        navigateToPracticeConfigSection("Treatment");
         clickTab("Treatment Expense");
 
         WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
@@ -323,7 +340,7 @@ public class TreatmentsSetupTest {
 
     @Test(priority = 11, description = "TC_TS_P07 – Add a new treatment expense with valid name and fee")
     public void testAddNewTreatmentExpense() throws InterruptedException {
-        navigateToTreatmentMenu();
+        navigateToPracticeConfigSection("Treatment");
         clickTab("Treatment Expense");
 
         String expenseName = "AutoExp " + TestDataGenerator.generateUniqueString();
@@ -345,7 +362,7 @@ public class TreatmentsSetupTest {
 
     @Test(priority = 12, description = "TC_TS_N05 – Save treatment expense without Expense Name")
     public void testSaveTreatmentExpenseWithoutName() throws InterruptedException {
-        navigateToTreatmentMenu();
+        navigateToPracticeConfigSection("Treatment");
         clickTab("Treatment Expense");
 
         driver.findElement(By.xpath("//input[@id='Provider Fee']")).sendKeys("750.00");
@@ -359,7 +376,7 @@ public class TreatmentsSetupTest {
 
     @Test(priority = 13, description = "TC_TS_N06 – Save treatment expense without Provider Fee")
     public void testSaveTreatmentExpenseWithoutFee() throws InterruptedException {
-        navigateToTreatmentMenu();
+        navigateToPracticeConfigSection("Treatment");
         clickTab("Treatment Expense");
 
         driver.findElement(By.xpath("//input[@id='Expense Name']"))
@@ -378,7 +395,7 @@ public class TreatmentsSetupTest {
 
     @Test(priority = 14, description = "TC_TS_P08 – Search for the existing test treatment courtesy")
     public void testSearchExistingTreatmentCourtesy() throws InterruptedException {
-        navigateToTreatmentMenu();
+        navigateToPracticeConfigSection("Treatment");
         clickTab("Treatment Courtesy");
 
         WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
@@ -397,7 +414,7 @@ public class TreatmentsSetupTest {
 
     @Test(priority = 15, description = "TC_TS_P09 – Add a new treatment courtesy with valid name and amount")
     public void testAddNewTreatmentCourtesy() throws InterruptedException {
-        navigateToTreatmentMenu();
+        navigateToPracticeConfigSection("Treatment");
         clickTab("Treatment Courtesy");
 
         String courtesyName = "AutoCourt " + TestDataGenerator.generateUniqueString();
@@ -419,7 +436,7 @@ public class TreatmentsSetupTest {
 
     @Test(priority = 16, description = "TC_TS_N07 – Save treatment courtesy without Courtesy name")
     public void testSaveTreatmentCourtesyWithoutName() throws InterruptedException {
-        navigateToTreatmentMenu();
+        navigateToPracticeConfigSection("Treatment");
         clickTab("Treatment Courtesy");
 
         driver.findElement(By.xpath("//input[@id='Amount']")).sendKeys("100.00");
@@ -433,7 +450,7 @@ public class TreatmentsSetupTest {
 
     @Test(priority = 17, description = "TC_TS_N08 – Save treatment courtesy without Amount")
     public void testSaveTreatmentCourtesyWithoutAmount() throws InterruptedException {
-        navigateToTreatmentMenu();
+        navigateToPracticeConfigSection("Treatment");
         clickTab("Treatment Courtesy");
 
         driver.findElement(By.xpath("//input[@id='Courtesy']"))
@@ -452,7 +469,7 @@ public class TreatmentsSetupTest {
 
     @Test(priority = 18, description = "TC_TS_P10 – Search for existing procedure code D0150")
     public void testSearchExistingProcedureCode01() throws InterruptedException {
-        navigateToTreatmentMenu();
+        navigateToPracticeConfigSection("Treatment");
         clickTab("Procedure Code Fee");
 
         String code = TreatmentsSetupPage.proccode01.split(" ")[0];
@@ -471,7 +488,7 @@ public class TreatmentsSetupTest {
 
     @Test(priority = 19, description = "TC_TS_P11 – Search for existing procedure code D0160")
     public void testSearchExistingProcedureCode02() throws InterruptedException {
-        navigateToTreatmentMenu();
+        navigateToPracticeConfigSection("Treatment");
         clickTab("Procedure Code Fee");
 
         String code = TreatmentsSetupPage.proccode02.split(" ")[0];
@@ -490,7 +507,7 @@ public class TreatmentsSetupTest {
 
     @Test(priority = 20, description = "TC_TS_N09 – Search for non-existent procedure code returns no result")
     public void testSearchNonExistentProcedureCode() throws InterruptedException {
-        navigateToTreatmentMenu();
+        navigateToPracticeConfigSection("Treatment");
         clickTab("Procedure Code Fee");
 
         String randomCode = "ZZZZ9999";

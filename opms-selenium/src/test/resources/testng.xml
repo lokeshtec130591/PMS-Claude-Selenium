@@ -32,6 +32,12 @@
         </classes>
     </test>
 
+    <test name="Patient Creation and Insurance" preserve-order="true">
+        <classes>
+            <class name="com.opms.tests.PatientCreationAndAddPatientInsurance"/>
+        </classes>
+    </test>
+
     <test name="Create Patient Tests" preserve-order="true">
         <classes>
             <class name="com.opms.tests.CreatePatientTest"/>

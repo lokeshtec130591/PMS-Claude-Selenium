@@ -426,13 +426,14 @@ public class CreatePatientTest {
 
         String fullName = ln + ", " + fn;
         WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//input[@placeholder='Search Patient' or @id='patientName']")));
+                By.xpath("//ng-select[@bindlabel='patientName']//input[@placeholder='last name, first name']")));
         searchBox.clear();
         searchBox.sendKeys(fullName);
         Thread.sleep(2000);
 
         WebElement result = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//li//span[contains(text(),'" + fullName + "')]")));
+                By.xpath("//li//span[@class='first-name-letter btn-primary p-3']"
+                        + "/following-sibling::span[contains(text(),'" + fullName + "')]")));
 
         Assert.assertTrue(result.isDisplayed(),
                 "TC_P06 FAIL – Patient should appear in search results after creation.");
