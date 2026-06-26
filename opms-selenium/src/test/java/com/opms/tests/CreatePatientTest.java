@@ -426,7 +426,7 @@ public class CreatePatientTest {
 
         String fullName = ln + ", " + fn;
         WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//ng-select[@bindlabel='patientName']//input[@placeholder='last name, first name']")));
+                By.xpath("//input[@placeholder='last name, first name ']")));
         searchBox.clear();
         searchBox.sendKeys(fullName);
         Thread.sleep(2000);

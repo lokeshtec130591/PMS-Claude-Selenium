@@ -1,106 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="0" failed="0" skipped="2">
+<testng-results ignored="0" total="2" passed="0" failed="1" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-06-17T18:56:04 IST" name="Default suite" finished-at="2026-06-17T18:56:22 IST" duration-ms="18227">
+  <suite started-at="2026-06-23T18:48:47 IST" name="Default suite" finished-at="2026-06-23T18:49:15 IST" duration-ms="27709">
     <groups>
     </groups>
-    <test started-at="2026-06-17T18:56:04 IST" name="Default test" finished-at="2026-06-17T18:56:22 IST" duration-ms="18227">
+    <test started-at="2026-06-23T18:48:47 IST" name="Default test" finished-at="2026-06-23T18:49:15 IST" duration-ms="27709">
       <class name="com.opms.tests.PatientCreationAndAddPatientInsurance">
-        <test-method is-config="true" signature="setUpSuite()[pri:0, instance:com.opms.tests.PatientCreationAndAddPatientInsurance@740cae06]" started-at="2026-06-17T18:56:04 IST" name="setUpSuite" finished-at="2026-06-17T18:56:22 IST" duration-ms="18153" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.id: username (tried for 10 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.id: username (tried for 10 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at com.opms.pages.LoginPage.loginWith(LoginPage.java:34)
-at com.opms.tests.PatientCreationAndAddPatientInsurance.setUpSuite(PatientCreationAndAddPatientInsurance.java:55)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
-at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:180)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:122)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:819)
-at org.testng.TestRunner.run(TestRunner.java:619)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-at org.testng.TestNG.runSuites(TestNG.java:1134)
-at org.testng.TestNG.run(TestNG.java:1101)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=149.0.7827.102)
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [387e4ae05fbfa4848c38943ac2ef84de, findElement {value=username, using=id}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.102, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52153}, goog:processID: 5824, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52153/devtoo..., se:cdpVersion: 149.0.7827.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 387e4ae05fbfa4848c38943ac2ef84de
-at jdk.internal.reflect.GeneratedConstructorAccessor10.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:627)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:624)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-... 28 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method is-config="true" signature="setUpSuite()[pri:0, instance:com.opms.tests.PatientCreationAndAddPatientInsurance@3e27aa33]" started-at="2026-06-23T18:48:47 IST" name="setUpSuite" finished-at="2026-06-23T18:49:09 IST" duration-ms="22096" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpSuite -->
-        <test-method signature="testCreatePatientWithPrimaryContact()[pri:1, instance:com.opms.tests.PatientCreationAndAddPatientInsurance@740cae06]" started-at="2026-06-17T18:56:22 IST" name="testCreatePatientWithPrimaryContact" description="TC_PI_01 – Create minor patient with all Patient and Primary Contact details" finished-at="2026-06-17T18:56:22 IST" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.TimeoutException">
+        <test-method signature="testSearchAndOpenPatient()[pri:2, instance:com.opms.tests.PatientCreationAndAddPatientInsurance@3e27aa33]" started-at="2026-06-23T18:49:09 IST" name="testSearchAndOpenPatient" description="TC_PI_02 – Search for the created patient and open their profile" finished-at="2026-06-23T18:49:14 IST" duration-ms="5329" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.id: username (tried for 10 second(s) with 500 milliseconds interval)]]>
+              <![CDATA[element click intercepted: Element <li _ngcontent-kce-c215="" class="py-2 px-3 d-flex align-items-center cursor-pointer justify-content-between gap-1">...</li> is not clickable at point (474, 92). Other element would receive the click: <div class="swal2-container swal2-center swal2-backdrop-hide" style="overflow-y: hidden;">...</div>
+  (Session info: chrome=149.0.7827.155)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0c988313a7f778625c2e1e2db47cfbe5, clickElement {id=f.F96B85ED6DD1F2A744A03897AA496C8C.d.86B7601B9D3047F6917FB14A8AB4E1EB.e.2175}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.155, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49751}, goog:processID: 32256, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49751/devtoo..., se:cdpVersion: 149.0.7827.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (0c988313a7f778625c2e1e2db47cfbe5)] -> xpath: //div[contains(@class,'ng-option') and contains(.,'ctguywdtgi')] | //li[contains(.,'ctguywdtgi')]]
+Session ID: 0c988313a7f778625c2e1e2db47cfbe5]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.id: username (tried for 10 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at com.opms.pages.LoginPage.loginWith(LoginPage.java:34)
-at com.opms.tests.PatientCreationAndAddPatientInsurance.setUpSuite(PatientCreationAndAddPatientInsurance.java:55)
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <li _ngcontent-kce-c215="" class="py-2 px-3 d-flex align-items-center cursor-pointer justify-content-between gap-1">...</li> is not clickable at point (474, 92). Other element would receive the click: <div class="swal2-container swal2-center swal2-backdrop-hide" style="overflow-y: hidden;">...</div>
+  (Session info: chrome=149.0.7827.155)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0c988313a7f778625c2e1e2db47cfbe5, clickElement {id=f.F96B85ED6DD1F2A744A03897AA496C8C.d.86B7601B9D3047F6917FB14A8AB4E1EB.e.2175}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.155, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49751}, goog:processID: 32256, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49751/devtoo..., se:cdpVersion: 149.0.7827.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (0c988313a7f778625c2e1e2db47cfbe5)] -> xpath: //div[contains(@class,'ng-option') and contains(.,'ctguywdtgi')] | //li[contains(.,'ctguywdtgi')]]
+Session ID: 0c988313a7f778625c2e1e2db47cfbe5
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at com.opms.tests.PatientCreationAndAddPatientInsurance.testSearchAndOpenPatient(PatientCreationAndAddPatientInsurance.java:304)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
-at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:180)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:122)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
 at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 at org.testng.TestRunner.privateRun(TestRunner.java:819)
 at org.testng.TestRunner.run(TestRunner.java:619)
@@ -117,51 +77,21 @@ at org.testng.TestNG.run(TestNG.java:1101)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=149.0.7827.102)
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [387e4ae05fbfa4848c38943ac2ef84de, findElement {value=username, using=id}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.102, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52153}, goog:processID: 5824, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52153/devtoo..., se:cdpVersion: 149.0.7827.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 387e4ae05fbfa4848c38943ac2ef84de
-at jdk.internal.reflect.GeneratedConstructorAccessor10.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:627)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:624)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-... 28 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testCreatePatientWithPrimaryContact -->
-        <test-method signature="testSearchAndOpenPatient()[pri:2, instance:com.opms.tests.PatientCreationAndAddPatientInsurance@740cae06]" started-at="2026-06-17T18:56:22 IST" name="testSearchAndOpenPatient" description="TC_PI_02 – Search for the created patient and open their profile" finished-at="2026-06-17T18:56:22 IST" depends-on-methods="com.opms.tests.PatientCreationAndAddPatientInsurance.testCreatePatientWithPrimaryContact" duration-ms="0" status="SKIP">
+        </test-method> <!-- testSearchAndOpenPatient -->
+        <test-method signature="testAddPatientInsurance()[pri:3, instance:com.opms.tests.PatientCreationAndAddPatientInsurance@3e27aa33]" started-at="2026-06-23T18:49:14 IST" name="testAddPatientInsurance" description="TC_PI_03 – Add insurance to the patient and save" finished-at="2026-06-23T18:49:14 IST" depends-on-methods="com.opms.tests.PatientCreationAndAddPatientInsurance.testSearchAndOpenPatient" duration-ms="0" status="SKIP">
           <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Method com.opms.tests.PatientCreationAndAddPatientInsurance.testSearchAndOpenPatient() on instance com.opms.tests.PatientCreationAndAddPatientInsurance@740cae06 depends on not successfully finished methods 
-[com.opms.tests.PatientCreationAndAddPatientInsurance.testCreatePatientWithPrimaryContact() on instance com.opms.tests.PatientCreationAndAddPatientInsurance@740cae06]]]>
+              <![CDATA[Method com.opms.tests.PatientCreationAndAddPatientInsurance.testAddPatientInsurance() on instance com.opms.tests.PatientCreationAndAddPatientInsurance@3e27aa33 depends on not successfully finished methods 
+[com.opms.tests.PatientCreationAndAddPatientInsurance.testSearchAndOpenPatient() on instance com.opms.tests.PatientCreationAndAddPatientInsurance@3e27aa33]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method com.opms.tests.PatientCreationAndAddPatientInsurance.testSearchAndOpenPatient() on instance com.opms.tests.PatientCreationAndAddPatientInsurance@740cae06 depends on not successfully finished methods 
-[com.opms.tests.PatientCreationAndAddPatientInsurance.testCreatePatientWithPrimaryContact() on instance com.opms.tests.PatientCreationAndAddPatientInsurance@740cae06]
+              <![CDATA[java.lang.Throwable: Method com.opms.tests.PatientCreationAndAddPatientInsurance.testAddPatientInsurance() on instance com.opms.tests.PatientCreationAndAddPatientInsurance@3e27aa33 depends on not successfully finished methods 
+[com.opms.tests.PatientCreationAndAddPatientInsurance.testSearchAndOpenPatient() on instance com.opms.tests.PatientCreationAndAddPatientInsurance@3e27aa33]
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
@@ -186,8 +116,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSearchAndOpenPatient -->
-        <test-method is-config="true" signature="tearDownSuite()[pri:0, instance:com.opms.tests.PatientCreationAndAddPatientInsurance@740cae06]" started-at="2026-06-17T18:56:22 IST" name="tearDownSuite" finished-at="2026-06-17T18:56:22 IST" duration-ms="0" status="SKIP">
+        </test-method> <!-- testAddPatientInsurance -->
+        <test-method is-config="true" signature="tearDownSuite()[pri:0, instance:com.opms.tests.PatientCreationAndAddPatientInsurance@3e27aa33]" started-at="2026-06-23T18:49:14 IST" name="tearDownSuite" finished-at="2026-06-23T18:49:15 IST" duration-ms="228" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownSuite -->

@@ -7,7 +7,7 @@
         <methods>
           <include name="testSearchAndOpenPatient"/>
           <include name="tearDownSuite"/>
-          <include name="testCreatePatientWithPrimaryContact"/>
+          <include name="testAddPatientInsurance"/>
           <include name="setUpSuite"/>
         </methods>
       </class> <!-- com.opms.tests.PatientCreationAndAddPatientInsurance -->
