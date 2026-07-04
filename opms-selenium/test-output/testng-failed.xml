@@ -3,14 +3,20 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.opms.tests.PatientCreationAndAddPatientInsurance">
+      <class name="com.opms.tests.InsuranceScenariosTest">
         <methods>
-          <include name="testSearchAndOpenPatient"/>
-          <include name="tearDownSuite"/>
-          <include name="testAddPatientInsurance"/>
-          <include name="setUpSuite"/>
+          <include name="setUp"/>
+          <include name="testMajorDifferentInsuranceOther"/>
+          <include name="testMinorSameInsuranceOther_2"/>
+          <include name="tearDown"/>
+          <include name="testCreateMinorPatient"/>
+          <include name="testCreateMajorPatient"/>
+          <include name="testMajorDifferentInsuranceSameAsPatient"/>
+          <include name="testMinorDifferentInsuranceOther"/>
+          <include name="testMinorDifferentInsuranceSameAsPatient"/>
+          <include name="testMinorSameInsuranceOther_1"/>
         </methods>
-      </class> <!-- com.opms.tests.PatientCreationAndAddPatientInsurance -->
+      </class> <!-- com.opms.tests.InsuranceScenariosTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

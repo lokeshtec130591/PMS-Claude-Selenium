@@ -390,7 +390,7 @@ public class LookupTest {
         System.out.println("TC_LK_N05 PASS – Missing Insurance Company Name correctly blocked.");
     }
 
-    @Test(priority = 14, description = "TC_LK_N06 – Save insurance with letters in phone number; expect validation error")
+    @Test(priority = 13, description = "TC_LK_N06 – Save insurance with letters in phone number; expect validation error")
     public void testSaveInsuranceInvalidPhone() throws InterruptedException {
         navigateToPracticeConfigSection("Insurance");
 
@@ -408,7 +408,44 @@ public class LookupTest {
         System.out.println("TC_LK_N06 PASS – Invalid phone number (letters) correctly blocked.");
     }
 
-    @Test(priority = 15, description = "TC_LK_N07 – Search for non-existent insurance; expect no results")
+    @Test(priority = 14, description = "TC_LK_P09 – Create Delta Insurance if it does not already exist")
+    public void testCreateDeltaInsurance() throws InterruptedException {
+        navigateToPracticeConfigSection("Insurance");
+
+        // Search first — skip creation if already exists
+        WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@placeholder='search insurance']")));
+        searchBox.clear();
+        searchBox.sendKeys(LookupPage.insurance2);
+        Thread.sleep(1500);
+
+        List<WebElement> existing = driver.findElements(By.xpath(
+                "//div[@class='d-flex flex-column']//span[contains(text(),'" + LookupPage.insurance2 + "')]"));
+        if (!existing.isEmpty()) {
+            System.out.println("TC_LK_P09 PASS – '" + LookupPage.insurance2 + "' already exists, skipping creation.");
+            return;
+        }
+
+        // Clear search and fill the form
+        searchBox.clear();
+        Thread.sleep(500);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@id='Insurance Company Name']"))).sendKeys(LookupPage.insurance2);
+        driver.findElement(By.xpath("//input[@placeholder='Phone']")).sendKeys("(312) 555-0300");
+        driver.findElement(By.xpath("//input[@id='Address Line 1']")).sendKeys("300 Delta Street");
+        driver.findElement(By.xpath("//input[@id='City']")).sendKeys("Chicago");
+        selectDropdownOption("//div[@class='ng-placeholder' and text()='Select State']", "Illinois");
+        driver.findElement(By.xpath("//input[@id='Zip Code']")).sendKeys("60601");
+
+        clickSaveButton();
+
+        Assert.assertFalse(isErrorVisible(),
+                "TC_LK_P09 FAIL – No error should appear when creating '" + LookupPage.insurance2 + "'.");
+        System.out.println("TC_LK_P09 PASS – '" + LookupPage.insurance2 + "' created successfully.");
+    }
+
+    @Test(priority = 16, description = "TC_LK_N07 – Search for non-existent insurance; expect no results")
     public void testSearchNonExistentInsurance() throws InterruptedException {
         navigateToPracticeConfigSection("Insurance");
 

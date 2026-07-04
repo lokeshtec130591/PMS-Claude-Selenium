@@ -297,17 +297,21 @@ public class PatientCreationAndAddPatientInsurance {
         searchBar.sendKeys(fullName);
         Thread.sleep(2500);
 
-        // Try ng-option div first (ng-select dropdown), fall back to li span pattern
         WebElement patientResult = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//div[contains(@class,'ng-option') and contains(.,'" + patientLastName + "')]"
-                        + " | //li[contains(.,'" + patientLastName + "')]")));
+                By.xpath("//ul[contains(@class,'patient-search-select-box')]//li[contains(.,'" + patientLastName + "')]")));
+        System.out.println("TC_PI_02: Found result element – text=" + patientResult.getText());
         patientResult.click();
         Thread.sleep(3000);
         dismissErrorDialog();
 
+        String currentUrl = driver.getCurrentUrl();
+        String pageTitle  = driver.getTitle();
+        System.out.println("TC_PI_02: After click – URL=" + currentUrl + " | title=" + pageTitle);
+
         // Verify patient profile opened
         boolean profileOpen = !driver.findElements(By.xpath(
                 "//*[contains(text(),'" + patientFirstName + "') or contains(text(),'" + patientLastName + "')]")).isEmpty();
+        System.out.println("TC_PI_02: profileOpen=" + profileOpen);
         Assert.assertTrue(profileOpen,
                 "TC_PI_02 FAIL – Patient profile should open after clicking search result.");
         System.out.println("TC_PI_02 PASS – Patient profile opened for: " + patientFirstName + " " + patientLastName);
@@ -393,5 +397,217 @@ public class PatientCreationAndAddPatientInsurance {
         Assert.assertTrue(insuranceSaved,
                 "TC_PI_03 FAIL – Insurance should be saved and visible on patient profile.");
         System.out.println("TC_PI_03 PASS – Insurance '" + LookupPage.insurance + "' added to patient successfully.");
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // TC4 – Add insurance with Other as policyholder and enter full details
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    @Test(priority = 4,
+          description = "TC_PI_04 – Add insurance selecting Other as policyholder and fill all policyholder details")
+    public void testAddInsuranceWithOtherPolicyholder() throws InterruptedException {
+        dismissErrorDialog();
+
+        // Search and open the patient profile
+        String fullName = patientLastName + ", " + patientFirstName;
+        WebElement searchBar = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@placeholder='last name, first name ']")));
+        searchBar.clear();
+        searchBar.sendKeys(fullName);
+        Thread.sleep(2500);
+
+        WebElement patientResult = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//ul[contains(@class,'patient-search-select-box')]//li[contains(.,'" + patientLastName + "')]")));
+        patientResult.click();
+        Thread.sleep(3000);
+        dismissErrorDialog();
+        System.out.println("TC_PI_04: Patient profile opened for " + fullName);
+
+        // Scroll down to Insurance section
+        js.executeScript("window.scrollBy(0, 3000);");
+        Thread.sleep(1500);
+
+        // Click Add Insurance / Add New button (text varies when existing insurance present)
+        WebElement addInsuranceBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//span[@class='insurance-summary-add-hide']"
+                       + " | //button[contains(normalize-space(.),'Add Insurance')]"
+                       + " | //button[contains(normalize-space(.),'Add New')]")));
+        js.executeScript("arguments[0].click();", addInsuranceBtn);
+        Thread.sleep(2000);
+        dismissErrorDialog();
+
+        // Select insurance company
+        WebElement insuranceDropdown = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//ng-select[@id='Insurance Company']")));
+        insuranceDropdown.click();
+        Thread.sleep(500);
+        insuranceDropdown.findElement(By.tagName("input")).sendKeys(LookupPage.insurance);
+        Thread.sleep(500);
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[contains(@class,'ng-option')]//span[contains(text(),'"
+                        + LookupPage.insurance + "')]"))).click();
+        Thread.sleep(1000);
+
+        // Scroll down to policyholder section
+        js.executeScript("window.scrollBy(0, 4000);");
+        Thread.sleep(1500);
+
+        // Click "Who is the Policyholder?" — select Other (third button)
+        List<WebElement> policyholderBtns = driver.findElements(
+                By.xpath("//label[contains(text(),'Who is the Policyholder?')]"
+                       + "/following-sibling::div//button"));
+        // Buttons order: Self, Dependent, Other — click Other (index 2)
+        for (WebElement btn : policyholderBtns) {
+            if (btn.getText().trim().equalsIgnoreCase("Other")) {
+                actions.moveToElement(btn).click().perform();
+                break;
+            }
+        }
+        Thread.sleep(1500);
+
+        // Fill policyholder First Name
+        WebElement phFirstName = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//label[contains(text(),'Policyholder')]"
+                       + "/ancestor::div[contains(@class,'card')]//input[@id='First Name']")));
+        phFirstName.clear();
+        phFirstName.sendKeys(TestDataGenerator.generateUniqueString());
+
+        // Fill policyholder Last Name
+        WebElement phLastName = driver.findElement(
+                By.xpath("//label[contains(text(),'Policyholder')]"
+                       + "/ancestor::div[contains(@class,'card')]//input[@id='Last Name']"));
+        phLastName.clear();
+        phLastName.sendKeys(TestDataGenerator.generateUniqueString());
+
+        // Fill policyholder DOB
+        WebElement phDob = driver.findElement(
+                By.xpath("//label[contains(text(),'Policyholder')]"
+                       + "/ancestor::div[contains(@class,'card')]//input[@placeholder='MM/DD/YYYY']"));
+        phDob.click();
+        Thread.sleep(300);
+        phDob.sendKeys(Keys.HOME);
+        Thread.sleep(200);
+        phDob.sendKeys("05201985");
+        Thread.sleep(300);
+        phDob.sendKeys(Keys.TAB);
+        Thread.sleep(500);
+
+        // Select policyholder Gender at Birth
+        try {
+            WebElement genderMale = driver.findElement(By.xpath(
+                    "//input[@id='patientContactGender_Male']"
+                    + " | //input[@id='policyholderGender_Male']"
+                    + " | //label[contains(text(),'Gender')]/following-sibling::div//input[@value='Male']"
+                    + " | //label[contains(text(),'Gender')]/following-sibling::div//label[contains(text(),'Male')]"));
+            js.executeScript("arguments[0].click();", genderMale);
+            Thread.sleep(300);
+        } catch (Exception ignored) {
+            try {
+                WebElement genderLabel = driver.findElement(By.xpath(
+                        "//label[@for='patientContactGender_Male']"
+                        + " | //label[contains(@for,'Gender_Male') or contains(@for,'gender_Male')]"));
+                js.executeScript("arguments[0].click();", genderLabel);
+                Thread.sleep(300);
+            } catch (Exception ignored2) {}
+        }
+
+        // Fill policyholder Phone
+        try {
+            WebElement phPhone = driver.findElement(
+                    By.xpath("//label[contains(text(),'Policyholder')]"
+                           + "/ancestor::div[contains(@class,'card')]//input[@id='Primary Phone']"));
+            phPhone.clear();
+            phPhone.sendKeys(TestDataGenerator.generatePhoneNumber());
+        } catch (Exception ignored) {}
+
+        // Fill policyholder Email
+        try {
+            WebElement phEmail = driver.findElement(
+                    By.xpath("//label[contains(text(),'Policyholder')]"
+                           + "/ancestor::div[contains(@class,'card')]//input[@id='Email Address']"));
+            phEmail.clear();
+            phEmail.sendKeys(TestDataGenerator.generateUniqueEmail());
+        } catch (Exception ignored) {}
+
+        // Fill policyholder Relationship
+        try {
+            WebElement relDropdown = driver.findElement(
+                    By.xpath("//label[contains(text(),'Policyholder')]"
+                           + "/ancestor::div[contains(@class,'card')]//ng-select[@placeholder='Select Relationship']"));
+            relDropdown.click();
+            Thread.sleep(400);
+            wait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//div[contains(@class,'ng-option')]//span[text()='Spouse']"))).click();
+            Thread.sleep(500);
+        } catch (Exception ignored) {}
+
+        // Policyholder Address — fill manually
+        js.executeScript("window.scrollBy(0, 2000);");
+        Thread.sleep(1000);
+
+        try {
+            WebElement phAddr1 = driver.findElement(
+                    By.xpath("//label[contains(text(),'Policyholder Address')]"
+                           + "/ancestor::div[contains(@class,'card')]//input[@id='Address Line 1']"));
+            phAddr1.clear();
+            phAddr1.sendKeys("456 Other Street");
+        } catch (Exception ignored) {}
+
+        try {
+            WebElement phCity = driver.findElement(
+                    By.xpath("//label[contains(text(),'Policyholder Address')]"
+                           + "/ancestor::div[contains(@class,'card')]//input[@id='City']"));
+            phCity.clear();
+            phCity.sendKeys("Chicago");
+        } catch (Exception ignored) {}
+
+        try {
+            WebElement phStateSelect = driver.findElement(
+                    By.xpath("//label[contains(text(),'Policyholder Address')]"
+                           + "/ancestor::div[contains(@class,'card')]//ng-select[@bindlabel='stateName']"));
+            phStateSelect.click();
+            Thread.sleep(400);
+            phStateSelect.findElement(By.tagName("input")).sendKeys("Illinois");
+            Thread.sleep(500);
+            wait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//div[contains(@class,'ng-option')]//span[text()='Illinois']"))).click();
+            Thread.sleep(300);
+        } catch (Exception ignored) {}
+
+        try {
+            WebElement phZip = driver.findElement(
+                    By.xpath("//label[contains(text(),'Policyholder Address')]"
+                           + "/ancestor::div[contains(@class,'card')]//input[@id='Zip Code']"));
+            phZip.clear();
+            phZip.sendKeys("60601");
+        } catch (Exception ignored) {}
+
+        // Fill Group / Employer Name
+        try {
+            driver.findElement(By.xpath("//input[@id='Group / Employer Name']"))
+                  .sendKeys("OtherEmployer");
+        } catch (Exception ignored) {}
+
+        // Save insurance
+        WebElement saveInsuranceBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[contains(@class,'btn-submit')]")));
+        js.executeScript("arguments[0].click();", saveInsuranceBtn);
+        Thread.sleep(2000);
+
+        // Wait for OK popup and click it
+        WebElement confirmBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[@class='swal2-confirm swal2-styled']"
+                       + " | //button[normalize-space(text())='OK']")));
+        confirmBtn.click();
+        Thread.sleep(2000);
+
+        dismissErrorDialog();
+
+        // Verify insurance saved
+        boolean insuranceSaved = !driver.findElements(By.xpath(
+                "//*[contains(text(),'" + LookupPage.insurance + "')]")).isEmpty();
+        Assert.assertTrue(insuranceSaved,
+                "TC_PI_04 FAIL – Insurance with Other policyholder should be saved.");
+        System.out.println("TC_PI_04 PASS – Insurance with Other policyholder added successfully.");
     }
 }

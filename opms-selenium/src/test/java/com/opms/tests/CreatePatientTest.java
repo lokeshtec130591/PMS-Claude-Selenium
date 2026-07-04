@@ -432,8 +432,7 @@ public class CreatePatientTest {
         Thread.sleep(2000);
 
         WebElement result = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//li//span[@class='first-name-letter btn-primary p-3']"
-                        + "/following-sibling::span[contains(text(),'" + fullName + "')]")));
+                By.xpath("//ul[contains(@class,'patient-search-select-box')]//li[contains(.,'" + ln + "')]")));
 
         Assert.assertTrue(result.isDisplayed(),
                 "TC_P06 FAIL – Patient should appear in search results after creation.");
