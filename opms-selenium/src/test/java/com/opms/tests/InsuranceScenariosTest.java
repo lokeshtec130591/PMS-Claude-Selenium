@@ -180,6 +180,12 @@ public class InsuranceScenariosTest {
                 By.xpath("//button[contains(@class,'btn-submit')]")));
         js.executeScript("arguments[0].click();", saveBtn);
         Thread.sleep(2000);
+        // Dismiss success/error popup (swal2 OK or generic OK)
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[contains(@class,'swal2-confirm')] | //button[normalize-space(text())='OK']"))).click();
+            Thread.sleep(500);
+        } catch (Exception ignored) {}
         dismissErrorDialog();
         System.out.println("Insurance created: " + insuranceName);
     }
@@ -518,6 +524,7 @@ public class InsuranceScenariosTest {
     // ═══════════════════════════════════════════════════════════════════════════
 
     @Test(priority = 1,
+          dependsOnMethods = {"testSetupInsuranceData"},
           description = "TC_IS_M01 – Create adult patient (age >= 18)")
     public void testCreateMajorPatient() throws InterruptedException {
         openAddPatientForm();
@@ -647,6 +654,7 @@ public class InsuranceScenariosTest {
     // ═══════════════════════════════════════════════════════════════════════════
 
     @Test(priority = 8,
+          dependsOnMethods = {"testSetupInsuranceData"},
           description = "TC_IS_N01 – Create minor patient (age < 18) with Primary Contact")
     public void testCreateMinorPatient() throws InterruptedException {
         openAddPatientForm();
