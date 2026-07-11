@@ -54,6 +54,7 @@ public class ContractConfigTest {
         LoginPage.loginWith(LoginPage.VALID_EMAIL, LoginPage.VALID_PASSWORD);
         Assert.assertTrue(LoginPage.isDashboardVisible(), "Login failed in ContractConfigTest setup.");
         Thread.sleep(2000);
+        dismissErrorDialog();
         System.out.println("ContractConfigTest: logged in successfully.");
     }
 

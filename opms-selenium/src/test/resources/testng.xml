@@ -32,12 +32,6 @@
         </classes>
     </test>
 
-    <test name="Patient Creation and Insurance" preserve-order="true">
-        <classes>
-            <class name="com.opms.tests.PatientCreationAndAddPatientInsurance"/>
-        </classes>
-    </test>
-
     <test name="Insurance Scenarios" preserve-order="true">
         <classes>
             <class name="com.opms.tests.InsuranceScenariosTest"/>

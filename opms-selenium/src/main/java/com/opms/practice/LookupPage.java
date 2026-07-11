@@ -16,8 +16,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class LookupPage {
 
     public static final String location = "Mumbai";
-    public static final String insurance  = "Hanover Insurance Company";
-    public static final String insurance2 = "Delta Insurance";
+    public static final String insurance  = "Hanover Insurance Company Automation";
+    public static final String insurance2 = "Delta Insurance Company Automation";
 
     public static void addLocation(WebDriver driver, String location, Actions actions)
             throws InterruptedException {

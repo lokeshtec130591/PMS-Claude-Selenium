@@ -54,6 +54,7 @@ public class LookupTest {
         LoginPage.loginWith(LoginPage.VALID_EMAIL, LoginPage.VALID_PASSWORD);
         Assert.assertTrue(LoginPage.isDashboardVisible(), "Login failed in LookupTest setup.");
         Thread.sleep(2000);
+        dismissErrorDialog();
         System.out.println("LookupTest: logged in successfully.");
     }
 
@@ -365,6 +366,17 @@ public class LookupTest {
 
         driver.findElement(By.xpath("//input[@id='Zip Code']")).sendKeys("60002");
 
+        // Select Payer ID — mandatory dropdown, pick first available option
+        try {
+            WebElement payerDropdown = driver.findElement(By.xpath(
+                    "//ng-select[@id='Payer ID']"));
+            payerDropdown.click();
+            Thread.sleep(400);
+            wait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//ng-dropdown-panel//div[contains(@class,'ng-option')][1]"))).click();
+            Thread.sleep(300);
+        } catch (Exception ignored) {}
+
         clickSaveButton();
 
         Assert.assertFalse(isErrorVisible(),
@@ -437,6 +449,17 @@ public class LookupTest {
         driver.findElement(By.xpath("//input[@id='City']")).sendKeys("Chicago");
         selectDropdownOption("//div[@class='ng-placeholder' and text()='Select State']", "Illinois");
         driver.findElement(By.xpath("//input[@id='Zip Code']")).sendKeys("60601");
+
+        // Select Payer ID — mandatory dropdown, pick first available option
+        try {
+            WebElement payerDropdown = driver.findElement(By.xpath(
+                    "//ng-select[@id='Payer ID']"));
+            payerDropdown.click();
+            Thread.sleep(400);
+            wait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//ng-dropdown-panel//div[contains(@class,'ng-option')][1]"))).click();
+            Thread.sleep(300);
+        } catch (Exception ignored) {}
 
         clickSaveButton();
 

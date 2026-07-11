@@ -57,6 +57,7 @@ public class CreatePatientTest {
         LoginPage.loginWith(LoginPage.VALID_EMAIL, LoginPage.VALID_PASSWORD);
         Assert.assertTrue(LoginPage.isDashboardVisible(), "Login failed in setUpSuite.");
         Thread.sleep(3000);
+        dismissErrorDialog();
 
         // Close the right-side panel if present
         try {

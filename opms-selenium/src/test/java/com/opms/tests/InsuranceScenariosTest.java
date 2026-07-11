@@ -24,6 +24,8 @@ import org.testng.annotations.Test;
 /**
  * Insurance scenario tests for both major (age >= 18) and minor (age < 18) patients.
  *
+ * TC_IS_SETUP – Create insurance companies in Lookup (runs first, priority 0)
+ *
  * Major patient scenarios:
  *   TC_IS_M01 – Create adult patient
  *   TC_IS_M02 – Add same insurance (1st) with Same as Patient policyholder
@@ -72,6 +74,7 @@ public class InsuranceScenariosTest {
         LoginPage.loginWith(LoginPage.VALID_EMAIL, LoginPage.VALID_PASSWORD);
         Assert.assertTrue(LoginPage.isDashboardVisible(), "Login failed in InsuranceScenariosTest.");
         Thread.sleep(2000);
+        dismissErrorDialog();
         System.out.println("InsuranceScenariosTest: logged in.");
     }
 
@@ -79,6 +82,106 @@ public class InsuranceScenariosTest {
     public void tearDown() {
         DriverManager.quitDriver();
         System.out.println("InsuranceScenariosTest: browser closed.");
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // SETUP – Create insurance companies in Lookup if they don't exist
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    @Test(priority = 0,
+          description = "TC_IS_SETUP – Create required insurance companies in Lookup > Insurance")
+    public void testSetupInsuranceData() throws InterruptedException {
+        navigateToInsuranceLookup();
+        createInsuranceIfNotExists(LookupPage.insurance);
+
+        navigateToInsuranceLookup();
+        createInsuranceIfNotExists(LookupPage.insurance2);
+
+        // Navigate back to dashboard after setup
+        js.executeScript("window.scrollTo(0, 0);");
+        Thread.sleep(500);
+        WebElement homeLink = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//a[@href='/dashboard' or contains(@routerlink,'dashboard') or contains(@title,'Dashboard')]")));
+        js.executeScript("arguments[0].click();", homeLink);
+        Thread.sleep(2000);
+        dismissErrorDialog();
+        System.out.println("TC_IS_SETUP PASS – Insurance data ready: ["
+                + LookupPage.insurance + "] and [" + LookupPage.insurance2 + "]");
+    }
+
+    private void navigateToInsuranceLookup() throws InterruptedException {
+        js.executeScript("window.scrollTo(0, 0);");
+        Thread.sleep(300);
+        WebElement practiceLink = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//a[contains(@title,'Practice configuration')]")));
+        js.executeScript("arguments[0].click();", practiceLink);
+        Thread.sleep(2000);
+        dismissErrorDialog();
+
+        WebElement insuranceMenu = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//span[@class='pcoded-mtext d-flex justify-content-center text-wrap text-center lh-sm' and text()='Insurance']")));
+        insuranceMenu.click();
+        Thread.sleep(2000);
+        dismissErrorDialog();
+    }
+
+    private void createInsuranceIfNotExists(String insuranceName) throws InterruptedException {
+        // Search to check if already exists
+        WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@placeholder='search insurance']")));
+        searchBox.clear();
+        searchBox.sendKeys(insuranceName);
+        Thread.sleep(1500);
+
+        List<WebElement> existing = driver.findElements(By.xpath(
+                "//div[@class='d-flex flex-column']//span[contains(text(),'" + insuranceName + "')]"));
+        if (!existing.isEmpty()) {
+            System.out.println("Insurance already exists: " + insuranceName);
+            searchBox.clear();
+            return;
+        }
+
+        // Clear search and fill the form
+        searchBox.clear();
+        Thread.sleep(300);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@id='Insurance Company Name']"))).sendKeys(insuranceName);
+        driver.findElement(By.xpath("//input[@placeholder='Phone']")).sendKeys("(312) 555-0300");
+        driver.findElement(By.xpath("//input[@id='Address Line 1']")).sendKeys("100 Insurance Street");
+        driver.findElement(By.xpath("//input[@id='City']")).sendKeys("Chicago");
+
+        WebElement stateDropdown = driver.findElement(
+                By.xpath("//ng-select[@bindlabel='stateName'] | //div[@class='ng-placeholder' and text()='Select State']"));
+        stateDropdown.click();
+        Thread.sleep(400);
+        try {
+            stateDropdown.findElement(By.tagName("input")).sendKeys("Illinois");
+            Thread.sleep(400);
+        } catch (Exception ignored) {}
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[contains(@class,'ng-option')]//span[text()='Illinois']"))).click();
+        Thread.sleep(300);
+
+        driver.findElement(By.xpath("//input[@id='Zip Code']")).sendKeys("60601");
+
+        // Select Payer ID — mandatory dropdown, pick first available option
+        try {
+            WebElement payerDropdown = driver.findElement(By.xpath(
+                    "//ng-select[@id='Payer ID']"));
+            payerDropdown.click();
+            Thread.sleep(400);
+            wait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//ng-dropdown-panel//div[contains(@class,'ng-option')][1]"))).click();
+            Thread.sleep(300);
+        } catch (Exception ignored) {}
+
+        WebElement saveBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[contains(@class,'btn-submit')]")));
+        js.executeScript("arguments[0].click();", saveBtn);
+        Thread.sleep(2000);
+        dismissErrorDialog();
+        System.out.println("Insurance created: " + insuranceName);
     }
 
     // ── Shared helpers ────────────────────────────────────────────────────────

@@ -1,67 +1,315 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="14" passed="9" failed="5" skipped="0">
+<testng-results ignored="0" total="15" passed="0" failed="3" skipped="12">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-04T18:27:21 IST" name="Default suite" finished-at="2026-07-04T18:32:49 IST" duration-ms="327764">
+  <suite started-at="2026-07-11T14:27:21 IST" name="Default suite" finished-at="2026-07-11T14:28:06 IST" duration-ms="45187">
     <groups>
     </groups>
-    <test started-at="2026-07-04T18:27:21 IST" name="Default test" finished-at="2026-07-04T18:32:49 IST" duration-ms="327764">
+    <test started-at="2026-07-11T14:27:21 IST" name="Default test" finished-at="2026-07-11T14:28:06 IST" duration-ms="45187">
       <class name="com.opms.tests.InsuranceScenariosTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.opms.tests.InsuranceScenariosTest@54c5a2ff]" started-at="2026-07-04T18:27:21 IST" name="setUp" finished-at="2026-07-04T18:27:40 IST" duration-ms="18700" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:27:21 IST" name="setUp" finished-at="2026-07-11T14:27:41 IST" duration-ms="20250" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testCreateMajorPatient()[pri:1, instance:com.opms.tests.InsuranceScenariosTest@54c5a2ff]" started-at="2026-07-04T18:27:40 IST" name="testCreateMajorPatient" description="TC_IS_M01 – Create adult patient (age &gt;= 18)" finished-at="2026-07-04T18:27:48 IST" duration-ms="8525" status="PASS">
+        <test-method signature="testSetupInsuranceData()[pri:0, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:27:41 IST" name="testSetupInsuranceData" description="TC_IS_SETUP – Create required insurance companies in Lookup &gt; Insurance" finished-at="2026-07-11T14:28:01 IST" duration-ms="19744" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <ng-select bindlabel="stateName" placeholder="Select State" bindvalue="stateName" class="ng-select-searchable ng-select-clearable ng-select ng-select-single ng-untouched ng-pristine ng-valid">...</ng-select> is not clickable at point (1494, 305). Other element would receive the click: <div class="pcoded-main-container right_sidebar_opened">...</div>
+  (Session info: chrome=150.0.7871.101)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d9d3fd5dc9d98003c6e35bf42d0f8da2, clickElement {id=f.5669E4749B558C8B34AE7877642FB37E.d.FE670C45AD3391E56EFAEE8901D4355F.e.8039}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.101, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56068}, goog:processID: 41056, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56068/devtoo..., se:cdpVersion: 150.0.7871.101, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (d9d3fd5dc9d98003c6e35bf42d0f8da2)] -> xpath: //ng-select[@bindlabel='stateName'] | //div[@class='ng-placeholder' and text()='Select State']]
+Session ID: d9d3fd5dc9d98003c6e35bf42d0f8da2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <ng-select bindlabel="stateName" placeholder="Select State" bindvalue="stateName" class="ng-select-searchable ng-select-clearable ng-select ng-select-single ng-untouched ng-pristine ng-valid">...</ng-select> is not clickable at point (1494, 305). Other element would receive the click: <div class="pcoded-main-container right_sidebar_opened">...</div>
+  (Session info: chrome=150.0.7871.101)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d9d3fd5dc9d98003c6e35bf42d0f8da2, clickElement {id=f.5669E4749B558C8B34AE7877642FB37E.d.FE670C45AD3391E56EFAEE8901D4355F.e.8039}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.101, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56068}, goog:processID: 41056, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56068/devtoo..., se:cdpVersion: 150.0.7871.101, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (d9d3fd5dc9d98003c6e35bf42d0f8da2)] -> xpath: //ng-select[@bindlabel='stateName'] | //div[@class='ng-placeholder' and text()='Select State']]
+Session ID: d9d3fd5dc9d98003c6e35bf42d0f8da2
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at com.opms.tests.InsuranceScenariosTest.createInsuranceIfNotExists(InsuranceScenariosTest.java:155)
+at com.opms.tests.InsuranceScenariosTest.testSetupInsuranceData(InsuranceScenariosTest.java:97)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSetupInsuranceData -->
+        <test-method signature="testCreateMajorPatient()[pri:1, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:28:01 IST" name="testCreateMajorPatient" description="TC_IS_M01 – Create adult patient (age &gt;= 18)" finished-at="2026-07-11T14:28:06 IST" duration-ms="4814" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=150.0.7871.101)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d9d3fd5dc9d98003c6e35bf42d0f8da2, findElement {value=//span[text()='Save & Close'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.101, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56068}, goog:processID: 41056, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56068/devtoo..., se:cdpVersion: 150.0.7871.101, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d9d3fd5dc9d98003c6e35bf42d0f8da2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=150.0.7871.101)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d9d3fd5dc9d98003c6e35bf42d0f8da2, findElement {value=//span[text()='Save & Close'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.101, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56068}, goog:processID: 41056, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56068/devtoo..., se:cdpVersion: 150.0.7871.101, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d9d3fd5dc9d98003c6e35bf42d0f8da2
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:627)
+at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:624)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+at com.opms.tests.InsuranceScenariosTest.clickSaveAndClose(InsuranceScenariosTest.java:306)
+at com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient(InsuranceScenariosTest.java:522)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateMajorPatient -->
-        <test-method signature="testMajorSameInsuranceSameAsPatient_1()[pri:2, instance:com.opms.tests.InsuranceScenariosTest@54c5a2ff]" started-at="2026-07-04T18:27:48 IST" name="testMajorSameInsuranceSameAsPatient_1" description="TC_IS_M02 – Add same insurance 1st time with Same as Patient" finished-at="2026-07-04T18:28:08 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient" duration-ms="19406" status="PASS">
+        <test-method signature="testMajorSameInsuranceSameAsPatient_1()[pri:2, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:28:06 IST" name="testMajorSameInsuranceSameAsPatient_1" description="TC_IS_M02 – Add same insurance 1st time with Same as Patient" finished-at="2026-07-11T14:28:06 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceSameAsPatient_1() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceSameAsPatient_1() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMajorSameInsuranceSameAsPatient_1 -->
-        <test-method signature="testMajorSameInsuranceSameAsPatient_2()[pri:3, instance:com.opms.tests.InsuranceScenariosTest@54c5a2ff]" started-at="2026-07-04T18:28:08 IST" name="testMajorSameInsuranceSameAsPatient_2" description="TC_IS_M03 – Add same insurance 2nd time with Same as Patient" finished-at="2026-07-04T18:28:27 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceSameAsPatient_1" duration-ms="19341" status="PASS">
+        <test-method signature="testMajorSameInsuranceSameAsPatient_2()[pri:3, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:28:06 IST" name="testMajorSameInsuranceSameAsPatient_2" description="TC_IS_M03 – Add same insurance 2nd time with Same as Patient" finished-at="2026-07-11T14:28:06 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceSameAsPatient_1" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceSameAsPatient_2() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceSameAsPatient_1() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceSameAsPatient_2() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceSameAsPatient_1() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMajorSameInsuranceSameAsPatient_2 -->
-        <test-method signature="testMajorSameInsuranceOther_1()[pri:4, instance:com.opms.tests.InsuranceScenariosTest@54c5a2ff]" started-at="2026-07-04T18:28:27 IST" name="testMajorSameInsuranceOther_1" description="TC_IS_M04 – Add same insurance 1st time with Other policyholder" finished-at="2026-07-04T18:28:52 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient" duration-ms="24520" status="PASS">
+        <test-method signature="testMajorSameInsuranceOther_1()[pri:4, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:28:06 IST" name="testMajorSameInsuranceOther_1" description="TC_IS_M04 – Add same insurance 1st time with Other policyholder" finished-at="2026-07-11T14:28:06 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceOther_1() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceOther_1() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMajorSameInsuranceOther_1 -->
-        <test-method signature="testMajorSameInsuranceOther_2()[pri:5, instance:com.opms.tests.InsuranceScenariosTest@54c5a2ff]" started-at="2026-07-04T18:28:52 IST" name="testMajorSameInsuranceOther_2" description="TC_IS_M05 – Add same insurance 2nd time with Other policyholder" finished-at="2026-07-04T18:29:16 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceOther_1" duration-ms="24114" status="PASS">
+        <test-method signature="testMajorSameInsuranceOther_2()[pri:5, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:28:06 IST" name="testMajorSameInsuranceOther_2" description="TC_IS_M05 – Add same insurance 2nd time with Other policyholder" finished-at="2026-07-11T14:28:06 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceOther_1" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceOther_2() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceOther_1() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceOther_2() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceOther_1() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMajorSameInsuranceOther_2 -->
-        <test-method signature="testMajorDifferentInsuranceSameAsPatient()[pri:6, instance:com.opms.tests.InsuranceScenariosTest@54c5a2ff]" started-at="2026-07-04T18:29:16 IST" name="testMajorDifferentInsuranceSameAsPatient" description="TC_IS_M06 – Add different insurance with Same as Patient" finished-at="2026-07-04T18:29:42 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient" duration-ms="25978" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
+        <test-method signature="testMajorDifferentInsuranceSameAsPatient()[pri:6, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:28:06 IST" name="testMajorDifferentInsuranceSameAsPatient" description="TC_IS_M06 – Add different insurance with Same as Patient" finished-at="2026-07-11T14:28:06 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(@class,'ng-option')]//span[contains(text(),'Delta Dental Insurance Company')] (tried for 15 second(s) with 500 milliseconds interval)
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.155, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64479}, goog:processID: 19036, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64479/devtoo..., se:cdpVersion: 149.0.7827.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e518a5b1adc0a31d3a36c5c61e24b7f2]]>
+              <![CDATA[Method com.opms.tests.InsuranceScenariosTest.testMajorDifferentInsuranceSameAsPatient() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(@class,'ng-option')]//span[contains(text(),'Delta Dental Insurance Company')] (tried for 15 second(s) with 500 milliseconds interval)
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.155, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64479}, goog:processID: 19036, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64479/devtoo..., se:cdpVersion: 149.0.7827.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e518a5b1adc0a31d3a36c5c61e24b7f2
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at com.opms.tests.InsuranceScenariosTest.selectInsuranceCompany(InsuranceScenariosTest.java:249)
-at com.opms.tests.InsuranceScenariosTest.testMajorDifferentInsuranceSameAsPatient(InsuranceScenariosTest.java:540)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+              <![CDATA[java.lang.Throwable: Method com.opms.tests.InsuranceScenariosTest.testMajorDifferentInsuranceSameAsPatient() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
 at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
@@ -82,41 +330,20 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMajorDifferentInsuranceSameAsPatient -->
-        <test-method signature="testMajorDifferentInsuranceOther()[pri:7, instance:com.opms.tests.InsuranceScenariosTest@54c5a2ff]" started-at="2026-07-04T18:29:42 IST" name="testMajorDifferentInsuranceOther" description="TC_IS_M07 – Add different insurance with Other policyholder" finished-at="2026-07-04T18:30:08 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient" duration-ms="25911" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
+        <test-method signature="testMajorDifferentInsuranceOther()[pri:7, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:28:06 IST" name="testMajorDifferentInsuranceOther" description="TC_IS_M07 – Add different insurance with Other policyholder" finished-at="2026-07-11T14:28:06 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(@class,'ng-option')]//span[contains(text(),'Delta Dental Insurance Company')] (tried for 15 second(s) with 500 milliseconds interval)
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.155, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64479}, goog:processID: 19036, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64479/devtoo..., se:cdpVersion: 149.0.7827.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e518a5b1adc0a31d3a36c5c61e24b7f2]]>
+              <![CDATA[Method com.opms.tests.InsuranceScenariosTest.testMajorDifferentInsuranceOther() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(@class,'ng-option')]//span[contains(text(),'Delta Dental Insurance Company')] (tried for 15 second(s) with 500 milliseconds interval)
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.155, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64479}, goog:processID: 19036, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64479/devtoo..., se:cdpVersion: 149.0.7827.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e518a5b1adc0a31d3a36c5c61e24b7f2
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at com.opms.tests.InsuranceScenariosTest.selectInsuranceCompany(InsuranceScenariosTest.java:249)
-at com.opms.tests.InsuranceScenariosTest.testMajorDifferentInsuranceOther(InsuranceScenariosTest.java:557)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+              <![CDATA[java.lang.Throwable: Method com.opms.tests.InsuranceScenariosTest.testMajorDifferentInsuranceOther() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
 at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
@@ -137,57 +364,193 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMajorDifferentInsuranceOther -->
-        <test-method signature="testCreateMinorPatient()[pri:8, instance:com.opms.tests.InsuranceScenariosTest@54c5a2ff]" started-at="2026-07-04T18:30:08 IST" name="testCreateMinorPatient" description="TC_IS_N01 – Create minor patient (age &lt; 18) with Primary Contact" finished-at="2026-07-04T18:30:20 IST" duration-ms="12767" status="PASS">
+        <test-method signature="testCreateMinorPatient()[pri:8, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:28:06 IST" name="testCreateMinorPatient" description="TC_IS_N01 – Create minor patient (age &lt; 18) with Primary Contact" finished-at="2026-07-11T14:28:06 IST" duration-ms="159" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[invalid session id
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d9d3fd5dc9d98003c6e35bf42d0f8da2, findElements {value=//i[contains(@class,'fa-user-plus')], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.101, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56068}, goog:processID: 41056, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56068/devtoo..., se:cdpVersion: 150.0.7871.101, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d9d3fd5dc9d98003c6e35bf42d0f8da2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d9d3fd5dc9d98003c6e35bf42d0f8da2, findElements {value=//i[contains(@class,'fa-user-plus')], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.101, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56068}, goog:processID: 41056, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56068/devtoo..., se:cdpVersion: 150.0.7871.101, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d9d3fd5dc9d98003c6e35bf42d0f8da2
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElements(ElementLocation.java:182)
+at org.openqa.selenium.remote.ElementLocation.findElements(ElementLocation.java:103)
+at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:369)
+at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:363)
+at com.opms.tests.InsuranceScenariosTest.openAddPatientForm(InsuranceScenariosTest.java:189)
+at com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient(InsuranceScenariosTest.java:640)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateMinorPatient -->
-        <test-method signature="testMinorSameInsuranceSameAsPatient_1()[pri:9, instance:com.opms.tests.InsuranceScenariosTest@54c5a2ff]" started-at="2026-07-04T18:30:20 IST" name="testMinorSameInsuranceSameAsPatient_1" description="TC_IS_N02 – Add same insurance 1st time with Same as Patient (minor → validation expected)" finished-at="2026-07-04T18:30:37 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient" duration-ms="17077" status="PASS">
+        <test-method signature="testMinorSameInsuranceSameAsPatient_1()[pri:9, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:28:06 IST" name="testMinorSameInsuranceSameAsPatient_1" description="TC_IS_N02 – Add same insurance 1st time with Same as Patient (minor)" finished-at="2026-07-11T14:28:06 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceSameAsPatient_1() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceSameAsPatient_1() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMinorSameInsuranceSameAsPatient_1 -->
-        <test-method signature="testMinorSameInsuranceSameAsPatient_2()[pri:10, instance:com.opms.tests.InsuranceScenariosTest@54c5a2ff]" started-at="2026-07-04T18:30:37 IST" name="testMinorSameInsuranceSameAsPatient_2" description="TC_IS_N03 – Add same insurance 2nd time with Same as Patient (minor → validation expected)" finished-at="2026-07-04T18:30:54 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient" duration-ms="16999" status="PASS">
+        <test-method signature="testMinorSameInsuranceSameAsPatient_2()[pri:10, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:28:06 IST" name="testMinorSameInsuranceSameAsPatient_2" description="TC_IS_N03 – Add same insurance 2nd time with Same as Patient (minor)" finished-at="2026-07-11T14:28:06 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceSameAsPatient_1" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceSameAsPatient_2() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceSameAsPatient_1() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceSameAsPatient_2() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceSameAsPatient_1() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMinorSameInsuranceSameAsPatient_2 -->
-        <test-method signature="testMinorSameInsuranceOther_1()[pri:11, instance:com.opms.tests.InsuranceScenariosTest@54c5a2ff]" started-at="2026-07-04T18:30:54 IST" name="testMinorSameInsuranceOther_1" description="TC_IS_N04 – Add same insurance 1st time with Other policyholder (minor)" finished-at="2026-07-04T18:31:19 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient" duration-ms="24154" status="PASS">
+        <test-method signature="testMinorSameInsuranceOther_1()[pri:11, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:28:06 IST" name="testMinorSameInsuranceOther_1" description="TC_IS_N04 – Add same insurance 1st time with Other policyholder (minor)" finished-at="2026-07-11T14:28:06 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceOther_1() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceOther_1() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMinorSameInsuranceOther_1 -->
-        <test-method signature="testMinorSameInsuranceOther_2()[pri:12, instance:com.opms.tests.InsuranceScenariosTest@54c5a2ff]" started-at="2026-07-04T18:31:19 IST" name="testMinorSameInsuranceOther_2" description="TC_IS_N05 – Add same insurance 2nd time with Other policyholder (minor)" finished-at="2026-07-04T18:31:57 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceOther_1" duration-ms="38155" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
+        <test-method signature="testMinorSameInsuranceOther_2()[pri:12, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:28:06 IST" name="testMinorSameInsuranceOther_2" description="TC_IS_N05 – Add same insurance 2nd time with Other policyholder (minor)" finished-at="2026-07-11T14:28:06 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceOther_1" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //button[@class='swal2-confirm swal2-styled'] | //button[normalize-space(text())='OK'] (tried for 15 second(s) with 500 milliseconds interval)
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.155, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64479}, goog:processID: 19036, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64479/devtoo..., se:cdpVersion: 149.0.7827.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e518a5b1adc0a31d3a36c5c61e24b7f2]]>
+              <![CDATA[Method com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceOther_2() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceOther_1() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //button[@class='swal2-confirm swal2-styled'] | //button[normalize-space(text())='OK'] (tried for 15 second(s) with 500 milliseconds interval)
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.155, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64479}, goog:processID: 19036, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64479/devtoo..., se:cdpVersion: 149.0.7827.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e518a5b1adc0a31d3a36c5c61e24b7f2
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at com.opms.tests.InsuranceScenariosTest.saveInsuranceAndConfirm(InsuranceScenariosTest.java:403)
-at com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceOther_2(InsuranceScenariosTest.java:684)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+              <![CDATA[java.lang.Throwable: Method com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceOther_2() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceOther_1() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
 at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
@@ -208,41 +571,20 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMinorSameInsuranceOther_2 -->
-        <test-method signature="testMinorDifferentInsuranceSameAsPatient()[pri:13, instance:com.opms.tests.InsuranceScenariosTest@54c5a2ff]" started-at="2026-07-04T18:31:57 IST" name="testMinorDifferentInsuranceSameAsPatient" description="TC_IS_N06 – Add different insurance with Same as Patient (minor → validation expected)" finished-at="2026-07-04T18:32:23 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient" duration-ms="25995" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
+        <test-method signature="testMinorDifferentInsuranceSameAsPatient()[pri:13, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:28:06 IST" name="testMinorDifferentInsuranceSameAsPatient" description="TC_IS_N06 – Add different insurance with Same as Patient (minor)" finished-at="2026-07-11T14:28:06 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(@class,'ng-option')]//span[contains(text(),'Delta Dental Insurance Company')] (tried for 15 second(s) with 500 milliseconds interval)
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.155, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64479}, goog:processID: 19036, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64479/devtoo..., se:cdpVersion: 149.0.7827.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e518a5b1adc0a31d3a36c5c61e24b7f2]]>
+              <![CDATA[Method com.opms.tests.InsuranceScenariosTest.testMinorDifferentInsuranceSameAsPatient() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(@class,'ng-option')]//span[contains(text(),'Delta Dental Insurance Company')] (tried for 15 second(s) with 500 milliseconds interval)
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.155, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64479}, goog:processID: 19036, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64479/devtoo..., se:cdpVersion: 149.0.7827.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e518a5b1adc0a31d3a36c5c61e24b7f2
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at com.opms.tests.InsuranceScenariosTest.selectInsuranceCompany(InsuranceScenariosTest.java:249)
-at com.opms.tests.InsuranceScenariosTest.testMinorDifferentInsuranceSameAsPatient(InsuranceScenariosTest.java:699)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+              <![CDATA[java.lang.Throwable: Method com.opms.tests.InsuranceScenariosTest.testMinorDifferentInsuranceSameAsPatient() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
 at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
@@ -263,41 +605,20 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMinorDifferentInsuranceSameAsPatient -->
-        <test-method signature="testMinorDifferentInsuranceOther()[pri:14, instance:com.opms.tests.InsuranceScenariosTest@54c5a2ff]" started-at="2026-07-04T18:32:23 IST" name="testMinorDifferentInsuranceOther" description="TC_IS_N07 – Add different insurance with Other policyholder (minor)" finished-at="2026-07-04T18:32:48 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient" duration-ms="25671" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
+        <test-method signature="testMinorDifferentInsuranceOther()[pri:14, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:28:06 IST" name="testMinorDifferentInsuranceOther" description="TC_IS_N07 – Add different insurance with Other policyholder (minor)" finished-at="2026-07-11T14:28:06 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(@class,'ng-option')]//span[contains(text(),'Delta Dental Insurance Company')] (tried for 15 second(s) with 500 milliseconds interval)
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.155, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64479}, goog:processID: 19036, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64479/devtoo..., se:cdpVersion: 149.0.7827.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e518a5b1adc0a31d3a36c5c61e24b7f2]]>
+              <![CDATA[Method com.opms.tests.InsuranceScenariosTest.testMinorDifferentInsuranceOther() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(@class,'ng-option')]//span[contains(text(),'Delta Dental Insurance Company')] (tried for 15 second(s) with 500 milliseconds interval)
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.155, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64479}, goog:processID: 19036, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64479/devtoo..., se:cdpVersion: 149.0.7827.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e518a5b1adc0a31d3a36c5c61e24b7f2
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at com.opms.tests.InsuranceScenariosTest.selectInsuranceCompany(InsuranceScenariosTest.java:249)
-at com.opms.tests.InsuranceScenariosTest.testMinorDifferentInsuranceOther(InsuranceScenariosTest.java:729)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+              <![CDATA[java.lang.Throwable: Method com.opms.tests.InsuranceScenariosTest.testMinorDifferentInsuranceOther() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2 depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient() on instance com.opms.tests.InsuranceScenariosTest@6d4d66d2]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
 at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
@@ -318,11 +639,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMinorDifferentInsuranceOther -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.opms.tests.InsuranceScenariosTest@54c5a2ff]" started-at="2026-07-04T18:32:48 IST" name="tearDown" finished-at="2026-07-04T18:32:49 IST" duration-ms="347" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:28:06 IST" name="tearDown" finished-at="2026-07-11T14:28:06 IST" duration-ms="75" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
