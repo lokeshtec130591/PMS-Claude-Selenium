@@ -151,16 +151,19 @@ public class InsuranceScenariosTest {
         driver.findElement(By.xpath("//input[@id='Address Line 1']")).sendKeys("100 Insurance Street");
         driver.findElement(By.xpath("//input[@id='City']")).sendKeys("Chicago");
 
-        WebElement stateDropdown = driver.findElement(
-                By.xpath("//ng-select[@bindlabel='stateName'] | //div[@class='ng-placeholder' and text()='Select State']"));
-        stateDropdown.click();
-        Thread.sleep(400);
+        WebElement stateDropdown = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//ng-select[@bindlabel='stateName']")));
+        js.executeScript("arguments[0].scrollIntoView({block:'center'});", stateDropdown);
+        Thread.sleep(300);
+        js.executeScript("arguments[0].click();", stateDropdown);
+        Thread.sleep(500);
         try {
-            stateDropdown.findElement(By.tagName("input")).sendKeys("Illinois");
-            Thread.sleep(400);
+            WebElement stateInput = stateDropdown.findElement(By.tagName("input"));
+            stateInput.sendKeys("Illinois");
+            Thread.sleep(500);
         } catch (Exception ignored) {}
         wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//div[contains(@class,'ng-option')]//span[text()='Illinois']"))).click();
+                By.xpath("//ng-dropdown-panel//div[contains(@class,'ng-option')]//span[text()='Illinois']"))).click();
         Thread.sleep(300);
 
         driver.findElement(By.xpath("//input[@id='Zip Code']")).sendKeys("60601");
