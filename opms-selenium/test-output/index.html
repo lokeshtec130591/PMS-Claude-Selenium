@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 5 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Owner\AppData\Local\Temp\testng-eclipse-447545343\testng-customsuite.xml</span>
+                    <span>C:\Users\Owner\AppData\Local\Temp\testng-eclipse--1273455927\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,90 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">15 methods,   15 passed</span>
+                    <span class="method-stats">15 methods, 5 failed,  8 skipped,  2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testCreateMinorPatient">testCreateMinorPatient</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMajorDifferentInsuranceOther">testMajorDifferentInsuranceOther</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMajorDifferentInsuranceSameAsPatient">testMajorDifferentInsuranceSameAsPatient</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMajorSameInsuranceOther_1">testMajorSameInsuranceOther_1</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMajorSameInsuranceSameAsPatient_1">testMajorSameInsuranceSameAsPatient_1</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods skipped suite-Default_suite"> (hide)</a> <!-- hide-methods skipped suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods skipped suite-Default_suite"> (show)</a> <!-- show-methods skipped suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Default_suite">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMajorSameInsuranceOther_2">testMajorSameInsuranceOther_2</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMajorSameInsuranceSameAsPatient_2">testMajorSameInsuranceSameAsPatient_2</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMinorDifferentInsuranceOther">testMinorDifferentInsuranceOther</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMinorDifferentInsuranceSameAsPatient">testMinorDifferentInsuranceSameAsPatient</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMinorSameInsuranceOther_1">testMinorSameInsuranceOther_1</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMinorSameInsuranceOther_2">testMinorSameInsuranceOther_2</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMinorSameInsuranceSameAsPatient_1">testMinorSameInsuranceSameAsPatient_1</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMinorSameInsuranceSameAsPatient_2">testMinorSameInsuranceSameAsPatient_2</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,71 +187,6 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testCreateMajorPatient">testCreateMajorPatient</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testCreateMinorPatient">testCreateMinorPatient</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMajorDifferentInsuranceOther">testMajorDifferentInsuranceOther</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMajorDifferentInsuranceSameAsPatient">testMajorDifferentInsuranceSameAsPatient</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMajorSameInsuranceOther_1">testMajorSameInsuranceOther_1</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMajorSameInsuranceOther_2">testMajorSameInsuranceOther_2</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMajorSameInsuranceSameAsPatient_1">testMajorSameInsuranceSameAsPatient_1</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMajorSameInsuranceSameAsPatient_2">testMajorSameInsuranceSameAsPatient_2</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMinorDifferentInsuranceOther">testMinorDifferentInsuranceOther</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMinorDifferentInsuranceSameAsPatient">testMinorDifferentInsuranceSameAsPatient</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMinorSameInsuranceOther_1">testMinorSameInsuranceOther_1</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMinorSameInsuranceOther_2">testMinorSameInsuranceOther_2</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMinorSameInsuranceSameAsPatient_1">testMinorSameInsuranceSameAsPatient_1</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.InsuranceScenariosTest" class="method navigator-link" hash-for-method="testMinorSameInsuranceSameAsPatient_2">testMinorSameInsuranceSameAsPatient_2</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -188,6 +206,559 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.opms.tests.InsuranceScenariosTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateMinorPatient">
+                  </a> <!-- testCreateMinorPatient -->
+                  <span class="method-name">testCreateMinorPatient</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=150.0.7871.114)
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.10&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d7273130e80388ddd9b3325747262c5e, getAlertText {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.114, chrome: {chromedriverVersion: 150.0.7871.115 (25f5b661e5b..., userDataDir: C:\Users\Owner\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61312}, goog:processID: 17780, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61312/devtoo..., se:cdpVersion: 150.0.7871.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d7273130e80388ddd9b3325747262c5e
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:592)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1164)
+	at com.opms.tests.InsuranceScenariosTest.dismissNativeAlert(InsuranceScenariosTest.java:204)
+	at com.opms.tests.InsuranceScenariosTest.dismissErrorDialog(InsuranceScenariosTest.java:220)
+	at com.opms.tests.InsuranceScenariosTest.openAddPatientForm(InsuranceScenariosTest.java:231)
+	at com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient(InsuranceScenariosTest.java:765)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                  <em>
+(TC_IS_N01 – Create minor patient (age < 18) with Primary Contact)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMajorDifferentInsuranceOther">
+                  </a> <!-- testMajorDifferentInsuranceOther -->
+                  <span class="method-name">testMajorDifferentInsuranceOther</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=150.0.7871.114)
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.10&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d7273130e80388ddd9b3325747262c5e, executeScript {args=[], script=window.scrollBy(0, document.body.scrollHeight);}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.114, chrome: {chromedriverVersion: 150.0.7871.115 (25f5b661e5b..., userDataDir: C:\Users\Owner\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61312}, goog:processID: 17780, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61312/devtoo..., se:cdpVersion: 150.0.7871.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d7273130e80388ddd9b3325747262c5e
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:464)
+	at com.opms.tests.InsuranceScenariosTest.addInsuranceBenefit(InsuranceScenariosTest.java:594)
+	at com.opms.tests.InsuranceScenariosTest.saveInsuranceAndConfirm(InsuranceScenariosTest.java:560)
+	at com.opms.tests.InsuranceScenariosTest.testMajorDifferentInsuranceOther(InsuranceScenariosTest.java:748)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                  <em>
+(TC_IS_M07 – Add different insurance with Other policyholder)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMajorDifferentInsuranceSameAsPatient">
+                  </a> <!-- testMajorDifferentInsuranceSameAsPatient -->
+                  <span class="method-name">testMajorDifferentInsuranceSameAsPatient</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //ng-dropdown-panel//div[contains(@class,&apos;ng-option&apos;)]//span[text()=&apos;Verified&apos;] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.10&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.114, chrome: {chromedriverVersion: 150.0.7871.115 (25f5b661e5b..., userDataDir: C:\Users\Owner\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61312}, goog:processID: 17780, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61312/devtoo..., se:cdpVersion: 150.0.7871.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d7273130e80388ddd9b3325747262c5e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.opms.tests.InsuranceScenariosTest.addInsuranceBenefit(InsuranceScenariosTest.java:608)
+	at com.opms.tests.InsuranceScenariosTest.saveInsuranceAndConfirm(InsuranceScenariosTest.java:560)
+	at com.opms.tests.InsuranceScenariosTest.testMajorDifferentInsuranceSameAsPatient(InsuranceScenariosTest.java:730)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                  <em>
+(TC_IS_M06 – Add different insurance with Same as Patient)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMajorSameInsuranceOther_1">
+                  </a> <!-- testMajorSameInsuranceOther_1 -->
+                  <span class="method-name">testMajorSameInsuranceOther_1</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //ng-dropdown-panel//div[contains(@class,&apos;ng-option&apos;)]//span[text()=&apos;Verified&apos;] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.10&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.114, chrome: {chromedriverVersion: 150.0.7871.115 (25f5b661e5b..., userDataDir: C:\Users\Owner\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61312}, goog:processID: 17780, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61312/devtoo..., se:cdpVersion: 150.0.7871.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d7273130e80388ddd9b3325747262c5e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.opms.tests.InsuranceScenariosTest.addInsuranceBenefit(InsuranceScenariosTest.java:608)
+	at com.opms.tests.InsuranceScenariosTest.saveInsuranceAndConfirm(InsuranceScenariosTest.java:560)
+	at com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceOther_1(InsuranceScenariosTest.java:695)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                  <em>
+(TC_IS_M04 – Add same insurance 1st time with Other policyholder)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMajorSameInsuranceSameAsPatient_1">
+                  </a> <!-- testMajorSameInsuranceSameAsPatient_1 -->
+                  <span class="method-name">testMajorSameInsuranceSameAsPatient_1</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //ng-dropdown-panel//div[contains(@class,&apos;ng-option&apos;)]//span[text()=&apos;Verified&apos;] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.10&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.114, chrome: {chromedriverVersion: 150.0.7871.115 (25f5b661e5b..., userDataDir: C:\Users\Owner\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61312}, goog:processID: 17780, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61312/devtoo..., se:cdpVersion: 150.0.7871.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d7273130e80388ddd9b3325747262c5e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.opms.tests.InsuranceScenariosTest.addInsuranceBenefit(InsuranceScenariosTest.java:608)
+	at com.opms.tests.InsuranceScenariosTest.saveInsuranceAndConfirm(InsuranceScenariosTest.java:560)
+	at com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceSameAsPatient_1(InsuranceScenariosTest.java:660)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                  <em>
+(TC_IS_M02 – Add same insurance 1st time with Same as Patient)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.opms.tests.InsuranceScenariosTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMajorSameInsuranceOther_2">
+                  </a> <!-- testMajorSameInsuranceOther_2 -->
+                  <span class="method-name">testMajorSameInsuranceOther_2</span>
+                  <div class="stack-trace">java.lang.Throwable: Method com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceOther_2() on instance com.opms.tests.InsuranceScenariosTest@2cf3d63b depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceOther_1() on instance com.opms.tests.InsuranceScenariosTest@2cf3d63b]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                  <em>
+(TC_IS_M05 – Add same insurance 2nd time with Other policyholder)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMajorSameInsuranceSameAsPatient_2">
+                  </a> <!-- testMajorSameInsuranceSameAsPatient_2 -->
+                  <span class="method-name">testMajorSameInsuranceSameAsPatient_2</span>
+                  <div class="stack-trace">java.lang.Throwable: Method com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceSameAsPatient_2() on instance com.opms.tests.InsuranceScenariosTest@2cf3d63b depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceSameAsPatient_1() on instance com.opms.tests.InsuranceScenariosTest@2cf3d63b]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                  <em>
+(TC_IS_M03 – Add same insurance 2nd time with Same as Patient)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMinorDifferentInsuranceOther">
+                  </a> <!-- testMinorDifferentInsuranceOther -->
+                  <span class="method-name">testMinorDifferentInsuranceOther</span>
+                  <div class="stack-trace">java.lang.Throwable: Method com.opms.tests.InsuranceScenariosTest.testMinorDifferentInsuranceOther() on instance com.opms.tests.InsuranceScenariosTest@2cf3d63b depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient() on instance com.opms.tests.InsuranceScenariosTest@2cf3d63b]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                  <em>
+(TC_IS_N07 – Add different insurance with Other policyholder (minor))                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMinorDifferentInsuranceSameAsPatient">
+                  </a> <!-- testMinorDifferentInsuranceSameAsPatient -->
+                  <span class="method-name">testMinorDifferentInsuranceSameAsPatient</span>
+                  <div class="stack-trace">java.lang.Throwable: Method com.opms.tests.InsuranceScenariosTest.testMinorDifferentInsuranceSameAsPatient() on instance com.opms.tests.InsuranceScenariosTest@2cf3d63b depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient() on instance com.opms.tests.InsuranceScenariosTest@2cf3d63b]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                  <em>
+(TC_IS_N06 – Add different insurance with Same as Patient (minor))                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMinorSameInsuranceOther_1">
+                  </a> <!-- testMinorSameInsuranceOther_1 -->
+                  <span class="method-name">testMinorSameInsuranceOther_1</span>
+                  <div class="stack-trace">java.lang.Throwable: Method com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceOther_1() on instance com.opms.tests.InsuranceScenariosTest@2cf3d63b depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient() on instance com.opms.tests.InsuranceScenariosTest@2cf3d63b]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                  <em>
+(TC_IS_N04 – Add same insurance 1st time with Other policyholder (minor))                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMinorSameInsuranceOther_2">
+                  </a> <!-- testMinorSameInsuranceOther_2 -->
+                  <span class="method-name">testMinorSameInsuranceOther_2</span>
+                  <div class="stack-trace">java.lang.Throwable: Method com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceOther_2() on instance com.opms.tests.InsuranceScenariosTest@2cf3d63b depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceOther_1() on instance com.opms.tests.InsuranceScenariosTest@2cf3d63b]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                  <em>
+(TC_IS_N05 – Add same insurance 2nd time with Other policyholder (minor))                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMinorSameInsuranceSameAsPatient_1">
+                  </a> <!-- testMinorSameInsuranceSameAsPatient_1 -->
+                  <span class="method-name">testMinorSameInsuranceSameAsPatient_1</span>
+                  <div class="stack-trace">java.lang.Throwable: Method com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceSameAsPatient_1() on instance com.opms.tests.InsuranceScenariosTest@2cf3d63b depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient() on instance com.opms.tests.InsuranceScenariosTest@2cf3d63b]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                  <em>
+(TC_IS_N02 – Add same insurance 1st time with Same as Patient (minor))                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMinorSameInsuranceSameAsPatient_2">
+                  </a> <!-- testMinorSameInsuranceSameAsPatient_2 -->
+                  <span class="method-name">testMinorSameInsuranceSameAsPatient_2</span>
+                  <div class="stack-trace">java.lang.Throwable: Method com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceSameAsPatient_2() on instance com.opms.tests.InsuranceScenariosTest@2cf3d63b depends on not successfully finished methods 
+[com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceSameAsPatient_1() on instance com.opms.tests.InsuranceScenariosTest@2cf3d63b]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                  <em>
+(TC_IS_N03 – Add same insurance 2nd time with Same as Patient (minor))                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-skipped -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -205,123 +776,6 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testCreateMinorPatient">
-                  </a> <!-- testCreateMinorPatient -->
-                  <span class="method-name">testCreateMinorPatient</span>
-                  <em>
-(TC_IS_N01 – Create minor patient (age < 18) with Primary Contact)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testMajorDifferentInsuranceOther">
-                  </a> <!-- testMajorDifferentInsuranceOther -->
-                  <span class="method-name">testMajorDifferentInsuranceOther</span>
-                  <em>
-(TC_IS_M07 – Add different insurance with Other policyholder)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testMajorDifferentInsuranceSameAsPatient">
-                  </a> <!-- testMajorDifferentInsuranceSameAsPatient -->
-                  <span class="method-name">testMajorDifferentInsuranceSameAsPatient</span>
-                  <em>
-(TC_IS_M06 – Add different insurance with Same as Patient)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testMajorSameInsuranceOther_1">
-                  </a> <!-- testMajorSameInsuranceOther_1 -->
-                  <span class="method-name">testMajorSameInsuranceOther_1</span>
-                  <em>
-(TC_IS_M04 – Add same insurance 1st time with Other policyholder)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testMajorSameInsuranceOther_2">
-                  </a> <!-- testMajorSameInsuranceOther_2 -->
-                  <span class="method-name">testMajorSameInsuranceOther_2</span>
-                  <em>
-(TC_IS_M05 – Add same insurance 2nd time with Other policyholder)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testMajorSameInsuranceSameAsPatient_1">
-                  </a> <!-- testMajorSameInsuranceSameAsPatient_1 -->
-                  <span class="method-name">testMajorSameInsuranceSameAsPatient_1</span>
-                  <em>
-(TC_IS_M02 – Add same insurance 1st time with Same as Patient)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testMajorSameInsuranceSameAsPatient_2">
-                  </a> <!-- testMajorSameInsuranceSameAsPatient_2 -->
-                  <span class="method-name">testMajorSameInsuranceSameAsPatient_2</span>
-                  <em>
-(TC_IS_M03 – Add same insurance 2nd time with Same as Patient)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testMinorDifferentInsuranceOther">
-                  </a> <!-- testMinorDifferentInsuranceOther -->
-                  <span class="method-name">testMinorDifferentInsuranceOther</span>
-                  <em>
-(TC_IS_N07 – Add different insurance with Other policyholder (minor))                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testMinorDifferentInsuranceSameAsPatient">
-                  </a> <!-- testMinorDifferentInsuranceSameAsPatient -->
-                  <span class="method-name">testMinorDifferentInsuranceSameAsPatient</span>
-                  <em>
-(TC_IS_N06 – Add different insurance with Same as Patient (minor))                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testMinorSameInsuranceOther_1">
-                  </a> <!-- testMinorSameInsuranceOther_1 -->
-                  <span class="method-name">testMinorSameInsuranceOther_1</span>
-                  <em>
-(TC_IS_N04 – Add same insurance 1st time with Other policyholder (minor))                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testMinorSameInsuranceOther_2">
-                  </a> <!-- testMinorSameInsuranceOther_2 -->
-                  <span class="method-name">testMinorSameInsuranceOther_2</span>
-                  <em>
-(TC_IS_N05 – Add same insurance 2nd time with Other policyholder (minor))                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testMinorSameInsuranceSameAsPatient_1">
-                  </a> <!-- testMinorSameInsuranceSameAsPatient_1 -->
-                  <span class="method-name">testMinorSameInsuranceSameAsPatient_1</span>
-                  <em>
-(TC_IS_N02 – Add same insurance 1st time with Same as Patient (minor))                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testMinorSameInsuranceSameAsPatient_2">
-                  </a> <!-- testMinorSameInsuranceSameAsPatient_2 -->
-                  <span class="method-name">testMinorSameInsuranceSameAsPatient_2</span>
-                  <em>
-(TC_IS_N03 – Add same insurance 2nd time with Same as Patient (minor))                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="testSetupInsuranceData">
                   </a> <!-- testSetupInsuranceData -->
                   <span class="method-name">testSetupInsuranceData</span>
@@ -334,7 +788,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Owner\AppData\Local\Temp\testng-eclipse-447545343\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Owner\AppData\Local\Temp\testng-eclipse--1273455927\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -387,68 +841,68 @@ data.addRows(15);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testMajorSameInsuranceOther_1')
 data.setCell(0, 2, 'com.opms.tests.InsuranceScenariosTest')
-data.setCell(0, 3, 28096);
+data.setCell(0, 3, 50795);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testMinorSameInsuranceOther_1')
+data.setCell(1, 1, 'testMajorSameInsuranceSameAsPatient_1')
 data.setCell(1, 2, 'com.opms.tests.InsuranceScenariosTest')
-data.setCell(1, 3, 27875);
+data.setCell(1, 3, 44258);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testMajorDifferentInsuranceOther')
+data.setCell(2, 1, 'testMajorDifferentInsuranceSameAsPatient')
 data.setCell(2, 2, 'com.opms.tests.InsuranceScenariosTest')
-data.setCell(2, 3, 27693);
+data.setCell(2, 3, 43999);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testMajorSameInsuranceOther_2')
+data.setCell(3, 1, 'testMajorDifferentInsuranceOther')
 data.setCell(3, 2, 'com.opms.tests.InsuranceScenariosTest')
-data.setCell(3, 3, 27691);
+data.setCell(3, 3, 33690);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'testMinorDifferentInsuranceOther')
+data.setCell(4, 1, 'testSetupInsuranceData')
 data.setCell(4, 2, 'com.opms.tests.InsuranceScenariosTest')
-data.setCell(4, 3, 27617);
+data.setCell(4, 3, 16054);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'testMinorSameInsuranceOther_2')
+data.setCell(5, 1, 'testCreateMajorPatient')
 data.setCell(5, 2, 'com.opms.tests.InsuranceScenariosTest')
-data.setCell(5, 3, 27391);
+data.setCell(5, 3, 8438);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'testMajorSameInsuranceSameAsPatient_2')
+data.setCell(6, 1, 'testCreateMinorPatient')
 data.setCell(6, 2, 'com.opms.tests.InsuranceScenariosTest')
-data.setCell(6, 3, 21544);
+data.setCell(6, 3, 7);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'testMajorSameInsuranceSameAsPatient_1')
+data.setCell(7, 1, 'testMinorDifferentInsuranceSameAsPatient')
 data.setCell(7, 2, 'com.opms.tests.InsuranceScenariosTest')
-data.setCell(7, 3, 21504);
+data.setCell(7, 3, 1);
 data.setCell(8, 0, 8)
 data.setCell(8, 1, 'testMinorSameInsuranceSameAsPatient_1')
 data.setCell(8, 2, 'com.opms.tests.InsuranceScenariosTest')
-data.setCell(8, 3, 21289);
+data.setCell(8, 3, 0);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'testMajorDifferentInsuranceSameAsPatient')
+data.setCell(9, 1, 'testMajorSameInsuranceSameAsPatient_2')
 data.setCell(9, 2, 'com.opms.tests.InsuranceScenariosTest')
-data.setCell(9, 3, 21278);
+data.setCell(9, 3, 0);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'testMinorSameInsuranceSameAsPatient_2')
+data.setCell(10, 1, 'testMinorSameInsuranceOther_2')
 data.setCell(10, 2, 'com.opms.tests.InsuranceScenariosTest')
-data.setCell(10, 3, 21188);
+data.setCell(10, 3, 0);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'testMinorDifferentInsuranceSameAsPatient')
+data.setCell(11, 1, 'testMajorSameInsuranceOther_2')
 data.setCell(11, 2, 'com.opms.tests.InsuranceScenariosTest')
-data.setCell(11, 3, 21105);
+data.setCell(11, 3, 0);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'testSetupInsuranceData')
+data.setCell(12, 1, 'testMinorSameInsuranceSameAsPatient_2')
 data.setCell(12, 2, 'com.opms.tests.InsuranceScenariosTest')
-data.setCell(12, 3, 15966);
+data.setCell(12, 3, 0);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'testCreateMinorPatient')
+data.setCell(13, 1, 'testMinorSameInsuranceOther_1')
 data.setCell(13, 2, 'com.opms.tests.InsuranceScenariosTest')
-data.setCell(13, 3, 14627);
+data.setCell(13, 3, 0);
 data.setCell(14, 0, 14)
-data.setCell(14, 1, 'testCreateMajorPatient')
+data.setCell(14, 1, 'testMinorDifferentInsuranceOther')
 data.setCell(14, 2, 'com.opms.tests.InsuranceScenariosTest')
-data.setCell(14, 3, 8256);
+data.setCell(14, 3, 0);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 minutes</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -481,67 +935,45 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testSetupInsuranceData</span>
-                <span class="method-start">22184 ms</span>
+                <span class="method-start">22600 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testCreateMajorPatient</span>
-                <span class="method-start">38163 ms</span>
+                <span class="method-start">38672 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">testMajorSameInsuranceSameAsPatient_1</span>
-                <span class="method-start">46426 ms</span>
+                <span class="method-start">47120 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testMajorSameInsuranceSameAsPatient_2</span>
-                <span class="method-start">67938 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">testMajorSameInsuranceOther_1</span>
-                <span class="method-start">89486 ms</span>
+                <span class="method-start">91404 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testMajorSameInsuranceOther_2</span>
-                <span class="method-start">117584 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">testMajorDifferentInsuranceSameAsPatient</span>
-                <span class="method-start">145282 ms</span>
+                <span class="method-start">142212 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">testMajorDifferentInsuranceOther</span>
-                <span class="method-start">166566 ms</span>
+                <span class="method-start">186216 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">testCreateMinorPatient</span>
-                <span class="method-start">194259 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testMinorSameInsuranceSameAsPatient_1</span>
-                <span class="method-start">208891 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testMinorSameInsuranceSameAsPatient_2</span>
-                <span class="method-start">230187 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testMinorSameInsuranceOther_1</span>
-                <span class="method-start">251378 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testMinorSameInsuranceOther_2</span>
-                <span class="method-start">279265 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testMinorDifferentInsuranceSameAsPatient</span>
-                <span class="method-start">306660 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testMinorDifferentInsuranceOther</span>
-                <span class="method-start">327772 ms</span>
+                <span class="method-start">219912 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">355392 ms</span>
+                <span class="method-start">219995 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

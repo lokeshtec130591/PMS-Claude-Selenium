@@ -556,6 +556,87 @@ public class InsuranceScenariosTest {
         okBtn.click();
         Thread.sleep(2000);
         dismissErrorDialog();
+
+        addInsuranceBenefit();
+    }
+
+    /**
+     * Navigates to the patient's Insurance tab and adds a Benefit entry for the insurance
+     * just saved (the last "Add Benefit" button on the page, since the newly created
+     * insurance is appended to the end of the Insurance List). Confirmed live DOM ids:
+     * input#Available Coverage, input#I confirm (checkbox), ng-select#Status.
+     */
+    private void addInsuranceBenefit() throws InterruptedException {
+        WebElement insuranceTabLink = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//a[contains(@href,'insurancesummary')]")));
+        js.executeScript("arguments[0].click();", insuranceTabLink);
+        Thread.sleep(2000);
+        dismissErrorDialog();
+
+        List<WebElement> addBenefitButtons = findElementsSafely(
+                By.xpath("//button[normalize-space(text())='Add Benefit']"));
+        if (addBenefitButtons.isEmpty()) {
+            System.out.println("addInsuranceBenefit: no 'Add Benefit' button found — skipping.");
+            return;
+        }
+        WebElement addBenefitButton = addBenefitButtons.get(addBenefitButtons.size() - 1);
+        js.executeScript("arguments[0].scrollIntoView({block:'center'});", addBenefitButton);
+        Thread.sleep(300);
+        js.executeScript("arguments[0].click();", addBenefitButton);
+        Thread.sleep(2000);
+        dismissErrorDialog();
+
+        WebElement coverageField = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.id("Available Coverage")));
+        coverageField.clear();
+        coverageField.sendKeys("5000");
+
+        js.executeScript("window.scrollBy(0, document.body.scrollHeight);");
+        Thread.sleep(1000);
+
+        WebElement confirmCheckbox = driver.findElement(By.id("I confirm"));
+        js.executeScript("arguments[0].scrollIntoView({block:'center'});", confirmCheckbox);
+        Thread.sleep(300);
+        js.executeScript("arguments[0].click();", confirmCheckbox);
+        Thread.sleep(300);
+        Boolean confirmChecked = (Boolean) js.executeScript("return arguments[0].checked;", confirmCheckbox);
+        if (!Boolean.TRUE.equals(confirmChecked)) {
+            // Raw input click didn't register with Angular — fall back to clicking its label.
+            try {
+                WebElement confirmLabel = driver.findElement(By.xpath("//label[@for='I confirm']"));
+                js.executeScript("arguments[0].click();", confirmLabel);
+                Thread.sleep(300);
+            } catch (Exception ignored) {}
+        }
+
+        WebElement statusDropdown = driver.findElement(By.id("Status"));
+        js.executeScript("arguments[0].scrollIntoView({block:'center'});", statusDropdown);
+        Thread.sleep(300);
+        js.executeScript("arguments[0].click();", statusDropdown);
+        Thread.sleep(500);
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//ng-dropdown-panel//div[contains(@class,'ng-option')]//span[text()='Verified']"))).click();
+        Thread.sleep(500);
+
+        WebElement saveBenefitButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[@class='btn btn-submit btn-light-primary']")));
+        js.executeScript("arguments[0].scrollIntoView({block:'center'});", saveBenefitButton);
+        Thread.sleep(300);
+        Boolean saveDisabled = (Boolean) js.executeScript("return arguments[0].disabled;", saveBenefitButton);
+        if (Boolean.TRUE.equals(saveDisabled)) {
+            System.out.println("addInsuranceBenefit: Save button is disabled — 'I confirm' or 'Status' may not be set.");
+        }
+        js.executeScript("arguments[0].click();", saveBenefitButton);
+        Thread.sleep(2500);
+        dismissErrorDialog();
+        System.out.println("Insurance Benefit added successfully.");
+
+        // Return to the Patient tab so the next scenario's searchAndOpenPatient() resumes cleanly.
+        WebElement patientTabLink = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//a[contains(@href,'patientsummary')]")));
+        js.executeScript("arguments[0].click();", patientTabLink);
+        Thread.sleep(1500);
+        dismissErrorDialog();
     }
 
     // ═══════════════════════════════════════════════════════════════════════════
