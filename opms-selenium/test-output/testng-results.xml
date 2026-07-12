@@ -2,76 +2,76 @@
 <testng-results ignored="0" total="15" passed="15" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-11T14:48:13 IST" name="Default suite" finished-at="2026-07-11T14:53:49 IST" duration-ms="336077">
+  <suite started-at="2026-07-12T20:25:59 IST" name="Default suite" finished-at="2026-07-12T20:31:54 IST" duration-ms="355870">
     <groups>
     </groups>
-    <test started-at="2026-07-11T14:48:13 IST" name="Default test" finished-at="2026-07-11T14:53:49 IST" duration-ms="336077">
+    <test started-at="2026-07-12T20:25:59 IST" name="Default test" finished-at="2026-07-12T20:31:54 IST" duration-ms="355870">
       <class name="com.opms.tests.InsuranceScenariosTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:48:13 IST" name="setUp" finished-at="2026-07-11T14:48:29 IST" duration-ms="15998" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.opms.tests.InsuranceScenariosTest@2cf3d63b]" started-at="2026-07-12T20:25:59 IST" name="setUp" finished-at="2026-07-12T20:26:21 IST" duration-ms="22171" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testSetupInsuranceData()[pri:0, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:48:29 IST" name="testSetupInsuranceData" description="TC_IS_SETUP – Create required insurance companies in Lookup &gt; Insurance" finished-at="2026-07-11T14:48:51 IST" duration-ms="22278" status="PASS">
+        <test-method signature="testSetupInsuranceData()[pri:0, instance:com.opms.tests.InsuranceScenariosTest@2cf3d63b]" started-at="2026-07-12T20:26:21 IST" name="testSetupInsuranceData" description="TC_IS_SETUP – Create required insurance companies in Lookup &gt; Insurance" finished-at="2026-07-12T20:26:37 IST" duration-ms="15966" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSetupInsuranceData -->
-        <test-method signature="testCreateMajorPatient()[pri:1, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:48:51 IST" name="testCreateMajorPatient" description="TC_IS_M01 – Create adult patient (age &gt;= 18)" finished-at="2026-07-11T14:48:59 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testSetupInsuranceData" duration-ms="7866" status="PASS">
+        <test-method signature="testCreateMajorPatient()[pri:1, instance:com.opms.tests.InsuranceScenariosTest@2cf3d63b]" started-at="2026-07-12T20:26:37 IST" name="testCreateMajorPatient" description="TC_IS_M01 – Create adult patient (age &gt;= 18)" finished-at="2026-07-12T20:26:45 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testSetupInsuranceData" duration-ms="8256" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateMajorPatient -->
-        <test-method signature="testMajorSameInsuranceSameAsPatient_1()[pri:2, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:48:59 IST" name="testMajorSameInsuranceSameAsPatient_1" description="TC_IS_M02 – Add same insurance 1st time with Same as Patient" finished-at="2026-07-11T14:49:21 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient" duration-ms="21884" status="PASS">
+        <test-method signature="testMajorSameInsuranceSameAsPatient_1()[pri:2, instance:com.opms.tests.InsuranceScenariosTest@2cf3d63b]" started-at="2026-07-12T20:26:45 IST" name="testMajorSameInsuranceSameAsPatient_1" description="TC_IS_M02 – Add same insurance 1st time with Same as Patient" finished-at="2026-07-12T20:27:07 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient" duration-ms="21504" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMajorSameInsuranceSameAsPatient_1 -->
-        <test-method signature="testMajorSameInsuranceSameAsPatient_2()[pri:3, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:49:21 IST" name="testMajorSameInsuranceSameAsPatient_2" description="TC_IS_M03 – Add same insurance 2nd time with Same as Patient" finished-at="2026-07-11T14:49:41 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceSameAsPatient_1" duration-ms="20174" status="PASS">
+        <test-method signature="testMajorSameInsuranceSameAsPatient_2()[pri:3, instance:com.opms.tests.InsuranceScenariosTest@2cf3d63b]" started-at="2026-07-12T20:27:07 IST" name="testMajorSameInsuranceSameAsPatient_2" description="TC_IS_M03 – Add same insurance 2nd time with Same as Patient" finished-at="2026-07-12T20:27:28 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceSameAsPatient_1" duration-ms="21544" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMajorSameInsuranceSameAsPatient_2 -->
-        <test-method signature="testMajorSameInsuranceOther_1()[pri:4, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:49:41 IST" name="testMajorSameInsuranceOther_1" description="TC_IS_M04 – Add same insurance 1st time with Other policyholder" finished-at="2026-07-11T14:50:06 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient" duration-ms="25373" status="PASS">
+        <test-method signature="testMajorSameInsuranceOther_1()[pri:4, instance:com.opms.tests.InsuranceScenariosTest@2cf3d63b]" started-at="2026-07-12T20:27:28 IST" name="testMajorSameInsuranceOther_1" description="TC_IS_M04 – Add same insurance 1st time with Other policyholder" finished-at="2026-07-12T20:27:56 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient" duration-ms="28096" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMajorSameInsuranceOther_1 -->
-        <test-method signature="testMajorSameInsuranceOther_2()[pri:5, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:50:06 IST" name="testMajorSameInsuranceOther_2" description="TC_IS_M05 – Add same insurance 2nd time with Other policyholder" finished-at="2026-07-11T14:50:32 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceOther_1" duration-ms="25348" status="PASS">
+        <test-method signature="testMajorSameInsuranceOther_2()[pri:5, instance:com.opms.tests.InsuranceScenariosTest@2cf3d63b]" started-at="2026-07-12T20:27:56 IST" name="testMajorSameInsuranceOther_2" description="TC_IS_M05 – Add same insurance 2nd time with Other policyholder" finished-at="2026-07-12T20:28:24 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testMajorSameInsuranceOther_1" duration-ms="27691" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMajorSameInsuranceOther_2 -->
-        <test-method signature="testMajorDifferentInsuranceSameAsPatient()[pri:6, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:50:32 IST" name="testMajorDifferentInsuranceSameAsPatient" description="TC_IS_M06 – Add different insurance with Same as Patient" finished-at="2026-07-11T14:50:52 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient" duration-ms="20487" status="PASS">
+        <test-method signature="testMajorDifferentInsuranceSameAsPatient()[pri:6, instance:com.opms.tests.InsuranceScenariosTest@2cf3d63b]" started-at="2026-07-12T20:28:24 IST" name="testMajorDifferentInsuranceSameAsPatient" description="TC_IS_M06 – Add different insurance with Same as Patient" finished-at="2026-07-12T20:28:45 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient" duration-ms="21278" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMajorDifferentInsuranceSameAsPatient -->
-        <test-method signature="testMajorDifferentInsuranceOther()[pri:7, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:50:52 IST" name="testMajorDifferentInsuranceOther" description="TC_IS_M07 – Add different insurance with Other policyholder" finished-at="2026-07-11T14:51:17 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient" duration-ms="25167" status="PASS">
+        <test-method signature="testMajorDifferentInsuranceOther()[pri:7, instance:com.opms.tests.InsuranceScenariosTest@2cf3d63b]" started-at="2026-07-12T20:28:45 IST" name="testMajorDifferentInsuranceOther" description="TC_IS_M07 – Add different insurance with Other policyholder" finished-at="2026-07-12T20:29:13 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMajorPatient" duration-ms="27693" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMajorDifferentInsuranceOther -->
-        <test-method signature="testCreateMinorPatient()[pri:8, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:51:17 IST" name="testCreateMinorPatient" description="TC_IS_N01 – Create minor patient (age &lt; 18) with Primary Contact" finished-at="2026-07-11T14:51:31 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testSetupInsuranceData" duration-ms="13210" status="PASS">
+        <test-method signature="testCreateMinorPatient()[pri:8, instance:com.opms.tests.InsuranceScenariosTest@2cf3d63b]" started-at="2026-07-12T20:29:13 IST" name="testCreateMinorPatient" description="TC_IS_N01 – Create minor patient (age &lt; 18) with Primary Contact" finished-at="2026-07-12T20:29:28 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testSetupInsuranceData" duration-ms="14627" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateMinorPatient -->
-        <test-method signature="testMinorSameInsuranceSameAsPatient_1()[pri:9, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:51:31 IST" name="testMinorSameInsuranceSameAsPatient_1" description="TC_IS_N02 – Add same insurance 1st time with Same as Patient (minor)" finished-at="2026-07-11T14:51:51 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient" duration-ms="20343" status="PASS">
+        <test-method signature="testMinorSameInsuranceSameAsPatient_1()[pri:9, instance:com.opms.tests.InsuranceScenariosTest@2cf3d63b]" started-at="2026-07-12T20:29:28 IST" name="testMinorSameInsuranceSameAsPatient_1" description="TC_IS_N02 – Add same insurance 1st time with Same as Patient (minor)" finished-at="2026-07-12T20:29:49 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient" duration-ms="21289" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMinorSameInsuranceSameAsPatient_1 -->
-        <test-method signature="testMinorSameInsuranceSameAsPatient_2()[pri:10, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:51:51 IST" name="testMinorSameInsuranceSameAsPatient_2" description="TC_IS_N03 – Add same insurance 2nd time with Same as Patient (minor)" finished-at="2026-07-11T14:52:11 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceSameAsPatient_1" duration-ms="20288" status="PASS">
+        <test-method signature="testMinorSameInsuranceSameAsPatient_2()[pri:10, instance:com.opms.tests.InsuranceScenariosTest@2cf3d63b]" started-at="2026-07-12T20:29:49 IST" name="testMinorSameInsuranceSameAsPatient_2" description="TC_IS_N03 – Add same insurance 2nd time with Same as Patient (minor)" finished-at="2026-07-12T20:30:10 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceSameAsPatient_1" duration-ms="21188" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMinorSameInsuranceSameAsPatient_2 -->
-        <test-method signature="testMinorSameInsuranceOther_1()[pri:11, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:52:11 IST" name="testMinorSameInsuranceOther_1" description="TC_IS_N04 – Add same insurance 1st time with Other policyholder (minor)" finished-at="2026-07-11T14:52:37 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient" duration-ms="25766" status="PASS">
+        <test-method signature="testMinorSameInsuranceOther_1()[pri:11, instance:com.opms.tests.InsuranceScenariosTest@2cf3d63b]" started-at="2026-07-12T20:30:10 IST" name="testMinorSameInsuranceOther_1" description="TC_IS_N04 – Add same insurance 1st time with Other policyholder (minor)" finished-at="2026-07-12T20:30:38 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient" duration-ms="27875" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMinorSameInsuranceOther_1 -->
-        <test-method signature="testMinorSameInsuranceOther_2()[pri:12, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:52:37 IST" name="testMinorSameInsuranceOther_2" description="TC_IS_N05 – Add same insurance 2nd time with Other policyholder (minor)" finished-at="2026-07-11T14:53:03 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceOther_1" duration-ms="25631" status="PASS">
+        <test-method signature="testMinorSameInsuranceOther_2()[pri:12, instance:com.opms.tests.InsuranceScenariosTest@2cf3d63b]" started-at="2026-07-12T20:30:38 IST" name="testMinorSameInsuranceOther_2" description="TC_IS_N05 – Add same insurance 2nd time with Other policyholder (minor)" finished-at="2026-07-12T20:31:05 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testMinorSameInsuranceOther_1" duration-ms="27391" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMinorSameInsuranceOther_2 -->
-        <test-method signature="testMinorDifferentInsuranceSameAsPatient()[pri:13, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:53:03 IST" name="testMinorDifferentInsuranceSameAsPatient" description="TC_IS_N06 – Add different insurance with Same as Patient (minor)" finished-at="2026-07-11T14:53:23 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient" duration-ms="20248" status="PASS">
+        <test-method signature="testMinorDifferentInsuranceSameAsPatient()[pri:13, instance:com.opms.tests.InsuranceScenariosTest@2cf3d63b]" started-at="2026-07-12T20:31:05 IST" name="testMinorDifferentInsuranceSameAsPatient" description="TC_IS_N06 – Add different insurance with Same as Patient (minor)" finished-at="2026-07-12T20:31:26 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient" duration-ms="21105" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMinorDifferentInsuranceSameAsPatient -->
-        <test-method signature="testMinorDifferentInsuranceOther()[pri:14, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:53:23 IST" name="testMinorDifferentInsuranceOther" description="TC_IS_N07 – Add different insurance with Other policyholder (minor)" finished-at="2026-07-11T14:53:48 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient" duration-ms="25610" status="PASS">
+        <test-method signature="testMinorDifferentInsuranceOther()[pri:14, instance:com.opms.tests.InsuranceScenariosTest@2cf3d63b]" started-at="2026-07-12T20:31:26 IST" name="testMinorDifferentInsuranceOther" description="TC_IS_N07 – Add different insurance with Other policyholder (minor)" finished-at="2026-07-12T20:31:54 IST" depends-on-methods="com.opms.tests.InsuranceScenariosTest.testCreateMinorPatient" duration-ms="27617" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMinorDifferentInsuranceOther -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.opms.tests.InsuranceScenariosTest@6d4d66d2]" started-at="2026-07-11T14:53:48 IST" name="tearDown" finished-at="2026-07-11T14:53:49 IST" duration-ms="311" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.opms.tests.InsuranceScenariosTest@2cf3d63b]" started-at="2026-07-12T20:31:54 IST" name="tearDown" finished-at="2026-07-12T20:31:54 IST" duration-ms="433" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

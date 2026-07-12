@@ -24,6 +24,19 @@ public class TestDataGenerator {
         return "5" + String.format("%09d", random.nextInt(1_000_000_000));
     }
 
+    private static final String ALPHANUMERIC_CHARS =
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    /** Generates a random alphanumeric string of the given length, e.g. for member/group plan IDs. */
+    public static String generateAlphanumeric(int length) {
+        Random random = new Random();
+        StringBuilder sb = new StringBuilder(length);
+        for (int i = 0; i < length; i++) {
+            sb.append(ALPHANUMERIC_CHARS.charAt(random.nextInt(ALPHANUMERIC_CHARS.length())));
+        }
+        return sb.toString();
+    }
+
     /**
      * Generates a valid DOB string in MMDDYYYY order (no separators).
      * Matches the datepicker placeholder MM/DD/YYYY — segments auto-advance.

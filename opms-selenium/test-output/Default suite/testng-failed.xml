@@ -5,21 +5,14 @@
     <classes>
       <class name="com.opms.tests.InsuranceScenariosTest">
         <methods>
-          <include name="testMinorSameInsuranceSameAsPatient_2"/>
           <include name="setUp"/>
+          <include name="testMinorSameInsuranceSameAsPatient_2"/>
           <include name="testMinorSameInsuranceOther_2"/>
-          <include name="testMajorSameInsuranceSameAsPatient_1"/>
+          <include name="tearDown"/>
           <include name="testMinorSameInsuranceSameAsPatient_1"/>
-          <include name="testCreateMajorPatient"/>
+          <include name="testCreateMinorPatient"/>
           <include name="testMinorDifferentInsuranceOther"/>
           <include name="testSetupInsuranceData"/>
-          <include name="testMajorSameInsuranceOther_1"/>
-          <include name="testMajorSameInsuranceOther_2"/>
-          <include name="testMajorDifferentInsuranceOther"/>
-          <include name="tearDown"/>
-          <include name="testCreateMinorPatient"/>
-          <include name="testMajorDifferentInsuranceSameAsPatient"/>
-          <include name="testMajorSameInsuranceSameAsPatient_2"/>
           <include name="testMinorDifferentInsuranceSameAsPatient"/>
           <include name="testMinorSameInsuranceOther_1"/>
         </methods>

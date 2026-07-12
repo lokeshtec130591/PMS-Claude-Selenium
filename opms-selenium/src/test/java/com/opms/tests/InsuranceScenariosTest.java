@@ -11,6 +11,8 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -195,7 +197,27 @@ public class InsuranceScenariosTest {
 
     // ── Shared helpers ────────────────────────────────────────────────────────
 
+    /** Accepts a native JS alert if one is open (this demo site occasionally fires a stray
+     *  "WebSDK v..." alert from a 3rd-party chat widget, unrelated to any test action). */
+    private void dismissNativeAlert() {
+        try {
+            driver.switchTo().alert().accept();
+            System.out.println("Dismissed unexpected native browser alert.");
+        } catch (NoAlertPresentException ignored) {}
+    }
+
+    /** Wraps driver.findElements with a single retry if a native alert intercepts the call. */
+    private List<WebElement> findElementsSafely(By by) {
+        try {
+            return driver.findElements(by);
+        } catch (UnhandledAlertException e) {
+            dismissNativeAlert();
+            return driver.findElements(by);
+        }
+    }
+
     private void dismissErrorDialog() {
+        dismissNativeAlert();
         try {
             List<WebElement> okBtns = driver.findElements(
                     By.xpath("//button[normalize-space(text())='OK']"));
@@ -255,11 +277,18 @@ public class InsuranceScenariosTest {
 
         driver.findElement(By.id("Primary Phone")).sendKeys(phone);
         driver.findElement(By.id("Email Address")).sendKeys(email);
-        driver.findElement(By.xpath("//label[@for='patientGender_" + gender + "']")).click();
+        dismissErrorDialog();
+
+        WebElement genderLabel = driver.findElement(By.xpath("//label[@for='patientGender_" + gender + "']"));
+        js.executeScript("arguments[0].click();", genderLabel);
 
         // Language, Marital Status, Dentist
-        driver.findElement(By.xpath("//label[@for='patientLanguagePreference_English']")).click();
-        driver.findElement(By.xpath("//label[@for='patientMaritalStatus_Single']")).click();
+        WebElement languageLabel = driver.findElement(By.xpath("//label[@for='patientLanguagePreference_English']"));
+        js.executeScript("arguments[0].click();", languageLabel);
+
+        WebElement maritalLabel = driver.findElement(By.xpath("//label[@for='patientMaritalStatus_Single']"));
+        js.executeScript("arguments[0].click();", maritalLabel);
+
         driver.findElement(By.xpath("//ng-select[@placeholder='Select Dentist']")).click();
         wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//div[contains(@class,'ng-option')]//span[text()='Johnny Bairstow (Orthopedic Dental Tooth Surgery CLinic)']")))
@@ -270,8 +299,11 @@ public class InsuranceScenariosTest {
     private void fillAddressSection() throws InterruptedException {
         driver.findElement(By.id("Address Line 1")).sendKeys("123 Test Street");
         driver.findElement(By.id("City")).sendKeys("Chicago");
+
         WebElement stateSelect = driver.findElement(By.xpath("//ng-select[@bindlabel='stateName']"));
-        stateSelect.click();
+        js.executeScript("arguments[0].scrollIntoView({block:'center'});", stateSelect);
+        Thread.sleep(300);
+        js.executeScript("arguments[0].click();", stateSelect);
         Thread.sleep(400);
         stateSelect.findElement(By.tagName("input")).sendKeys("Illinois");
         Thread.sleep(500);
@@ -291,7 +323,7 @@ public class InsuranceScenariosTest {
         driver.findElement(By.xpath(PC_CARD + "//input[@id='Last Name']"))
               .sendKeys(TestDataGenerator.generateUniqueString());
 
-        List<WebElement> datepickers = driver.findElements(By.xpath("//input[@placeholder='MM/DD/YYYY']"));
+        List<WebElement> datepickers = findElementsSafely(By.xpath("//input[@placeholder='MM/DD/YYYY']"));
         WebElement pcDob = datepickers.get(datepickers.size() - 1);
         js.executeScript("arguments[0].scrollIntoView({block:'center'});", pcDob);
         Thread.sleep(400);
@@ -411,27 +443,21 @@ public class InsuranceScenariosTest {
             WebElement dob = driver.findElement(By.xpath(
                     "//label[contains(text(),'Policyholder')]"
                     + "/ancestor::div[contains(@class,'card')]//input[@placeholder='MM/DD/YYYY']"));
-            dob.click(); Thread.sleep(300);
+            js.executeScript("arguments[0].scrollIntoView({block:'center'});", dob);
+            Thread.sleep(300);
+            js.executeScript("arguments[0].click();", dob);
+            Thread.sleep(300);
             dob.sendKeys(Keys.HOME); Thread.sleep(200);
             dob.sendKeys("05201985"); Thread.sleep(300);
             dob.sendKeys(Keys.TAB); Thread.sleep(500);
         } catch (Exception ignored) {}
 
-        // Gender at Birth
+        // Gender at Birth — confirmed live DOM id: subscriberGender_Male/Female/Other
         try {
-            WebElement gender = driver.findElement(By.xpath(
-                    "//input[@id='patientContactGender_Male']"
-                    + " | //input[@id='policyholderGender_Male']"));
+            WebElement gender = driver.findElement(By.id("subscriberGender_Male"));
             js.executeScript("arguments[0].click();", gender);
             Thread.sleep(300);
-        } catch (Exception ignored) {
-            try {
-                driver.findElement(By.xpath(
-                        "//label[@for='patientContactGender_Male']"
-                        + " | //label[contains(@for,'Gender_Male')]")).click();
-                Thread.sleep(300);
-            } catch (Exception ignored2) {}
-        }
+        } catch (Exception ignored) {}
 
         // Phone
         try {
@@ -449,15 +475,11 @@ public class InsuranceScenariosTest {
             em.clear(); em.sendKeys(TestDataGenerator.generateUniqueEmail());
         } catch (Exception ignored) {}
 
-        // Relationship
+        // Relationship to Patient — confirmed live DOM id: subscriberRelationshipToPatient_Spouse/Parent/...
         try {
-            WebElement rel = driver.findElement(By.xpath(
-                    "//label[contains(text(),'Policyholder')]"
-                    + "/ancestor::div[contains(@class,'card')]//ng-select[@placeholder='Select Relationship']"));
-            rel.click(); Thread.sleep(400);
-            wait.until(ExpectedConditions.elementToBeClickable(
-                    By.xpath("//div[contains(@class,'ng-option')]//span[text()='Spouse']"))).click();
-            Thread.sleep(500);
+            WebElement rel = driver.findElement(By.id("subscriberRelationshipToPatient_Spouse"));
+            js.executeScript("arguments[0].click();", rel);
+            Thread.sleep(300);
         } catch (Exception ignored) {}
 
         // Address
@@ -482,7 +504,10 @@ public class InsuranceScenariosTest {
             WebElement stateSelect = driver.findElement(By.xpath(
                     "//label[contains(text(),'Policyholder Address')]"
                     + "/ancestor::div[contains(@class,'card')]//ng-select[@bindlabel='stateName']"));
-            stateSelect.click(); Thread.sleep(400);
+            js.executeScript("arguments[0].scrollIntoView({block:'center'});", stateSelect);
+            Thread.sleep(300);
+            js.executeScript("arguments[0].click();", stateSelect);
+            Thread.sleep(400);
             stateSelect.findElement(By.tagName("input")).sendKeys("Illinois");
             Thread.sleep(500);
             wait.until(ExpectedConditions.elementToBeClickable(
@@ -500,6 +525,17 @@ public class InsuranceScenariosTest {
 
     /** Saves insurance and clicks OK on the confirmation popup. */
     private void saveInsuranceAndConfirm() throws InterruptedException {
+        // Policyholder Member # — alphanumeric value
+        WebElement memberField = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@id='Policyholder Member #']")));
+        memberField.clear();
+        memberField.sendKeys(TestDataGenerator.generateAlphanumeric(9));
+
+        // Group Plan # — alphanumeric value
+        WebElement groupPlanField = driver.findElement(By.xpath("//input[@id='Group Plan #']"));
+        groupPlanField.clear();
+        groupPlanField.sendKeys(TestDataGenerator.generateAlphanumeric(9));
+
         // Group / Employer Name — scroll to make it visible and fill
         js.executeScript("window.scrollBy(0, 2000);");
         Thread.sleep(800);
