@@ -20,6 +20,12 @@
         </classes>
     </test>
 
+    <test name="Letter Bulk Import Tests" preserve-order="true">
+        <classes>
+            <class name="com.opms.tests.LetterBulkImportTest"/>
+        </classes>
+    </test>
+
     <test name="Lookup Tests" preserve-order="true">
         <classes>
             <class name="com.opms.tests.LookupTest"/>
