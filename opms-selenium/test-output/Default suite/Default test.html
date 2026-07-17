@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>3/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Jul 17 10:35:40 IST 2026</td>
+<td>Started on:</td><td>Fri Jul 17 19:26:36 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>123 seconds (123246 ms)</td>
+<tr><td>Total time:</td><td>150 seconds (150120 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,26 +76,28 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.opms.tests.LetterBulkImportTest.testImportLetterFromDoc()'><b>testImportLetterFromDoc</b><br>Test class: com.opms.tests.LetterBulkImportTest<br>Test method: Bulk import: create one template per Word document<br>Parameters: AWPP011, Subject- AWPP011, «TodaysDate»
+<td title='com.opms.tests.LetterBulkImportTest.testImportLetterFromDoc()'><b>testImportLetterFromDoc</b><br>Test class: com.opms.tests.LetterBulkImportTest<br>Test method: Bulk import: create one template per Word document<br>Parameters: Test Appointment, Test Appointment, {{TodayDate}}
 
-«InsideName»
-«InsideAddress»
+{{PatientName}}
+{{PatientAddress1}}
+{{PatientAddress2}}
+{{PatientCity}}, {{PatientState}} {{PatientZip}}
 
-Dear «AutoSalutation»:
+Dear {{PatientPreferredName}}:
 
 Let’s review a few important points we talked about in the office today:
 
-*	Clean braces are bright and shiny.  Dirty braces are covered with a white, milky film of bacteria called plaque.
-*	Plaque causes tooth decay, bad breath, swollen gums, and eventual gum disease.  As plaque builds up along the gumline, bacterial irritants cause your gum tissues to become red, puffy, sore, and likely to bleed.
-*	Gums that bleed or swell have not been thoroughly brushed.  Brush well between the gums and the braces.
-*	The best methods for removing plaque are: proper toothbrushing, flossing, dry brushing, and water-pik usage.  This daily oral hygiene home care program takes time — your time! But, it can also shorten the time you have to wear your braces.
+Clean braces are bright and shiny.  Dirty braces are covered with a white, milky film of bacteria called plaque.
+Plaque causes tooth decay, bad breath, swollen gums, and eventual gum disease.  As plaque builds up along the gumline, bacterial irritants cause your gum tissues to become red, puffy, sore, and likely to bleed.
+Gums that bleed or swell have not been thoroughly brushed.  Brush well between the gums and the braces.
+The best methods for removing plaque are: proper toothbrushing, flossing, dry brushing, and water-pik usage.  This daily oral hygiene home care program takes time — your time! But, it can also shorten the time you have to wear your braces.
 
 A Few Reminders:
 
-1.	Brush after eating.  If it is impossible to brush, rinse your mouth thoroughly.
-2.	Cut down on toothpaste.  Too much toothpaste makes the toothbrush bristles limp and unable to clean properly.
-3.	Thirty minutes of dry brushing with a soft brush every day should solve your bleeding gum problem.
-4.	Never sit down in a treatment chair unless your teeth are clean.  Braces and appliances cannot be adjusted when they’re dirty.
+Brush after eating.  If it is impossible to brush, rinse your mouth thoroughly.
+Cut down on toothpaste.  Too much toothpaste makes the toothbrush bristles limp and unable to clean properly.
+Thirty minutes of dry brushing with a soft brush every day should solve your bleeding gum problem.
+Never sit down in a treatment chair unless your teeth are clean.  Braces and appliances cannot be adjusted when they’re dirty.
 
 Okay, now it’s up to you.  Please call if you have any questions or need help.
 
@@ -104,18 +106,48 @@ Sincerely,
 
 
 
-«Farewell», AWPP011.DOC</td>
+{{DoctorSignature}}, Test Appointment.docx</td>
 <td></td>
-<td>34</td>
+<td>43</td>
 <td>com.opms.tests.LetterBulkImportTest@563f38c4</td></tr>
 <tr>
-<td title='com.opms.tests.LetterBulkImportTest.testImportLetterFromDoc()'><b>testImportLetterFromDoc</b><br>Test class: com.opms.tests.LetterBulkImportTest<br>Test method: Bulk import: create one template per Word document<br>Parameters: AWPP018, Subject- AWPP018, «TodaysDate»
+<td title='com.opms.tests.LetterBulkImportTest.testImportLetterFromDoc()'><b>testImportLetterFromDoc</b><br>Test class: com.opms.tests.LetterBulkImportTest<br>Test method: Bulk import: create one template per Word document<br>Parameters: Test Consultation, Test Consultation, {{TodayDate}}
 
 
-«InsideName»
-«InsideAddress»
+{{PatientName}}
+{{PatientAddress1}}
+{{PatientAddress2}}
+{{PatientCity}}, {{PatientState}} {{PatientZip}}
 
-Dear «AutoSalutation»:
+Dear {{PatientPreferredName}}:
+
+During the consultation, it is often impossible to talk about everything, either for lack of time or something slipping my mind.  At this time, I would like to reinforce and re-emphasize points that may not have been discussed during your consultation visit.
+
+My staff is an integral part of this practice since I would be unable to accomplish all of the various technical tasks without their considerable help.  You may expect to see them performing many services for the patients as I am not able to be in all areas at once.  Should you have questions during treatment, please feel free to speak to either me or my staff.  They are very competent to handle most problems, and you will find them easily accessible.
+
+Orthodontic treatment cannot be completed without the total cooperation of the patient.  The areas which we are most concerned about are cleaning the teeth, wearing elastics, following instructions for headgear, and not abusing the braces. One of the orthodontist's greatest joys is a happy, cooperative patient, and an orthodontist's deepest despair is the occasional patient who “couldn’t care less” about the whole project.
+
+Again, if you should have questions concerning your treatment, please feel free to seek me out or call.  I welcome your interest.
+
+For the most part I expect the next couple of years to be a lot of fun for all of us, and look forward to getting to know you better.
+
+Sincerely,
+
+
+{{DoctorSignature}}, Test Consultation.docx</td>
+<td></td>
+<td>43</td>
+<td>com.opms.tests.LetterBulkImportTest@563f38c4</td></tr>
+<tr>
+<td title='com.opms.tests.LetterBulkImportTest.testImportLetterFromDoc()'><b>testImportLetterFromDoc</b><br>Test class: com.opms.tests.LetterBulkImportTest<br>Test method: Bulk import: create one template per Word document<br>Parameters: Test Payment, Test Payment, {{TodayDate}}
+
+
+{{PatientName}}
+{{PatientAddress1}}
+{{PatientAddress2}}
+{{PatientCity}}, {{PatientState}} {{PatientZip}}
+
+Dear {{PatientPreferredName}}:
 
 
 When you were in today, it was evident that our instructions for proper teeth cleaning are not being followed.  As a result, you have an infection of the gum tissue that could spread and cause a loss of the bone which surrounds the teeth.
@@ -130,35 +162,9 @@ Sincerely,
 
 
 
-«Farewell», AWPP018.DOC</td>
+{{DoctorSignature}}, Test Payment.docx</td>
 <td></td>
-<td>34</td>
-<td>com.opms.tests.LetterBulkImportTest@563f38c4</td></tr>
-<tr>
-<td title='com.opms.tests.LetterBulkImportTest.testImportLetterFromDoc()'><b>testImportLetterFromDoc</b><br>Test class: com.opms.tests.LetterBulkImportTest<br>Test method: Bulk import: create one template per Word document<br>Parameters: AWPP006, Subject- AWPP006, «TodaysDate»
-
-
-«InsideName»
-«InsideAddress»
-
-Dear «AutoSalutation»:
-
-During the consultation, it is often impossible to talk about everything, either for lack of time or something slipping my mind.  At this time, I would like to reinforce and re-emphasize points that may not have been discussed during your consultation visit.
-
-*	My staff is an integral part of this practice since I would be unable to accomplish all of the various technical tasks without their considerable help.  You may expect to see them performing many services for the patients as I am not able to be in all areas at once.  Should you have questions during treatment, please feel free to speak to either me or my staff.  They are very competent to handle most problems, and you will find them easily accessible.
-
-*	Orthodontic treatment cannot be completed without the total cooperation of the patient.  The areas which we are most concerned about are cleaning the teeth, wearing elastics, following instructions for headgear, and not abusing the braces. One of the orthodontist's greatest joys is a happy, cooperative patient, and an orthodontist's deepest despair is the occasional patient who “couldn’t care less” about the whole project.
-
-Again, if you should have questions concerning your treatment, please feel free to seek me out or call.  I welcome your interest.
-
-For the most part I expect the next couple of years to be a lot of fun for all of us, and look forward to getting to know you better.
-
-Sincerely,
-
-
-«Farewell», AWPP006.DOC</td>
-<td></td>
-<td>35</td>
+<td>43</td>
 <td>com.opms.tests.LetterBulkImportTest@563f38c4</td></tr>
 </table><p>
 </body>

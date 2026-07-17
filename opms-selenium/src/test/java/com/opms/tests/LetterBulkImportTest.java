@@ -88,7 +88,7 @@ public class LetterBulkImportTest {
         List<Object[]> rows = new ArrayList<>();
         for (File f : files) {
             String nameWithoutExt = f.getName().replaceAll("(?i)\\.(docx?)$", "");
-            String subject        = "Subject- " + nameWithoutExt;
+            String subject        = nameWithoutExt;
             String content        = extractDocText(f);
             rows.add(new Object[]{nameWithoutExt, subject, content, f.getName()});
         }
@@ -183,12 +183,39 @@ public class LetterBulkImportTest {
         System.out.println("LetterBulkImportTest: importing [" + fileName + "]");
         navigateToLetterSection();
 
-        // Click Add New / Add Letter button
-        WebElement addBtn = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//button[contains(.,'Add') and contains(.,'Letter')]"
-                       + " | //button[contains(@class,'btn') and contains(.,'New')]"
-                       + " | //button[contains(.,'Add New')]"
-                       + " | //i[contains(@class,'fa-plus')]/..")));
+        // Debug: print all visible button texts on the page
+        try {
+            List<WebElement> allBtns = driver.findElements(By.tagName("button"));
+            StringBuilder btnLog = new StringBuilder("LetterBulkImportTest: buttons on page = [");
+            for (WebElement b : allBtns) {
+                if (b.isDisplayed()) btnLog.append("'").append(b.getText().trim()).append("' ");
+            }
+            System.out.println(btnLog.append("]").toString());
+        } catch (Exception ignored) {}
+
+        // Click Add New / Add Letter button — try multiple XPath patterns
+        WebElement addBtn = null;
+        String[] addBtnXpaths = {
+            "//button[contains(normalize-space(.),'Add New')]",
+            "//button[contains(normalize-space(.),'Add Letter')]",
+            "//button[contains(normalize-space(.),'Add Template')]",
+            "//button[contains(normalize-space(.),'New Template')]",
+            "//button[.//i[contains(@class,'fa-plus')]]",
+            "//button[contains(@class,'btn-primary')]",
+            "//button[contains(@class,'add')]",
+            "//a[contains(@class,'btn') and (contains(.,'Add') or contains(.,'New'))]"
+        };
+        for (String xp : addBtnXpaths) {
+            try {
+                addBtn = new WebDriverWait(driver, Duration.ofSeconds(5))
+                        .until(ExpectedConditions.elementToBeClickable(By.xpath(xp)));
+                System.out.println("LetterBulkImportTest: Add button found with XPath: " + xp);
+                break;
+            } catch (Exception ignored) {}
+        }
+        if (addBtn == null) {
+            throw new RuntimeException("Could not find Add button on Template page for [" + fileName + "]");
+        }
         js.executeScript("arguments[0].click();", addBtn);
         Thread.sleep(2000);
         dismissErrorDialog();
@@ -200,41 +227,65 @@ public class LetterBulkImportTest {
         nameField.sendKeys(templateName);
         Thread.sleep(300);
 
-        // Subject = "Subject- <filename>"
+        // Subject = template name value
         WebElement subjectField = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//input[@id='Subject']")));
         subjectField.clear();
         subjectField.sendKeys(subject);
-        Thread.sleep(300);
+        // Press Tab to release focus from Subject before touching Syncfusion
+        subjectField.sendKeys(org.openqa.selenium.Keys.TAB);
+        Thread.sleep(500);
+
+        // Email Content (TinyMCE) — mandatory field, fill with letter content
+        try {
+            WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(8));
+            WebElement tinyFrame = shortWait.until(ExpectedConditions.presenceOfElementLocated(
+                    By.cssSelector("iframe[id*='tiny-angular'][id$='_ifr']")));
+            driver.switchTo().frame(tinyFrame);
+            WebElement tinymceBody = driver.findElement(By.id("tinymce"));
+            tinymceBody.click();
+            tinymceBody.sendKeys(letterContent);
+            driver.switchTo().defaultContent();
+            Thread.sleep(500);
+            System.out.println("LetterBulkImportTest: filled Email Content for [" + fileName + "]");
+        } catch (Exception e) {
+            driver.switchTo().defaultContent();
+            System.out.println("LetterBulkImportTest: TinyMCE not found for [" + fileName + "]: " + e.getMessage());
+        }
 
         // Syncfusion document editor — paste full letter text via system clipboard
         if (letterContent != null && !letterContent.isEmpty()) {
             try {
-                WebElement syncEditor = wait.until(ExpectedConditions.elementToBeClickable(
+                WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+                WebElement syncEditor = shortWait.until(ExpectedConditions.presenceOfElementLocated(
                         By.id("syncontainer_editor_viewerContainer")));
                 js.executeScript("arguments[0].scrollIntoView({block:'center'});", syncEditor);
                 Thread.sleep(500);
-                syncEditor.click();
-                Thread.sleep(800);
 
-                // Put letter text onto the real system clipboard using Java AWT
+                // Use Actions.click() to properly transfer keyboard focus to Syncfusion
+                actions.moveToElement(syncEditor).click().perform();
+                Thread.sleep(1000);
+                System.out.println("LetterBulkImportTest: clicked Syncfusion editor for [" + fileName + "]");
+
+                // Set letter text on the OS system clipboard via Java AWT
                 StringSelection selection = new StringSelection(letterContent);
                 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, selection);
-                Thread.sleep(300);
+                Thread.sleep(400);
 
-                // Ctrl+A (clear existing) then Ctrl+V (paste) via Robot so it hits the OS clipboard
+                // Ctrl+A to clear existing content, then Ctrl+V to paste
                 Robot robot = new Robot();
+                robot.delay(300);
                 robot.keyPress(KeyEvent.VK_CONTROL);
                 robot.keyPress(KeyEvent.VK_A);
                 robot.keyRelease(KeyEvent.VK_A);
                 robot.keyRelease(KeyEvent.VK_CONTROL);
-                Thread.sleep(200);
+                robot.delay(300);
 
                 robot.keyPress(KeyEvent.VK_CONTROL);
                 robot.keyPress(KeyEvent.VK_V);
                 robot.keyRelease(KeyEvent.VK_V);
                 robot.keyRelease(KeyEvent.VK_CONTROL);
-                Thread.sleep(1000);
+                robot.delay(1200);
 
                 System.out.println("LetterBulkImportTest: pasted content into Syncfusion for [" + fileName + "]");
             } catch (Exception e) {
@@ -242,11 +293,13 @@ public class LetterBulkImportTest {
             }
         }
 
-        // Save
+        // Save — target the form Save button (not the Syncfusion toolbar Save)
+        // The form Save button is outside the ejs-documenteditorcontainer toolbar
         WebElement saveBtn = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//button[contains(@class,'btn-submit')]"
-                       + " | //button[normalize-space(text())='Save']"
-                       + " | //button[contains(.,'Save')]")));
+                       + " | //div[not(ancestor::ejs-documenteditorcontainer)]//button[normalize-space(text())='Save']"
+                       + " | //form//button[normalize-space(text())='Save']"
+                       + " | //app-template//button[normalize-space(text())='Save']")));
         js.executeScript("arguments[0].scrollIntoView({block:'center'});", saveBtn);
         Thread.sleep(300);
         js.executeScript("arguments[0].click();", saveBtn);

@@ -2,96 +2,51 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-17T10:35:40 IST" name="Default suite" finished-at="2026-07-17T10:37:43 IST" duration-ms="123246">
+  <suite started-at="2026-07-17T19:26:36 IST" name="Default suite" finished-at="2026-07-17T19:29:06 IST" duration-ms="150120">
     <groups>
     </groups>
-    <test started-at="2026-07-17T10:35:40 IST" name="Default test" finished-at="2026-07-17T10:37:43 IST" duration-ms="123246">
+    <test started-at="2026-07-17T19:26:36 IST" name="Default test" finished-at="2026-07-17T19:29:06 IST" duration-ms="150120">
       <class name="com.opms.tests.LetterBulkImportTest">
-        <test-method is-config="true" signature="setUpSuite()[pri:0, instance:com.opms.tests.LetterBulkImportTest@563f38c4]" started-at="2026-07-17T10:35:40 IST" name="setUpSuite" finished-at="2026-07-17T10:35:58 IST" duration-ms="18186" status="PASS">
+        <test-method is-config="true" signature="setUpSuite()[pri:0, instance:com.opms.tests.LetterBulkImportTest@563f38c4]" started-at="2026-07-17T19:26:36 IST" name="setUpSuite" finished-at="2026-07-17T19:26:54 IST" duration-ms="18252" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpSuite -->
-        <test-method signature="testImportLetterFromDoc(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.opms.tests.LetterBulkImportTest@563f38c4]" started-at="2026-07-17T10:35:59 IST" name="testImportLetterFromDoc" description="Bulk import: create one template per Word document" data-provider="letterFiles" finished-at="2026-07-17T10:36:34 IST" duration-ms="35357" status="PASS">
+        <test-method signature="testImportLetterFromDoc(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.opms.tests.LetterBulkImportTest@563f38c4]" started-at="2026-07-17T19:26:55 IST" name="testImportLetterFromDoc" description="Bulk import: create one template per Word document" data-provider="letterFiles" finished-at="2026-07-17T19:27:38 IST" duration-ms="43229" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[AWPP006]]>
+                <![CDATA[Test Appointment]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Subject- AWPP006]]>
+                <![CDATA[Test Appointment]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[«TodaysDate»
+                <![CDATA[{{TodayDate}}
 
+{{PatientName}}
+{{PatientAddress1}}
+{{PatientAddress2}}
+{{PatientCity}}, {{PatientState}} {{PatientZip}}
 
-«InsideName»
-«InsideAddress»
-
-Dear «AutoSalutation»:
-
-During the consultation, it is often impossible to talk about everything, either for lack of time or something slipping my mind.  At this time, I would like to reinforce and re-emphasize points that may not have been discussed during your consultation visit.
-
-*My staff is an integral part of this practice since I would be unable to accomplish all of the various technical tasks without their considerable help.  You may expect to see them performing many services for the patients as I am not able to be in all areas at once.  Should you have questions during treatment, please feel free to speak to either me or my staff.  They are very competent to handle most problems, and you will find them easily accessible.
-
-*Orthodontic treatment cannot be completed without the total cooperation of the patient.  The areas which we are most concerned about are cleaning the teeth, wearing elastics, following instructions for headgear, and not abusing the braces. One of the orthodontist's greatest joys is a happy, cooperative patient, and an orthodontist's deepest despair is the occasional patient who “couldn’t care less” about the whole project.
-
-Again, if you should have questions concerning your treatment, please feel free to seek me out or call.  I welcome your interest.
-
-For the most part I expect the next couple of years to be a lot of fun for all of us, and look forward to getting to know you better.
-
-Sincerely,
-
-
-«Farewell»]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[AWPP006.DOC]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testImportLetterFromDoc -->
-        <test-method signature="testImportLetterFromDoc(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.opms.tests.LetterBulkImportTest@563f38c4]" started-at="2026-07-17T10:36:34 IST" name="testImportLetterFromDoc" description="Bulk import: create one template per Word document" data-provider="letterFiles" finished-at="2026-07-17T10:37:09 IST" duration-ms="34575" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[AWPP011]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Subject- AWPP011]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[«TodaysDate»
-
-«InsideName»
-«InsideAddress»
-
-Dear «AutoSalutation»:
+Dear {{PatientPreferredName}}:
 
 Let’s review a few important points we talked about in the office today:
 
-*Clean braces are bright and shiny.  Dirty braces are covered with a white, milky film of bacteria called plaque.
-*Plaque causes tooth decay, bad breath, swollen gums, and eventual gum disease.  As plaque builds up along the gumline, bacterial irritants cause your gum tissues to become red, puffy, sore, and likely to bleed.
-*Gums that bleed or swell have not been thoroughly brushed.  Brush well between the gums and the braces.
-*The best methods for removing plaque are: proper toothbrushing, flossing, dry brushing, and water-pik usage.  This daily oral hygiene home care program takes time — your time! But, it can also shorten the time you have to wear your braces.
+Clean braces are bright and shiny.  Dirty braces are covered with a white, milky film of bacteria called plaque.
+Plaque causes tooth decay, bad breath, swollen gums, and eventual gum disease.  As plaque builds up along the gumline, bacterial irritants cause your gum tissues to become red, puffy, sore, and likely to bleed.
+Gums that bleed or swell have not been thoroughly brushed.  Brush well between the gums and the braces.
+The best methods for removing plaque are: proper toothbrushing, flossing, dry brushing, and water-pik usage.  This daily oral hygiene home care program takes time — your time! But, it can also shorten the time you have to wear your braces.
 
 A Few Reminders:
 
-1.Brush after eating.  If it is impossible to brush, rinse your mouth thoroughly.
-2.Cut down on toothpaste.  Too much toothpaste makes the toothbrush bristles limp and unable to clean properly.
-3.Thirty minutes of dry brushing with a soft brush every day should solve your bleeding gum problem.
-4.Never sit down in a treatment chair unless your teeth are clean.  Braces and appliances cannot be adjusted when they’re dirty.
+Brush after eating.  If it is impossible to brush, rinse your mouth thoroughly.
+Cut down on toothpaste.  Too much toothpaste makes the toothbrush bristles limp and unable to clean properly.
+Thirty minutes of dry brushing with a soft brush every day should solve your bleeding gum problem.
+Never sit down in a treatment chair unless your teeth are clean.  Braces and appliances cannot be adjusted when they’re dirty.
 
 Okay, now it’s up to you.  Please call if you have any questions or need help.
 
@@ -100,39 +55,90 @@ Sincerely,
 
 
 
-«Farewell»]]>
+{{DoctorSignature}}]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[AWPP011.DOC]]>
+                <![CDATA[Test Appointment.docx]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testImportLetterFromDoc -->
-        <test-method signature="testImportLetterFromDoc(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.opms.tests.LetterBulkImportTest@563f38c4]" started-at="2026-07-17T10:37:09 IST" name="testImportLetterFromDoc" description="Bulk import: create one template per Word document" data-provider="letterFiles" finished-at="2026-07-17T10:37:43 IST" duration-ms="34473" status="PASS">
+        <test-method signature="testImportLetterFromDoc(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.opms.tests.LetterBulkImportTest@563f38c4]" started-at="2026-07-17T19:27:38 IST" name="testImportLetterFromDoc" description="Bulk import: create one template per Word document" data-provider="letterFiles" finished-at="2026-07-17T19:28:22 IST" duration-ms="43951" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[AWPP018]]>
+                <![CDATA[Test Consultation]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Subject- AWPP018]]>
+                <![CDATA[Test Consultation]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[«TodaysDate»
+                <![CDATA[{{TodayDate}}
 
 
-«InsideName»
-«InsideAddress»
+{{PatientName}}
+{{PatientAddress1}}
+{{PatientAddress2}}
+{{PatientCity}}, {{PatientState}} {{PatientZip}}
 
-Dear «AutoSalutation»:
+Dear {{PatientPreferredName}}:
+
+During the consultation, it is often impossible to talk about everything, either for lack of time or something slipping my mind.  At this time, I would like to reinforce and re-emphasize points that may not have been discussed during your consultation visit.
+
+My staff is an integral part of this practice since I would be unable to accomplish all of the various technical tasks without their considerable help.  You may expect to see them performing many services for the patients as I am not able to be in all areas at once.  Should you have questions during treatment, please feel free to speak to either me or my staff.  They are very competent to handle most problems, and you will find them easily accessible.
+
+Orthodontic treatment cannot be completed without the total cooperation of the patient.  The areas which we are most concerned about are cleaning the teeth, wearing elastics, following instructions for headgear, and not abusing the braces. One of the orthodontist's greatest joys is a happy, cooperative patient, and an orthodontist's deepest despair is the occasional patient who “couldn’t care less” about the whole project.
+
+Again, if you should have questions concerning your treatment, please feel free to seek me out or call.  I welcome your interest.
+
+For the most part I expect the next couple of years to be a lot of fun for all of us, and look forward to getting to know you better.
+
+Sincerely,
+
+
+{{DoctorSignature}}]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test Consultation.docx]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testImportLetterFromDoc -->
+        <test-method signature="testImportLetterFromDoc(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.opms.tests.LetterBulkImportTest@563f38c4]" started-at="2026-07-17T19:28:22 IST" name="testImportLetterFromDoc" description="Bulk import: create one template per Word document" data-provider="letterFiles" finished-at="2026-07-17T19:29:06 IST" duration-ms="43850" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Test Payment]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Test Payment]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{{TodayDate}}
+
+
+{{PatientName}}
+{{PatientAddress1}}
+{{PatientAddress2}}
+{{PatientCity}}, {{PatientState}} {{PatientZip}}
+
+Dear {{PatientPreferredName}}:
 
 
 When you were in today, it was evident that our instructions for proper teeth cleaning are not being followed.  As a result, you have an infection of the gum tissue that could spread and cause a loss of the bone which surrounds the teeth.
@@ -147,19 +153,19 @@ Sincerely,
 
 
 
-«Farewell»]]>
+{{DoctorSignature}}]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[AWPP018.DOC]]>
+                <![CDATA[Test Payment.docx]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testImportLetterFromDoc -->
-        <test-method is-config="true" signature="tearDownSuite()[pri:0, instance:com.opms.tests.LetterBulkImportTest@563f38c4]" started-at="2026-07-17T10:37:43 IST" name="tearDownSuite" finished-at="2026-07-17T10:37:43 IST" duration-ms="288" status="PASS">
+        <test-method is-config="true" signature="tearDownSuite()[pri:0, instance:com.opms.tests.LetterBulkImportTest@563f38c4]" started-at="2026-07-17T19:29:06 IST" name="tearDownSuite" finished-at="2026-07-17T19:29:06 IST" duration-ms="222" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownSuite -->
