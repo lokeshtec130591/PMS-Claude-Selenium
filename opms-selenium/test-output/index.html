@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Infinire_Innovative\AppData\Local\Temp\testng-eclipse-1169934147\testng-customsuite.xml</span>
+                    <span>C:\Users\Infinire_Innovative\AppData\Local\Temp\testng-eclipse-2041070172\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,40 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">4 methods, 1 failed,  2 skipped,  1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.LoginAndCreatePatient" class="method navigator-link" hash-for-method="testSelectLocation">testSelectLocation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods skipped suite-Default_suite"> (hide)</a> <!-- hide-methods skipped suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods skipped suite-Default_suite"> (show)</a> <!-- show-methods skipped suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Default_suite">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.LoginAndCreatePatient" class="method navigator-link" hash-for-method="testCreatePatient">testCreatePatient</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.LoginAndCreatePatient" class="method navigator-link" hash-for-method="testSearchPatient">testSearchPatient</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,47 +136,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.LetterBulkImportTest" class="method navigator-link" hash-for-method="testImportLetterFromDoc(Test Appointment, Test Appointment, {{TodayDate}}
-
-{{PatientName}}
-{{PatientAddress1}}
-{{PatientAddr...)">testImportLetterFromDoc(Test Appointment, Test Appointment, {{TodayDate}}
-
-{{PatientName}}
-{{PatientAddress1}}
-{{PatientAddr...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.LetterBulkImportTest" class="method navigator-link" hash-for-method="testImportLetterFromDoc(Test Consultation, Test Consultation, {{TodayDate}}
-
-
-{{PatientName}}
-{{PatientAddress1}}
-{{PatientA...)">testImportLetterFromDoc(Test Consultation, Test Consultation, {{TodayDate}}
-
-
-{{PatientName}}
-{{PatientAddress1}}
-{{PatientA...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.LetterBulkImportTest" class="method navigator-link" hash-for-method="testImportLetterFromDoc(Test Payment, Test Payment, {{TodayDate}}
-
-
-{{PatientName}}
-{{PatientAddress1}}
-{{PatientAddress2}}
-...)">testImportLetterFromDoc(Test Payment, Test Payment, {{TodayDate}}
-
-
-{{PatientName}}
-{{PatientAddress1}}
-{{PatientAddress2}}
-...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.LoginAndCreatePatient" class="method navigator-link" hash-for-method="testLogin">testLogin</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -158,146 +151,167 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.opms.tests.LetterBulkImportTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.opms.tests.LoginAndCreatePatient</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testImportLetterFromDoc(Test Appointment, Test Appointment, {{TodayDate}}
+                  <a name="testSelectLocation">
+                  </a> <!-- testSelectLocation -->
+                  <span class="method-name">testSelectLocation</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
+  (Session info: chrome=150.0.7871.115)
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3478b0e8ec14bda10a6ae043629a3d1d, findElement {value=//ng-select[@bindlabel=&apos;practiceLocationName&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.115, chrome: {chromedriverVersion: 150.0.7871.124 (9261fd0a595..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60248}, goog:processID: 31092, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60248/devtoo..., se:cdpVersion: 150.0.7871.115, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3478b0e8ec14bda10a6ae043629a3d1d
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at com.opms.tests.LoginAndCreatePatient.testSelectLocation(LoginAndCreatePatient.java:67)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 
-{{PatientName}}
-{{PatientAddress1}}
-{{PatientAddr...)">
-                  </a> <!-- testImportLetterFromDoc(Test Appointment, Test Appointment, {{TodayDate}}
-
-{{PatientName}}
-{{PatientAddress1}}
-{{PatientAddr...) -->
-                  <span class="method-name">testImportLetterFromDoc</span>
-                  <span class="parameters">(Test Appointment,Test Appointment,{{TodayDate}}
-
-{{PatientName}}
-{{PatientAddress1}}
-{{PatientAddress2}}
-{{PatientCity}}, {{PatientState}} {{PatientZip}}
-
-Dear {{PatientPreferredName}}:
-
-Let’s review a few important points we talked about in the office today:
-
-Clean braces are bright and shiny.  Dirty braces are covered with a white, milky film of bacteria called plaque.
-Plaque causes tooth decay, bad breath, swollen gums, and eventual gum disease.  As plaque builds up along the gumline, bacterial irritants cause your gum tissues to become red, puffy, sore, and likely to bleed.
-Gums that bleed or swell have not been thoroughly brushed.  Brush well between the gums and the braces.
-The best methods for removing plaque are: proper toothbrushing, flossing, dry brushing, and water-pik usage.  This daily oral hygiene home care program takes time — your time! But, it can also shorten the time you have to wear your braces.
-
-A Few Reminders:
-
-Brush after eating.  If it is impossible to brush, rinse your mouth thoroughly.
-Cut down on toothpaste.  Too much toothpaste makes the toothbrush bristles limp and unable to clean properly.
-Thirty minutes of dry brushing with a soft brush every day should solve your bleeding gum problem.
-Never sit down in a treatment chair unless your teeth are clean.  Braces and appliances cannot be adjusted when they’re dirty.
-
-Okay, now it’s up to you.  Please call if you have any questions or need help.
-
-Sincerely,
-
-
-
-
-{{DoctorSignature}},Test Appointment.docx)</span>
+</div> <!-- stack-trace -->
                   <em>
-(Bulk import: create one template per Word document)                  </em>
+(Select practice location from dropdown)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.opms.tests.LoginAndCreatePatient</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreatePatient">
+                  </a> <!-- testCreatePatient -->
+                  <span class="method-name">testCreatePatient</span>
+                  <div class="stack-trace">java.lang.Throwable: Method com.opms.tests.LoginAndCreatePatient.testCreatePatient() on instance com.opms.tests.LoginAndCreatePatient@1530c739 depends on not successfully finished methods 
+[com.opms.tests.LoginAndCreatePatient.testSelectLocation() on instance com.opms.tests.LoginAndCreatePatient@1530c739]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Create a new patient with valid details)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testImportLetterFromDoc(Test Consultation, Test Consultation, {{TodayDate}}
+                  <a name="testSearchPatient">
+                  </a> <!-- testSearchPatient -->
+                  <span class="method-name">testSearchPatient</span>
+                  <div class="stack-trace">java.lang.Throwable: Method com.opms.tests.LoginAndCreatePatient.testSearchPatient() on instance com.opms.tests.LoginAndCreatePatient@1530c739 depends on not successfully finished methods 
+[com.opms.tests.LoginAndCreatePatient.testCreatePatient() on instance com.opms.tests.LoginAndCreatePatient@1530c739]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 
-
-{{PatientName}}
-{{PatientAddress1}}
-{{PatientA...)">
-                  </a> <!-- testImportLetterFromDoc(Test Consultation, Test Consultation, {{TodayDate}}
-
-
-{{PatientName}}
-{{PatientAddress1}}
-{{PatientA...) -->
-                  <span class="method-name">testImportLetterFromDoc</span>
-                  <span class="parameters">(Test Consultation,Test Consultation,{{TodayDate}}
-
-
-{{PatientName}}
-{{PatientAddress1}}
-{{PatientAddress2}}
-{{PatientCity}}, {{PatientState}} {{PatientZip}}
-
-Dear {{PatientPreferredName}}:
-
-During the consultation, it is often impossible to talk about everything, either for lack of time or something slipping my mind.  At this time, I would like to reinforce and re-emphasize points that may not have been discussed during your consultation visit.
-
-My staff is an integral part of this practice since I would be unable to accomplish all of the various technical tasks without their considerable help.  You may expect to see them performing many services for the patients as I am not able to be in all areas at once.  Should you have questions during treatment, please feel free to speak to either me or my staff.  They are very competent to handle most problems, and you will find them easily accessible.
-
-Orthodontic treatment cannot be completed without the total cooperation of the patient.  The areas which we are most concerned about are cleaning the teeth, wearing elastics, following instructions for headgear, and not abusing the braces. One of the orthodontist's greatest joys is a happy, cooperative patient, and an orthodontist's deepest despair is the occasional patient who “couldn’t care less” about the whole project.
-
-Again, if you should have questions concerning your treatment, please feel free to seek me out or call.  I welcome your interest.
-
-For the most part I expect the next couple of years to be a lot of fun for all of us, and look forward to getting to know you better.
-
-Sincerely,
-
-
-{{DoctorSignature}},Test Consultation.docx)</span>
+</div> <!-- stack-trace -->
                   <em>
-(Bulk import: create one template per Word document)                  </em>
+(Search for the newly created patient and verify)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-skipped -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.opms.tests.LoginAndCreatePatient</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testImportLetterFromDoc(Test Payment, Test Payment, {{TodayDate}}
-
-
-{{PatientName}}
-{{PatientAddress1}}
-{{PatientAddress2}}
-...)">
-                  </a> <!-- testImportLetterFromDoc(Test Payment, Test Payment, {{TodayDate}}
-
-
-{{PatientName}}
-{{PatientAddress1}}
-{{PatientAddress2}}
-...) -->
-                  <span class="method-name">testImportLetterFromDoc</span>
-                  <span class="parameters">(Test Payment,Test Payment,{{TodayDate}}
-
-
-{{PatientName}}
-{{PatientAddress1}}
-{{PatientAddress2}}
-{{PatientCity}}, {{PatientState}} {{PatientZip}}
-
-Dear {{PatientPreferredName}}:
-
-
-When you were in today, it was evident that our instructions for proper teeth cleaning are not being followed.  As a result, you have an infection of the gum tissue that could spread and cause a loss of the bone which surrounds the teeth.
-
-The only reason for this infection is neglect on your part.  When food is not removed around the teeth and gums, bacteria use the food to produce toxic waste which causes bone destruction.
-
-Please take this situation seriously.  You could suffer irreparable damage unless every effort is made to correct the problem.  One of my assistants who is specially trained to solve oral hygiene problems will be seeing you until this problem is resolved.
-
-Treatment must be discontinued until the infection eliminated by adequate oral hygiene.  We cannot move teeth into an area of infection.  Please work closely with my staff to resolve this serious problem.
-
-Sincerely,
-
-
-
-{{DoctorSignature}},Test Payment.docx)</span>
+                  <a name="testLogin">
+                  </a> <!-- testLogin -->
+                  <span class="method-name">testLogin</span>
                   <em>
-(Bulk import: create one template per Word document)                  </em>
+(Login with valid credentials)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -305,7 +319,7 @@ Sincerely,
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Infinire_Innovative\AppData\Local\Temp\testng-eclipse-1169934147\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Infinire_Innovative\AppData\Local\Temp\testng-eclipse-2041070172\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -314,7 +328,7 @@ Sincerely,
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.opms.tests.LetterBulkImportTest&quot;/&gt;
+      &lt;class name=&quot;com.opms.tests.LoginAndCreatePatient&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -354,24 +368,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testImportLetterFromDoc')
-data.setCell(0, 2, 'com.opms.tests.LetterBulkImportTest')
-data.setCell(0, 3, 43951);
+data.setCell(0, 1, 'testLogin')
+data.setCell(0, 2, 'com.opms.tests.LoginAndCreatePatient')
+data.setCell(0, 3, 19250);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testImportLetterFromDoc')
-data.setCell(1, 2, 'com.opms.tests.LetterBulkImportTest')
-data.setCell(1, 3, 43850);
+data.setCell(1, 1, 'testSelectLocation')
+data.setCell(1, 2, 'com.opms.tests.LoginAndCreatePatient')
+data.setCell(1, 3, 1449);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testImportLetterFromDoc')
-data.setCell(2, 2, 'com.opms.tests.LetterBulkImportTest')
-data.setCell(2, 3, 43229);
+data.setCell(2, 1, 'testCreatePatient')
+data.setCell(2, 2, 'com.opms.tests.LoginAndCreatePatient')
+data.setCell(2, 3, 0);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testSearchPatient')
+data.setCell(3, 2, 'com.opms.tests.LoginAndCreatePatient')
+data.setCell(3, 3, 0);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 20 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -397,41 +415,24 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.opms.tests.LetterBulkImportTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.opms.tests.LoginAndCreatePatient</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpSuite</span>
+                <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">testImportLetterFromDoc(Test Appointment, Test Appointment, {{TodayDate}}
-
-{{PatientName}}
-{{PatientAddress1}}
-{{PatientAddr...)</span>
-                <span class="method-start">18837 ms</span>
+                <span class="method-name">testLogin</span>
+                <span class="method-start">4100 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testImportLetterFromDoc(Test Consultation, Test Consultation, {{TodayDate}}
-
-
-{{PatientName}}
-{{PatientAddress1}}
-{{PatientA...)</span>
-                <span class="method-start">62068 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testImportLetterFromDoc(Test Payment, Test Payment, {{TodayDate}}
-
-
-{{PatientName}}
-{{PatientAddress1}}
-{{PatientAddress2}}
-...)</span>
-                <span class="method-start">106023 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testSelectLocation</span>
+                <span class="method-start">23362 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
-                <span class="method-name">tearDownSuite</span>
-                <span class="method-start">149875 ms</span>
+                <span class="method-name">tearDown</span>
+                <span class="method-start">24832 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -12,8 +12,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
 
-    public static final String VALID_EMAIL    = "lokeshqa1@test.com";
-    public static final String VALID_PASSWORD = "Lokesh@123";
+//    public static final String VALID_EMAIL    = "lokeshqa1@test.com";
+  //  public static final String VALID_PASSWORD = "Lokesh@123";
+    public static final String VALID_EMAIL    = "pacificwest@demo-opms.com";
+    public static final String VALID_PASSWORD = "Orth0$ofT1!";
     public static final String LOGIN_URL      = "https://demo.orthopms.com/login";
 
     /** Login with valid credentials (used by other page-object chains). */

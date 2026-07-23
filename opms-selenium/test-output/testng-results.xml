@@ -1,175 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="1" failed="1" skipped="2">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-17T19:26:36 IST" name="Default suite" finished-at="2026-07-17T19:29:06 IST" duration-ms="150120">
+  <suite started-at="2026-07-23T16:10:20 IST" name="Default suite" finished-at="2026-07-23T16:10:45 IST" duration-ms="25320">
     <groups>
     </groups>
-    <test started-at="2026-07-17T19:26:36 IST" name="Default test" finished-at="2026-07-17T19:29:06 IST" duration-ms="150120">
-      <class name="com.opms.tests.LetterBulkImportTest">
-        <test-method is-config="true" signature="setUpSuite()[pri:0, instance:com.opms.tests.LetterBulkImportTest@563f38c4]" started-at="2026-07-17T19:26:36 IST" name="setUpSuite" finished-at="2026-07-17T19:26:54 IST" duration-ms="18252" status="PASS">
+    <test started-at="2026-07-23T16:10:20 IST" name="Default test" finished-at="2026-07-23T16:10:45 IST" duration-ms="25320">
+      <class name="com.opms.tests.LoginAndCreatePatient">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.opms.tests.LoginAndCreatePatient@1530c739]" started-at="2026-07-23T16:10:20 IST" name="setUp" finished-at="2026-07-23T16:10:24 IST" duration-ms="4082" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpSuite -->
-        <test-method signature="testImportLetterFromDoc(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.opms.tests.LetterBulkImportTest@563f38c4]" started-at="2026-07-17T19:26:55 IST" name="testImportLetterFromDoc" description="Bulk import: create one template per Word document" data-provider="letterFiles" finished-at="2026-07-17T19:27:38 IST" duration-ms="43229" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Test Appointment]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Test Appointment]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[{{TodayDate}}
-
-{{PatientName}}
-{{PatientAddress1}}
-{{PatientAddress2}}
-{{PatientCity}}, {{PatientState}} {{PatientZip}}
-
-Dear {{PatientPreferredName}}:
-
-Let’s review a few important points we talked about in the office today:
-
-Clean braces are bright and shiny.  Dirty braces are covered with a white, milky film of bacteria called plaque.
-Plaque causes tooth decay, bad breath, swollen gums, and eventual gum disease.  As plaque builds up along the gumline, bacterial irritants cause your gum tissues to become red, puffy, sore, and likely to bleed.
-Gums that bleed or swell have not been thoroughly brushed.  Brush well between the gums and the braces.
-The best methods for removing plaque are: proper toothbrushing, flossing, dry brushing, and water-pik usage.  This daily oral hygiene home care program takes time — your time! But, it can also shorten the time you have to wear your braces.
-
-A Few Reminders:
-
-Brush after eating.  If it is impossible to brush, rinse your mouth thoroughly.
-Cut down on toothpaste.  Too much toothpaste makes the toothbrush bristles limp and unable to clean properly.
-Thirty minutes of dry brushing with a soft brush every day should solve your bleeding gum problem.
-Never sit down in a treatment chair unless your teeth are clean.  Braces and appliances cannot be adjusted when they’re dirty.
-
-Okay, now it’s up to you.  Please call if you have any questions or need help.
-
-Sincerely,
-
-
-
-
-{{DoctorSignature}}]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Test Appointment.docx]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- setUp -->
+        <test-method signature="testLogin()[pri:1, instance:com.opms.tests.LoginAndCreatePatient@1530c739]" started-at="2026-07-23T16:10:24 IST" name="testLogin" description="Login with valid credentials" finished-at="2026-07-23T16:10:43 IST" duration-ms="19250" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testImportLetterFromDoc -->
-        <test-method signature="testImportLetterFromDoc(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.opms.tests.LetterBulkImportTest@563f38c4]" started-at="2026-07-17T19:27:38 IST" name="testImportLetterFromDoc" description="Bulk import: create one template per Word document" data-provider="letterFiles" finished-at="2026-07-17T19:28:22 IST" duration-ms="43951" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Test Consultation]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Test Consultation]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[{{TodayDate}}
-
-
-{{PatientName}}
-{{PatientAddress1}}
-{{PatientAddress2}}
-{{PatientCity}}, {{PatientState}} {{PatientZip}}
-
-Dear {{PatientPreferredName}}:
-
-During the consultation, it is often impossible to talk about everything, either for lack of time or something slipping my mind.  At this time, I would like to reinforce and re-emphasize points that may not have been discussed during your consultation visit.
-
-My staff is an integral part of this practice since I would be unable to accomplish all of the various technical tasks without their considerable help.  You may expect to see them performing many services for the patients as I am not able to be in all areas at once.  Should you have questions during treatment, please feel free to speak to either me or my staff.  They are very competent to handle most problems, and you will find them easily accessible.
-
-Orthodontic treatment cannot be completed without the total cooperation of the patient.  The areas which we are most concerned about are cleaning the teeth, wearing elastics, following instructions for headgear, and not abusing the braces. One of the orthodontist's greatest joys is a happy, cooperative patient, and an orthodontist's deepest despair is the occasional patient who “couldn’t care less” about the whole project.
-
-Again, if you should have questions concerning your treatment, please feel free to seek me out or call.  I welcome your interest.
-
-For the most part I expect the next couple of years to be a lot of fun for all of us, and look forward to getting to know you better.
-
-Sincerely,
-
-
-{{DoctorSignature}}]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Test Consultation.docx]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- testLogin -->
+        <test-method signature="testSelectLocation()[pri:2, instance:com.opms.tests.LoginAndCreatePatient@1530c739]" started-at="2026-07-23T16:10:43 IST" name="testSelectLocation" description="Select practice location from dropdown" finished-at="2026-07-23T16:10:45 IST" depends-on-methods="com.opms.tests.LoginAndCreatePatient.testLogin" duration-ms="1449" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
+  (Session info: chrome=150.0.7871.115)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3478b0e8ec14bda10a6ae043629a3d1d, findElement {value=//ng-select[@bindlabel='practiceLocationName'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.115, chrome: {chromedriverVersion: 150.0.7871.124 (9261fd0a595..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60248}, goog:processID: 31092, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60248/devtoo..., se:cdpVersion: 150.0.7871.115, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3478b0e8ec14bda10a6ae043629a3d1d]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
+  (Session info: chrome=150.0.7871.115)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3478b0e8ec14bda10a6ae043629a3d1d, findElement {value=//ng-select[@bindlabel='practiceLocationName'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.115, chrome: {chromedriverVersion: 150.0.7871.124 (9261fd0a595..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60248}, goog:processID: 31092, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60248/devtoo..., se:cdpVersion: 150.0.7871.115, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3478b0e8ec14bda10a6ae043629a3d1d
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+at com.opms.tests.LoginAndCreatePatient.testSelectLocation(LoginAndCreatePatient.java:67)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testImportLetterFromDoc -->
-        <test-method signature="testImportLetterFromDoc(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.opms.tests.LetterBulkImportTest@563f38c4]" started-at="2026-07-17T19:28:22 IST" name="testImportLetterFromDoc" description="Bulk import: create one template per Word document" data-provider="letterFiles" finished-at="2026-07-17T19:29:06 IST" duration-ms="43850" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Test Payment]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Test Payment]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[{{TodayDate}}
-
-
-{{PatientName}}
-{{PatientAddress1}}
-{{PatientAddress2}}
-{{PatientCity}}, {{PatientState}} {{PatientZip}}
-
-Dear {{PatientPreferredName}}:
-
-
-When you were in today, it was evident that our instructions for proper teeth cleaning are not being followed.  As a result, you have an infection of the gum tissue that could spread and cause a loss of the bone which surrounds the teeth.
-
-The only reason for this infection is neglect on your part.  When food is not removed around the teeth and gums, bacteria use the food to produce toxic waste which causes bone destruction.
-
-Please take this situation seriously.  You could suffer irreparable damage unless every effort is made to correct the problem.  One of my assistants who is specially trained to solve oral hygiene problems will be seeing you until this problem is resolved.
-
-Treatment must be discontinued until the infection eliminated by adequate oral hygiene.  We cannot move teeth into an area of infection.  Please work closely with my staff to resolve this serious problem.
-
-Sincerely,
-
-
-
-{{DoctorSignature}}]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Test Payment.docx]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- testSelectLocation -->
+        <test-method signature="testCreatePatient()[pri:3, instance:com.opms.tests.LoginAndCreatePatient@1530c739]" started-at="2026-07-23T16:10:45 IST" name="testCreatePatient" description="Create a new patient with valid details" finished-at="2026-07-23T16:10:45 IST" depends-on-methods="com.opms.tests.LoginAndCreatePatient.testSelectLocation" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.opms.tests.LoginAndCreatePatient.testCreatePatient() on instance com.opms.tests.LoginAndCreatePatient@1530c739 depends on not successfully finished methods 
+[com.opms.tests.LoginAndCreatePatient.testSelectLocation() on instance com.opms.tests.LoginAndCreatePatient@1530c739]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.opms.tests.LoginAndCreatePatient.testCreatePatient() on instance com.opms.tests.LoginAndCreatePatient@1530c739 depends on not successfully finished methods 
+[com.opms.tests.LoginAndCreatePatient.testSelectLocation() on instance com.opms.tests.LoginAndCreatePatient@1530c739]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testImportLetterFromDoc -->
-        <test-method is-config="true" signature="tearDownSuite()[pri:0, instance:com.opms.tests.LetterBulkImportTest@563f38c4]" started-at="2026-07-17T19:29:06 IST" name="tearDownSuite" finished-at="2026-07-17T19:29:06 IST" duration-ms="222" status="PASS">
+        </test-method> <!-- testCreatePatient -->
+        <test-method signature="testSearchPatient()[pri:4, instance:com.opms.tests.LoginAndCreatePatient@1530c739]" started-at="2026-07-23T16:10:45 IST" name="testSearchPatient" description="Search for the newly created patient and verify" finished-at="2026-07-23T16:10:45 IST" depends-on-methods="com.opms.tests.LoginAndCreatePatient.testCreatePatient" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.opms.tests.LoginAndCreatePatient.testSearchPatient() on instance com.opms.tests.LoginAndCreatePatient@1530c739 depends on not successfully finished methods 
+[com.opms.tests.LoginAndCreatePatient.testCreatePatient() on instance com.opms.tests.LoginAndCreatePatient@1530c739]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.opms.tests.LoginAndCreatePatient.testSearchPatient() on instance com.opms.tests.LoginAndCreatePatient@1530c739 depends on not successfully finished methods 
+[com.opms.tests.LoginAndCreatePatient.testCreatePatient() on instance com.opms.tests.LoginAndCreatePatient@1530c739]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDownSuite -->
-      </class> <!-- com.opms.tests.LetterBulkImportTest -->
+        </test-method> <!-- testSearchPatient -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.opms.tests.LoginAndCreatePatient@1530c739]" started-at="2026-07-23T16:10:45 IST" name="tearDown" finished-at="2026-07-23T16:10:45 IST" duration-ms="447" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.opms.tests.LoginAndCreatePatient -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
