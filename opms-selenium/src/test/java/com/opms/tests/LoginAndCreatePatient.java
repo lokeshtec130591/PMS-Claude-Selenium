@@ -129,7 +129,7 @@ public class LoginAndCreatePatient {
         driver.findElement(By.xpath("//label[@for='patientMaritalStatus_Single']")).click();
 
         // Dentist — directly target the exact option span
-        driver.findElement(By.xpath("//ng-select[@placeholder='Select Dentist']")).click();
+        driver.findElement(By.xpath("//ng-select[@bindlabel='dentistFullName']")).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
             "//div[contains(@class,'ng-option')]" +
             "//span[text()='Johnny Bairstow (Orthopedic Dental Tooth Surgery CLinic)']")))

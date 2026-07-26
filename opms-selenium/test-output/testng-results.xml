@@ -1,63 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="1" failed="1" skipped="2">
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-23T16:10:20 IST" name="Default suite" finished-at="2026-07-23T16:10:45 IST" duration-ms="25320">
+  <suite started-at="2026-07-26T21:19:33 IST" name="Default suite" finished-at="2026-07-26T21:20:29 IST" duration-ms="55836">
     <groups>
     </groups>
-    <test started-at="2026-07-23T16:10:20 IST" name="Default test" finished-at="2026-07-23T16:10:45 IST" duration-ms="25320">
-      <class name="com.opms.tests.LoginAndCreatePatient">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.opms.tests.LoginAndCreatePatient@1530c739]" started-at="2026-07-23T16:10:20 IST" name="setUp" finished-at="2026-07-23T16:10:24 IST" duration-ms="4082" status="PASS">
+    <test started-at="2026-07-26T21:19:33 IST" name="Default test" finished-at="2026-07-26T21:20:29 IST" duration-ms="55836">
+      <class name="com.opms.tests.CreateExamAppointmentTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.opms.tests.CreateExamAppointmentTest@76b1e9b8]" started-at="2026-07-26T21:19:33 IST" name="setUp" finished-at="2026-07-26T21:19:57 IST" duration-ms="23754" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testLogin()[pri:1, instance:com.opms.tests.LoginAndCreatePatient@1530c739]" started-at="2026-07-23T16:10:24 IST" name="testLogin" description="Login with valid credentials" finished-at="2026-07-23T16:10:43 IST" duration-ms="19250" status="PASS">
+        <test-method signature="testCreatePatientForExam()[pri:1, instance:com.opms.tests.CreateExamAppointmentTest@76b1e9b8]" started-at="2026-07-26T21:19:57 IST" name="testCreatePatientForExam" description="TC_EXAM_01 – Create adult patient for exam appointment" finished-at="2026-07-26T21:20:07 IST" duration-ms="9494" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method signature="testSelectLocation()[pri:2, instance:com.opms.tests.LoginAndCreatePatient@1530c739]" started-at="2026-07-23T16:10:43 IST" name="testSelectLocation" description="Select practice location from dropdown" finished-at="2026-07-23T16:10:45 IST" depends-on-methods="com.opms.tests.LoginAndCreatePatient.testLogin" duration-ms="1449" status="FAIL">
-          <exception class="org.openqa.selenium.WebDriverException">
+        </test-method> <!-- testCreatePatientForExam -->
+        <test-method signature="testCreateExamAppointment()[pri:2, instance:com.opms.tests.CreateExamAppointmentTest@76b1e9b8]" started-at="2026-07-26T21:20:07 IST" name="testCreateExamAppointment" description="TC_EXAM_02 – Search patient, click Create Exam, book a New Patient Exam appointment" finished-at="2026-07-26T21:20:28 IST" depends-on-methods="com.opms.tests.CreateExamAppointmentTest.testCreatePatientForExam" duration-ms="21867" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[target frame detached
-  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
-  (Session info: chrome=150.0.7871.115)
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3478b0e8ec14bda10a6ae043629a3d1d, findElement {value=//ng-select[@bindlabel='practiceLocationName'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.115, chrome: {chromedriverVersion: 150.0.7871.124 (9261fd0a595..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60248}, goog:processID: 31092, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60248/devtoo..., se:cdpVersion: 150.0.7871.115, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3478b0e8ec14bda10a6ae043629a3d1d]]>
+              <![CDATA[TC_EXAM_02 FAIL – Exam appointment should be created (expected 'Modify Exam' button to appear). expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: target frame detached
-  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
-  (Session info: chrome=150.0.7871.115)
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3478b0e8ec14bda10a6ae043629a3d1d, findElement {value=//ng-select[@bindlabel='practiceLocationName'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.115, chrome: {chromedriverVersion: 150.0.7871.124 (9261fd0a595..., userDataDir: C:\Users\INFINI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60248}, goog:processID: 31092, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60248/devtoo..., se:cdpVersion: 150.0.7871.115, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3478b0e8ec14bda10a6ae043629a3d1d
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-at com.opms.tests.LoginAndCreatePatient.testSelectLocation(LoginAndCreatePatient.java:67)
+              <![CDATA[java.lang.AssertionError: TC_EXAM_02 FAIL – Exam appointment should be created (expected 'Modify Exam' button to appear). expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at com.opms.tests.CreateExamAppointmentTest.testCreateExamAppointment(CreateExamAppointmentTest.java:270)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -88,83 +56,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSelectLocation -->
-        <test-method signature="testCreatePatient()[pri:3, instance:com.opms.tests.LoginAndCreatePatient@1530c739]" started-at="2026-07-23T16:10:45 IST" name="testCreatePatient" description="Create a new patient with valid details" finished-at="2026-07-23T16:10:45 IST" depends-on-methods="com.opms.tests.LoginAndCreatePatient.testSelectLocation" duration-ms="0" status="SKIP">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method com.opms.tests.LoginAndCreatePatient.testCreatePatient() on instance com.opms.tests.LoginAndCreatePatient@1530c739 depends on not successfully finished methods 
-[com.opms.tests.LoginAndCreatePatient.testSelectLocation() on instance com.opms.tests.LoginAndCreatePatient@1530c739]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method com.opms.tests.LoginAndCreatePatient.testCreatePatient() on instance com.opms.tests.LoginAndCreatePatient@1530c739 depends on not successfully finished methods 
-[com.opms.tests.LoginAndCreatePatient.testSelectLocation() on instance com.opms.tests.LoginAndCreatePatient@1530c739]
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:819)
-at org.testng.TestRunner.run(TestRunner.java:619)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-at org.testng.TestNG.runSuites(TestNG.java:1134)
-at org.testng.TestNG.run(TestNG.java:1101)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testCreatePatient -->
-        <test-method signature="testSearchPatient()[pri:4, instance:com.opms.tests.LoginAndCreatePatient@1530c739]" started-at="2026-07-23T16:10:45 IST" name="testSearchPatient" description="Search for the newly created patient and verify" finished-at="2026-07-23T16:10:45 IST" depends-on-methods="com.opms.tests.LoginAndCreatePatient.testCreatePatient" duration-ms="0" status="SKIP">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method com.opms.tests.LoginAndCreatePatient.testSearchPatient() on instance com.opms.tests.LoginAndCreatePatient@1530c739 depends on not successfully finished methods 
-[com.opms.tests.LoginAndCreatePatient.testCreatePatient() on instance com.opms.tests.LoginAndCreatePatient@1530c739]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method com.opms.tests.LoginAndCreatePatient.testSearchPatient() on instance com.opms.tests.LoginAndCreatePatient@1530c739 depends on not successfully finished methods 
-[com.opms.tests.LoginAndCreatePatient.testCreatePatient() on instance com.opms.tests.LoginAndCreatePatient@1530c739]
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:819)
-at org.testng.TestRunner.run(TestRunner.java:619)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-at org.testng.TestNG.runSuites(TestNG.java:1134)
-at org.testng.TestNG.run(TestNG.java:1101)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSearchPatient -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.opms.tests.LoginAndCreatePatient@1530c739]" started-at="2026-07-23T16:10:45 IST" name="tearDown" finished-at="2026-07-23T16:10:45 IST" duration-ms="447" status="PASS">
+        </test-method> <!-- testCreateExamAppointment -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.opms.tests.CreateExamAppointmentTest@76b1e9b8]" started-at="2026-07-26T21:20:28 IST" name="tearDown" finished-at="2026-07-26T21:20:29 IST" duration-ms="637" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.opms.tests.LoginAndCreatePatient -->
+      </class> <!-- com.opms.tests.CreateExamAppointmentTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -3,16 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.opms.tests.LoginAndCreatePatient">
+      <class name="com.opms.tests.CreateExamAppointmentTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="testSearchPatient"/>
           <include name="setUp"/>
-          <include name="testSelectLocation"/>
-          <include name="testCreatePatient"/>
-          <include name="testLogin"/>
+          <include name="tearDown"/>
+          <include name="testCreateExamAppointment"/>
+          <include name="testCreatePatientForExam"/>
         </methods>
-      </class> <!-- com.opms.tests.LoginAndCreatePatient -->
+      </class> <!-- com.opms.tests.CreateExamAppointmentTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

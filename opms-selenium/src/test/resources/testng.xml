@@ -68,4 +68,10 @@
         </classes>
     </test>
 
+    <test name="Create Exam Appointment Tests" preserve-order="true">
+        <classes>
+            <class name="com.opms.tests.CreateExamAppointmentTest"/>
+        </classes>
+    </test>
+
 </suite>

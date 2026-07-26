@@ -247,7 +247,7 @@ public class InsuranceScenariosTest {
         dismissErrorDialog();
         String fullName = lastName + ", " + firstName;
         WebElement searchBar = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//input[@placeholder='last name, first name ']")));
+                By.xpath("//input[@placeholder='last name, first name']")));
         searchBar.clear();
         searchBar.sendKeys(fullName);
         Thread.sleep(2500);
@@ -289,7 +289,14 @@ public class InsuranceScenariosTest {
         WebElement maritalLabel = driver.findElement(By.xpath("//label[@for='patientMaritalStatus_Single']"));
         js.executeScript("arguments[0].click();", maritalLabel);
 
-        driver.findElement(By.xpath("//ng-select[@placeholder='Select Dentist']")).click();
+        dismissErrorDialog();
+        WebElement dentistSelect = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//ng-select[@bindlabel='dentistFullName']")));
+        js.executeScript("arguments[0].scrollIntoView({block:'center'});", dentistSelect);
+        Thread.sleep(500);
+        dismissErrorDialog();
+        dentistSelect.click();
+        Thread.sleep(500);
         wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//div[contains(@class,'ng-option')]//span[text()='Johnny Bairstow (Orthopedic Dental Tooth Surgery CLinic)']")))
             .click();

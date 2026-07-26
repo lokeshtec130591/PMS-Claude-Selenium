@@ -75,7 +75,7 @@ public class PatientPage {
         driver.findElement(By.xpath("//label[@for='patientLanguagePreference_English']")).click();
         driver.findElement(By.xpath("//label[@for='patientMaritalStatus_Single']")).click();
 
-        driver.findElement(By.xpath("//ng-select[@placeholder='Select Dentist']")).click();
+        driver.findElement(By.xpath("//ng-select[@bindlabel='dentistFullName']")).click();
         WebElement dentistDropdown = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.xpath("//div[@class='ng-option ng-option-marked']")));
         dentistDropdown.findElement(By.xpath(

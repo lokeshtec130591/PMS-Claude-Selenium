@@ -160,7 +160,7 @@ public class CreatePatientTest {
      *   "First Name", "Last Name", "datepicker-1", "Primary Phone", "Email Address"
      *   patientGender_Male/Female/Other, patientLanguagePreference_English/Spanish
      *   patientMaritalStatus_Single/Married/Divorced/Separated/Widowed
-     *   ng-select[placeholder='Select Dentist']
+     *   ng-select[bindlabel='dentistFullName']
      */
     private void fillPatientForm(String prefix, String firstName, String lastName,
                                   String dob, String phone, String email,
@@ -213,7 +213,7 @@ public class CreatePatientTest {
                     "//label[@for='patientMaritalStatus_" + maritalStatus + "']")).click();
 
         if (dentist != null) {
-            driver.findElement(By.xpath("//ng-select[@placeholder='Select Dentist']")).click();
+            driver.findElement(By.xpath("//ng-select[@bindlabel='dentistFullName']")).click();
             // Directly click the exact option — avoids chaining on the first ng-option div
             wait.until(ExpectedConditions.elementToBeClickable(
                     By.xpath("//div[contains(@class,'ng-option')]//span[text()='" + dentist + "']")))
@@ -427,7 +427,7 @@ public class CreatePatientTest {
 
         String fullName = ln + ", " + fn;
         WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//input[@placeholder='last name, first name ']")));
+                By.xpath("//input[@placeholder='last name, first name']")));
         searchBox.clear();
         searchBox.sendKeys(fullName);
         Thread.sleep(2000);
