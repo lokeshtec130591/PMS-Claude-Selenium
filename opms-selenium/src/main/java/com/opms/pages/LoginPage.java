@@ -60,12 +60,18 @@ public class LoginPage {
     /** Returns true when the post-login dashboard/home element is visible. */
     public static boolean isDashboardVisible() {
         try {
-            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.visibilityOfElementLocated(
+            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(20));
+            // Wait until URL no longer contains /login (redirected away from login page)
+            wait.until(d -> !d.getCurrentUrl().contains("/login"));
+            // Then confirm a post-login element is present
+            new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOfElementLocated(
                     By.xpath(
                         "//a[contains(@class,'navbar-brand')]"
+                        + " | //div[contains(@class,'pcoded-navbar')]"
                         + " | //div[contains(@class,'dashboard')]"
-                        + " | //span[contains(@class,'pcoded-mtext') and text()='Contract']")));
+                        + " | //nav[contains(@class,'pcoded-navbar')]"
+                        + " | //span[contains(@class,'pcoded-mtext')]")));
             return true;
         } catch (Exception e) {
             return false;

@@ -32,6 +32,12 @@
         </classes>
     </test>
 
+    <test name="Schedule Lookup Tests" preserve-order="true">
+        <classes>
+            <class name="com.opms.tests.ScheduleLookupTest"/>
+        </classes>
+    </test>
+
     <test name="Treatments Setup Tests" preserve-order="true">
         <classes>
             <class name="com.opms.tests.TreatmentsSetupTest"/>
