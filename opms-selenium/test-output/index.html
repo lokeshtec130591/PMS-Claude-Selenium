@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Infinire_Innovative\AppData\Local\Temp\testng-eclipse--540665025\testng-customsuite.xml</span>
+                    <span>C:\Users\Infinire_Innovative\AppData\Local\Temp\testng-eclipse-1821663097\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -108,7 +108,17 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.ScheduleLookupTest" class="method navigator-link" hash-for-method="testCreateAppointmentType">testCreateAppointmentType</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.ScheduleLookupTest" class="method navigator-link" hash-for-method="testCreateNonExamAppointmentGroup">testCreateNonExamAppointmentGroup</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.opms.tests.ScheduleLookupTest" class="method navigator-link" hash-for-method="testCreateNonExamAppointmentType">testCreateNonExamAppointmentType</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -140,6 +150,15 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="testCreateAppointmentType">
+                  </a> <!-- testCreateAppointmentType -->
+                  <span class="method-name">testCreateAppointmentType</span>
+                  <em>
+(TC_SL_P03 – Create Appointment Type 'QA Exam Appointment Type' if not already exist)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="testCreateNonExamAppointmentGroup">
                   </a> <!-- testCreateNonExamAppointmentGroup -->
                   <span class="method-name">testCreateNonExamAppointmentGroup</span>
@@ -147,12 +166,21 @@
 (TC_SL_P02 – Create Appointment Group 'QA Non Exam Appt' if not already exist)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateNonExamAppointmentType">
+                  </a> <!-- testCreateNonExamAppointmentType -->
+                  <span class="method-name">testCreateNonExamAppointmentType</span>
+                  <em>
+(TC_SL_P04 – Create Appointment Type 'QA Non Exam Appointment Type' if not already exist)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Infinire_Innovative\AppData\Local\Temp\testng-eclipse--540665025\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Infinire_Innovative\AppData\Local\Temp\testng-eclipse-1821663097\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -201,20 +229,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testCreateNonExamAppointmentGroup')
+data.setCell(0, 1, 'testCreateNonExamAppointmentType')
 data.setCell(0, 2, 'com.opms.tests.ScheduleLookupTest')
-data.setCell(0, 3, 14735);
+data.setCell(0, 3, 14837);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testCreateAppointmentGroup')
+data.setCell(1, 1, 'testCreateNonExamAppointmentGroup')
 data.setCell(1, 2, 'com.opms.tests.ScheduleLookupTest')
-data.setCell(1, 3, 7864);
+data.setCell(1, 3, 7835);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testCreateAppointmentGroup')
+data.setCell(2, 2, 'com.opms.tests.ScheduleLookupTest')
+data.setCell(2, 3, 7825);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testCreateAppointmentType')
+data.setCell(3, 2, 'com.opms.tests.ScheduleLookupTest')
+data.setCell(3, 3, 7813);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 22 seconds</span>
+              <span class="suite-total-time">Total running time: 38 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -247,15 +283,23 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testCreateAppointmentGroup</span>
-                <span class="method-start">22316 ms</span>
+                <span class="method-start">17502 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testCreateNonExamAppointmentGroup</span>
-                <span class="method-start">30184 ms</span>
+                <span class="method-start">25336 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCreateAppointmentType</span>
+                <span class="method-start">33173 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCreateNonExamAppointmentType</span>
+                <span class="method-start">40989 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownSuite</span>
-                <span class="method-start">44920 ms</span>
+                <span class="method-start">55828 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

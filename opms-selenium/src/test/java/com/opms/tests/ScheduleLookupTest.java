@@ -31,6 +31,8 @@ public class ScheduleLookupTest {
     private static final String APPT_GROUP_DURATION      = "15";
     private static final String APPT_GROUP_NAME_2        = "QA Non Exam Appt";
     private static final String APPT_GROUP_DURATION_2    = "20";
+    private static final String APPT_TYPE_NAME           = "QA Exam Appointment Type";
+    private static final String APPT_TYPE_NAME_2         = "QA Non Exam Appointment Type";
 
     private WebDriver          driver;
     private WebDriverWait      wait;
@@ -103,14 +105,15 @@ public class ScheduleLookupTest {
         js.executeScript("arguments[0].click();", scheduleMenu);
         Thread.sleep(1500);
 
-        // Click the sub-section link by href pattern
+        // Click the sub-section link by href pattern (subSection maps to href keyword)
+        String hrefKeyword = subSection.toLowerCase().replace(" ", "");
         WebElement subMenu = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//a[contains(@href,'appointmentgroup')]")));
+                By.xpath("//a[contains(@href,'" + hrefKeyword + "')]")));
         js.executeScript("arguments[0].click();", subMenu);
         Thread.sleep(2000);
         dismissErrorDialog();
 
-        System.out.println("ScheduleLookupTest: navigated to Practice Config → Schedule → " + subMenu);
+        System.out.println("ScheduleLookupTest: navigated to Practice Config → Schedule → " + subSection);
     }
 
     private boolean isErrorVisible() {
@@ -283,5 +286,151 @@ public class ScheduleLookupTest {
         Assert.assertFalse(isErrorVisible(),
                 "TC_SL_P02 FAIL – Error visible after saving Appointment Group '" + APPT_GROUP_NAME_2 + "'.");
         System.out.println("TC_SL_P02 PASS – Appointment Group '" + APPT_GROUP_NAME_2 + "' created successfully.");
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // APPOINTMENT TYPE TESTS
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    @Test(priority = 3,
+          description = "TC_SL_P03 – Create Appointment Type 'QA Exam Appointment Type' if not already exist")
+    public void testCreateAppointmentType() throws InterruptedException {
+        navigateToScheduleSection("Appointment Type");
+
+        // Search to check if already exists
+        try {
+            WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                    By.xpath("//input[@placeholder='search']")));
+            searchBox.clear();
+            searchBox.sendKeys(APPT_TYPE_NAME);
+            Thread.sleep(1500);
+
+            List<WebElement> existingRows = driver.findElements(
+                    By.xpath("//td[normalize-space(text())='" + APPT_TYPE_NAME + "']"
+                           + " | //div[contains(@class,'list-item') and normalize-space(text())='" + APPT_TYPE_NAME + "']"
+                           + " | //span[normalize-space(text())='" + APPT_TYPE_NAME + "']"));
+            if (!existingRows.isEmpty()) {
+                System.out.println("TC_SL_P03 SKIP – Appointment Type '" + APPT_TYPE_NAME + "' already exists.");
+                return;
+            }
+            searchBox.clear();
+            Thread.sleep(500);
+        } catch (Exception ignored) {}
+
+        // Click Add New button
+        WebElement addBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[contains(.,'Add New') or contains(.,'Add Type') or contains(.,'New')]"
+                       + " | //button[.//i[contains(@class,'fa-plus')]]")));
+        js.executeScript("arguments[0].click();", addBtn);
+        Thread.sleep(1500);
+        dismissErrorDialog();
+
+        // Fill Appointment Type Name
+        WebElement typeNameField = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@id='Appointment Type Name']"
+                       + " | //input[@placeholder='Appointment Type Name']"
+                       + " | //input[contains(@id,'Type Name')]")));
+        typeNameField.clear();
+        typeNameField.sendKeys(APPT_TYPE_NAME);
+        Thread.sleep(300);
+
+        // Select Appointment Group dropdown = "QA Exam Appt"
+        WebElement groupDropdown = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//ng-select[contains(@id,'Appointment Group') or contains(@id,'appointment-group') or contains(@id,'appointmentGroup')]"
+                       + " | //ng-select[@formcontrolname='appointmentGroupId' or @formcontrolname='appointmentGroup']")));
+        groupDropdown.click();
+        Thread.sleep(800);
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//ng-dropdown-panel//span[@class='ng-option-label' and normalize-space(text())='" + APPT_GROUP_NAME + "']")))
+            .click();
+        Thread.sleep(300);
+        System.out.println("ScheduleLookupTest: selected Appointment Group = " + APPT_GROUP_NAME);
+
+        // Save
+        WebElement saveBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[contains(@class,'btn-submit')]"
+                       + " | //button[normalize-space(text())='Save']"
+                       + " | //button[contains(.,'Save')]")));
+        js.executeScript("arguments[0].scrollIntoView({block:'center'});", saveBtn);
+        Thread.sleep(300);
+        js.executeScript("arguments[0].click();", saveBtn);
+        Thread.sleep(2000);
+        dismissSuccessPopup();
+        dismissErrorDialog();
+
+        Assert.assertFalse(isErrorVisible(),
+                "TC_SL_P03 FAIL – Error visible after saving Appointment Type '" + APPT_TYPE_NAME + "'.");
+        System.out.println("TC_SL_P03 PASS – Appointment Type '" + APPT_TYPE_NAME + "' created successfully.");
+    }
+
+    @Test(priority = 4,
+          description = "TC_SL_P04 – Create Appointment Type 'QA Non Exam Appointment Type' if not already exist")
+    public void testCreateNonExamAppointmentType() throws InterruptedException {
+        navigateToScheduleSection("Appointment Type");
+
+        // Search to check if already exists
+        try {
+            WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                    By.xpath("//input[@placeholder='search']")));
+            searchBox.clear();
+            searchBox.sendKeys(APPT_TYPE_NAME_2);
+            Thread.sleep(1500);
+
+            List<WebElement> existingRows = driver.findElements(
+                    By.xpath("//td[normalize-space(text())='" + APPT_TYPE_NAME_2 + "']"
+                           + " | //div[contains(@class,'list-item') and normalize-space(text())='" + APPT_TYPE_NAME_2 + "']"
+                           + " | //span[normalize-space(text())='" + APPT_TYPE_NAME_2 + "']"));
+            if (!existingRows.isEmpty()) {
+                System.out.println("TC_SL_P04 SKIP – Appointment Type '" + APPT_TYPE_NAME_2 + "' already exists.");
+                return;
+            }
+            searchBox.clear();
+            Thread.sleep(500);
+        } catch (Exception ignored) {}
+
+        // Click Add New button
+        WebElement addBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[contains(.,'Add New') or contains(.,'Add Type') or contains(.,'New')]"
+                       + " | //button[.//i[contains(@class,'fa-plus')]]")));
+        js.executeScript("arguments[0].click();", addBtn);
+        Thread.sleep(1500);
+        dismissErrorDialog();
+
+        // Fill Appointment Type Name
+        WebElement typeNameField = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@id='Appointment Type Name']"
+                       + " | //input[@placeholder='Appointment Type Name']"
+                       + " | //input[contains(@id,'Type Name')]")));
+        typeNameField.clear();
+        typeNameField.sendKeys(APPT_TYPE_NAME_2);
+        Thread.sleep(300);
+
+        // Select Appointment Group dropdown = "QA Non Exam Appt"
+        WebElement groupDropdown = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//ng-select[contains(@id,'Appointment Group') or contains(@id,'appointment-group') or contains(@id,'appointmentGroup')]"
+                       + " | //ng-select[@formcontrolname='appointmentGroupId' or @formcontrolname='appointmentGroup']")));
+        groupDropdown.click();
+        Thread.sleep(800);
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//ng-dropdown-panel//span[@class='ng-option-label' and normalize-space(text())='" + APPT_GROUP_NAME_2 + "']")))
+            .click();
+        Thread.sleep(300);
+        System.out.println("ScheduleLookupTest: selected Appointment Group = " + APPT_GROUP_NAME_2);
+
+        // Save
+        WebElement saveBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[contains(@class,'btn-submit')]"
+                       + " | //button[normalize-space(text())='Save']"
+                       + " | //button[contains(.,'Save')]")));
+        js.executeScript("arguments[0].scrollIntoView({block:'center'});", saveBtn);
+        Thread.sleep(300);
+        js.executeScript("arguments[0].click();", saveBtn);
+        Thread.sleep(2000);
+        dismissSuccessPopup();
+        dismissErrorDialog();
+
+        Assert.assertFalse(isErrorVisible(),
+                "TC_SL_P04 FAIL – Error visible after saving Appointment Type '" + APPT_TYPE_NAME_2 + "'.");
+        System.out.println("TC_SL_P04 PASS – Appointment Type '" + APPT_TYPE_NAME_2 + "' created successfully.");
     }
 }
