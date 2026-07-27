@@ -27,12 +27,15 @@ import org.testng.annotations.Test;
  */
 public class ScheduleLookupTest {
 
-    private static final String APPT_GROUP_NAME         = "QA Exam Appt";
-    private static final String APPT_GROUP_DURATION      = "15";
-    private static final String APPT_GROUP_NAME_2        = "QA Non Exam Appt";
-    private static final String APPT_GROUP_DURATION_2    = "20";
-    private static final String APPT_TYPE_NAME           = "QA Exam Appointment Type";
-    private static final String APPT_TYPE_NAME_2         = "QA Non Exam Appointment Type";
+    // Package-visible (not private) so other test classes, e.g. CreateExamAppointmentTest,
+    // can reference the exact Appointment Group / Type this class creates instead of
+    // duplicating the literal names.
+    static final String APPT_GROUP_NAME         = "QA Exam Appt";
+    static final String APPT_GROUP_DURATION      = "15";
+    static final String APPT_GROUP_NAME_2        = "QA Non Exam Appt";
+    static final String APPT_GROUP_DURATION_2    = "20";
+    static final String APPT_TYPE_NAME           = "QA Exam Appointment Type";
+    static final String APPT_TYPE_NAME_2         = "QA Non Exam Appointment Type";
 
     private WebDriver          driver;
     private WebDriverWait      wait;
