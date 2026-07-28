@@ -49,10 +49,8 @@ public class CreateExamAppointmentTest {
     private Actions            actions;
     private JavascriptExecutor js;
 
-    // Hardcoded test patient — reused across runs to avoid DB bloat.
-    // Uncomment TC_EXAM_01 and remove these two lines once finalised.
-    private String patientFirstName = "vzhxqqaien";
-    private String patientLastName  = "fqqmsghmsw";
+    private String patientFirstName;
+    private String patientLastName;
 
     // ── Setup / Teardown ──────────────────────────────────────────────────────
 
@@ -365,9 +363,6 @@ public class CreateExamAppointmentTest {
     // TEST SCENARIOS
     // ═══════════════════════════════════════════════════════════════════════════
 
-    // TC_EXAM_01 commented out — reusing existing patient to avoid creating new patients on every run.
-    // Uncomment and remove the hardcoded patientFirstName/patientLastName fields above when finalised.
-    /*
     @Test(priority = 1, description = "TC_EXAM_01 – Create adult patient for exam appointment")
     public void testCreatePatientForExam() throws InterruptedException {
         openAddPatientForm();
@@ -386,11 +381,11 @@ public class CreateExamAppointmentTest {
                 "TC_EXAM_01 FAIL – Patient form should close after save.");
         System.out.println("TC_EXAM_01 PASS – Patient created: " + patientLastName + ", " + patientFirstName);
     }
-    */
 
     @Test(priority = 2,
           description = "TC_EXAM_02 – Search patient, click Create Exam, book a '"
-                  + ScheduleLookupTest.APPT_TYPE_NAME + "' appointment (from ScheduleLookupTest)")
+                  + ScheduleLookupTest.APPT_TYPE_NAME + "' appointment (from ScheduleLookupTest)",
+          dependsOnMethods = "testCreatePatientForExam")
     public void testCreateExamAppointment() throws InterruptedException {
         searchAndOpenPatient(patientLastName, patientFirstName);
         bookAppointment(CREATE_EXAM_BUTTON, ScheduleLookupTest.APPT_TYPE_NAME);
@@ -444,7 +439,8 @@ public class CreateExamAppointmentTest {
 
     @Test(priority = 3,
           description = "TC_EXAM_03 – Search patient, click Schedule button on patient dashboard, "
-                  + "book a '" + ScheduleLookupTest.APPT_TYPE_NAME_2 + "' non-exam appointment")
+                  + "book a '" + ScheduleLookupTest.APPT_TYPE_NAME_2 + "' non-exam appointment",
+          dependsOnMethods = "testCreateExamAppointment")
     public void testCreateNonExamAppointment() throws InterruptedException {
         // Re-open the patient profile (we may have navigated away after TC_EXAM_02 verification)
         searchAndOpenPatient(patientLastName, patientFirstName);

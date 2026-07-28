@@ -1,29 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-28T17:13:45 IST" name="Default suite" finished-at="2026-07-28T17:14:58 IST" duration-ms="72721">
+  <suite started-at="2026-07-28T17:20:22 IST" name="Default suite" finished-at="2026-07-28T17:21:27 IST" duration-ms="65578">
     <groups>
     </groups>
-    <test started-at="2026-07-28T17:13:45 IST" name="Default test" finished-at="2026-07-28T17:14:58 IST" duration-ms="72721">
-      <class name="com.opms.tests.CreateExamAppointmentTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.opms.tests.CreateExamAppointmentTest@4be29ed9]" started-at="2026-07-28T17:13:45 IST" name="setUp" finished-at="2026-07-28T17:14:04 IST" duration-ms="18804" status="PASS">
+    <test started-at="2026-07-28T17:20:22 IST" name="Default test" finished-at="2026-07-28T17:21:27 IST" duration-ms="65578">
+      <class name="com.opms.tests.ScheduleLookupTest">
+        <test-method is-config="true" signature="setUpSuite()[pri:0, instance:com.opms.tests.ScheduleLookupTest@449a4f23]" started-at="2026-07-28T17:20:22 IST" name="setUpSuite" finished-at="2026-07-28T17:20:40 IST" duration-ms="18759" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="testCreateExamAppointment()[pri:2, instance:com.opms.tests.CreateExamAppointmentTest@4be29ed9]" started-at="2026-07-28T17:14:04 IST" name="testCreateExamAppointment" description="TC_EXAM_02 – Search patient, click Create Exam, book a &#039;QA Exam Appointment Type&#039; appointment (from ScheduleLookupTest)" finished-at="2026-07-28T17:14:41 IST" duration-ms="36991" status="PASS">
+        </test-method> <!-- setUpSuite -->
+        <test-method signature="testCreateAppointmentGroup()[pri:1, instance:com.opms.tests.ScheduleLookupTest@449a4f23]" started-at="2026-07-28T17:20:40 IST" name="testCreateAppointmentGroup" description="TC_SL_P01 – Create Appointment Group &#039;QA Exam Appt&#039; if not already exist" finished-at="2026-07-28T17:20:48 IST" duration-ms="7780" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testCreateExamAppointment -->
-        <test-method signature="testCreateNonExamAppointment()[pri:3, instance:com.opms.tests.CreateExamAppointmentTest@4be29ed9]" started-at="2026-07-28T17:14:41 IST" name="testCreateNonExamAppointment" description="TC_EXAM_03 – Search patient, click Schedule button on patient dashboard, book a &#039;QA Non Exam Appointment Type&#039; non-exam appointment" finished-at="2026-07-28T17:14:57 IST" duration-ms="16563" status="PASS">
+        </test-method> <!-- testCreateAppointmentGroup -->
+        <test-method signature="testCreateNonExamAppointmentGroup()[pri:2, instance:com.opms.tests.ScheduleLookupTest@449a4f23]" started-at="2026-07-28T17:20:48 IST" name="testCreateNonExamAppointmentGroup" description="TC_SL_P02 – Create Appointment Group &#039;QA Non Exam Appt&#039; if not already exist" finished-at="2026-07-28T17:20:56 IST" duration-ms="7932" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testCreateNonExamAppointment -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.opms.tests.CreateExamAppointmentTest@4be29ed9]" started-at="2026-07-28T17:14:57 IST" name="tearDown" finished-at="2026-07-28T17:14:58 IST" duration-ms="320" status="PASS">
+        </test-method> <!-- testCreateNonExamAppointmentGroup -->
+        <test-method signature="testCreateAppointmentType()[pri:3, instance:com.opms.tests.ScheduleLookupTest@449a4f23]" started-at="2026-07-28T17:20:56 IST" name="testCreateAppointmentType" description="TC_SL_P03 – Create Appointment Type &#039;QA Exam Appointment Type&#039; if not already exist" finished-at="2026-07-28T17:21:04 IST" duration-ms="7754" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.opms.tests.CreateExamAppointmentTest -->
+        </test-method> <!-- testCreateAppointmentType -->
+        <test-method signature="testCreateNonExamAppointmentType()[pri:4, instance:com.opms.tests.ScheduleLookupTest@449a4f23]" started-at="2026-07-28T17:21:04 IST" name="testCreateNonExamAppointmentType" description="TC_SL_P04 – Create Appointment Type &#039;QA Non Exam Appointment Type&#039; if not already exist" finished-at="2026-07-28T17:21:12 IST" duration-ms="7979" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateNonExamAppointmentType -->
+        <test-method signature="testCreateExamResult()[pri:5, instance:com.opms.tests.ScheduleLookupTest@449a4f23]" started-at="2026-07-28T17:21:12 IST" name="testCreateExamResult" description="TC_SL_P05 – Create Exam Result &#039;QA Treatment Recommended Exam&#039; if not already exist" finished-at="2026-07-28T17:21:27 IST" duration-ms="14903" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateExamResult -->
+        <test-method is-config="true" signature="tearDownSuite()[pri:0, instance:com.opms.tests.ScheduleLookupTest@449a4f23]" started-at="2026-07-28T17:21:27 IST" name="tearDownSuite" finished-at="2026-07-28T17:21:27 IST" duration-ms="402" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSuite -->
+      </class> <!-- com.opms.tests.ScheduleLookupTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
