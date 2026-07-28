@@ -36,6 +36,8 @@ public class ScheduleLookupTest {
     static final String APPT_GROUP_DURATION_2    = "20";
     static final String APPT_TYPE_NAME           = "QA Exam Appointment Type";
     static final String APPT_TYPE_NAME_2         = "QA Non Exam Appointment Type";
+    static final String EXAM_RESULT_NAME         = "QA Treatment Recommended Exam";
+    static final String EXAM_RESULT_CATEGORY     = "Tx Recommended";
 
     private WebDriver          driver;
     private WebDriverWait      wait;
@@ -435,5 +437,240 @@ public class ScheduleLookupTest {
         Assert.assertFalse(isErrorVisible(),
                 "TC_SL_P04 FAIL – Error visible after saving Appointment Type '" + APPT_TYPE_NAME_2 + "'.");
         System.out.println("TC_SL_P04 PASS – Appointment Type '" + APPT_TYPE_NAME_2 + "' created successfully.");
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // EXAM RESULT TESTS
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    @Test(priority = 5,
+          description = "TC_SL_P05 – Create Exam Result 'QA Treatment Recommended Exam' if not already exist")
+    public void testCreateExamResult() throws InterruptedException {
+        navigateToScheduleSection("Exam Result");
+
+        // Search to check if already exists
+        try {
+            WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                    By.xpath("//input[@placeholder='search']")));
+            searchBox.clear();
+            searchBox.sendKeys(EXAM_RESULT_NAME);
+            Thread.sleep(1500);
+
+            List<WebElement> existingRows = driver.findElements(
+                    By.xpath("//td[normalize-space(text())='" + EXAM_RESULT_NAME + "']"
+                           + " | //span[normalize-space(text())='" + EXAM_RESULT_NAME + "']"));
+            if (!existingRows.isEmpty()) {
+                System.out.println("TC_SL_P05 SKIP – Exam Result '" + EXAM_RESULT_NAME + "' already exists.");
+                return;
+            }
+            searchBox.clear();
+            Thread.sleep(500);
+        } catch (Exception ignored) {}
+
+        // Click Add New button
+        WebElement addBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[contains(.,'Add New') or contains(.,'New')]"
+                       + " | //button[.//i[contains(@class,'fa-plus')]]")));
+        js.executeScript("arguments[0].click();", addBtn);
+        Thread.sleep(1500);
+        dismissErrorDialog();
+
+        // Fill Exam Result name
+        WebElement examResultField = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@id='Exam Result']")));
+        examResultField.clear();
+        examResultField.sendKeys(EXAM_RESULT_NAME);
+        Thread.sleep(300);
+
+        // Select Exam Result Category = "Tx Recommended"
+        WebElement categoryDropdown = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//ng-select[@id='Exam Result Category']")));
+        categoryDropdown.click();
+        Thread.sleep(800);
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//ng-dropdown-panel//span[@class='ng-option-label' and normalize-space(text())='" + EXAM_RESULT_CATEGORY + "']")))
+            .click();
+        Thread.sleep(300);
+        System.out.println("ScheduleLookupTest: selected Exam Result Category = " + EXAM_RESULT_CATEGORY);
+
+        // Save
+        WebElement saveBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[contains(@class,'btn-submit')]"
+                       + " | //button[normalize-space(text())='Save']"
+                       + " | //button[contains(.,'Save')]")));
+        js.executeScript("arguments[0].scrollIntoView({block:'center'});", saveBtn);
+        Thread.sleep(300);
+        js.executeScript("arguments[0].click();", saveBtn);
+        Thread.sleep(2000);
+        dismissSuccessPopup();
+        dismissErrorDialog();
+
+        Assert.assertFalse(isErrorVisible(),
+                "TC_SL_P05 FAIL – Error visible after saving Exam Result '" + EXAM_RESULT_NAME + "'.");
+        System.out.println("TC_SL_P05 PASS – Exam Result '" + EXAM_RESULT_NAME + "' created successfully.");
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // APPOINTMENT GROUP — SEARCH & VERIFY SCENARIOS (no data created)
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    @Test(priority = 6,
+          description = "TC_SL_P06 – Search Appointment Group 'QA Exam Appt' and verify it appears in list")
+    public void testSearchAppointmentGroupExam() throws InterruptedException {
+        navigateToScheduleSection("Appointment Group");
+
+        WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@placeholder='search']")));
+        searchBox.clear();
+        searchBox.sendKeys(APPT_GROUP_NAME);
+        Thread.sleep(1500);
+
+        List<WebElement> results = driver.findElements(
+                By.xpath("//td[normalize-space(text())='" + APPT_GROUP_NAME + "']"
+                       + " | //span[normalize-space(text())='" + APPT_GROUP_NAME + "']"));
+        Assert.assertFalse(results.isEmpty(),
+                "TC_SL_P06 FAIL – '" + APPT_GROUP_NAME + "' not found in Appointment Group list.");
+        System.out.println("TC_SL_P06 PASS – '" + APPT_GROUP_NAME + "' found in list.");
+    }
+
+    @Test(priority = 7,
+          description = "TC_SL_P07 – Search Appointment Group 'QA Non Exam Appt' and verify it appears in list")
+    public void testSearchAppointmentGroupNonExam() throws InterruptedException {
+        navigateToScheduleSection("Appointment Group");
+
+        WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@placeholder='search']")));
+        searchBox.clear();
+        searchBox.sendKeys(APPT_GROUP_NAME_2);
+        Thread.sleep(1500);
+
+        List<WebElement> results = driver.findElements(
+                By.xpath("//td[normalize-space(text())='" + APPT_GROUP_NAME_2 + "']"
+                       + " | //span[normalize-space(text())='" + APPT_GROUP_NAME_2 + "']"));
+        Assert.assertFalse(results.isEmpty(),
+                "TC_SL_P07 FAIL – '" + APPT_GROUP_NAME_2 + "' not found in Appointment Group list.");
+        System.out.println("TC_SL_P07 PASS – '" + APPT_GROUP_NAME_2 + "' found in list.");
+    }
+
+    @Test(priority = 8,
+          description = "TC_SL_P08 – Search non-existent Appointment Group and verify empty results")
+    public void testSearchAppointmentGroupNoResult() throws InterruptedException {
+        navigateToScheduleSection("Appointment Group");
+
+        WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@placeholder='search']")));
+        searchBox.clear();
+        searchBox.sendKeys("ZZ_NONEXISTENT_GROUP_QA");
+        Thread.sleep(1500);
+
+        List<WebElement> results = driver.findElements(
+                By.xpath("//td[normalize-space(text())='ZZ_NONEXISTENT_GROUP_QA']"
+                       + " | //span[normalize-space(text())='ZZ_NONEXISTENT_GROUP_QA']"));
+        Assert.assertTrue(results.isEmpty(),
+                "TC_SL_P08 FAIL – Search for non-existent group returned unexpected results.");
+        System.out.println("TC_SL_P08 PASS – No results shown for non-existent Appointment Group.");
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // APPOINTMENT TYPE — SEARCH & VERIFY SCENARIOS (no data created)
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    @Test(priority = 9,
+          description = "TC_SL_P09 – Search Appointment Type 'QA Exam Appointment Type' and verify it appears in list")
+    public void testSearchAppointmentTypeExam() throws InterruptedException {
+        navigateToScheduleSection("Appointment Type");
+
+        WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@placeholder='search']")));
+        searchBox.clear();
+        searchBox.sendKeys(APPT_TYPE_NAME);
+        Thread.sleep(1500);
+
+        List<WebElement> results = driver.findElements(
+                By.xpath("//td[normalize-space(text())='" + APPT_TYPE_NAME + "']"
+                       + " | //span[normalize-space(text())='" + APPT_TYPE_NAME + "']"));
+        Assert.assertFalse(results.isEmpty(),
+                "TC_SL_P09 FAIL – '" + APPT_TYPE_NAME + "' not found in Appointment Type list.");
+        System.out.println("TC_SL_P09 PASS – '" + APPT_TYPE_NAME + "' found in list.");
+    }
+
+    @Test(priority = 10,
+          description = "TC_SL_P10 – Search Appointment Type 'QA Non Exam Appointment Type' and verify it appears in list")
+    public void testSearchAppointmentTypeNonExam() throws InterruptedException {
+        navigateToScheduleSection("Appointment Type");
+
+        WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@placeholder='search']")));
+        searchBox.clear();
+        searchBox.sendKeys(APPT_TYPE_NAME_2);
+        Thread.sleep(1500);
+
+        List<WebElement> results = driver.findElements(
+                By.xpath("//td[normalize-space(text())='" + APPT_TYPE_NAME_2 + "']"
+                       + " | //span[normalize-space(text())='" + APPT_TYPE_NAME_2 + "']"));
+        Assert.assertFalse(results.isEmpty(),
+                "TC_SL_P10 FAIL – '" + APPT_TYPE_NAME_2 + "' not found in Appointment Type list.");
+        System.out.println("TC_SL_P10 PASS – '" + APPT_TYPE_NAME_2 + "' found in list.");
+    }
+
+    @Test(priority = 11,
+          description = "TC_SL_P11 – Search non-existent Appointment Type and verify empty results")
+    public void testSearchAppointmentTypeNoResult() throws InterruptedException {
+        navigateToScheduleSection("Appointment Type");
+
+        WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@placeholder='search']")));
+        searchBox.clear();
+        searchBox.sendKeys("ZZ_NONEXISTENT_TYPE_QA");
+        Thread.sleep(1500);
+
+        List<WebElement> results = driver.findElements(
+                By.xpath("//td[normalize-space(text())='ZZ_NONEXISTENT_TYPE_QA']"
+                       + " | //span[normalize-space(text())='ZZ_NONEXISTENT_TYPE_QA']"));
+        Assert.assertTrue(results.isEmpty(),
+                "TC_SL_P11 FAIL – Search for non-existent type returned unexpected results.");
+        System.out.println("TC_SL_P11 PASS – No results shown for non-existent Appointment Type.");
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // EXAM RESULT — SEARCH & VERIFY SCENARIOS (no data created)
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    @Test(priority = 12,
+          description = "TC_SL_P12 – Search Exam Result 'QA Treatment Recommended Exam' and verify it appears in list")
+    public void testSearchExamResult() throws InterruptedException {
+        navigateToScheduleSection("Exam Result");
+
+        WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@placeholder='search']")));
+        searchBox.clear();
+        searchBox.sendKeys(EXAM_RESULT_NAME);
+        Thread.sleep(1500);
+
+        List<WebElement> results = driver.findElements(
+                By.xpath("//td[normalize-space(text())='" + EXAM_RESULT_NAME + "']"
+                       + " | //span[normalize-space(text())='" + EXAM_RESULT_NAME + "']"));
+        Assert.assertFalse(results.isEmpty(),
+                "TC_SL_P12 FAIL – '" + EXAM_RESULT_NAME + "' not found in Exam Result list.");
+        System.out.println("TC_SL_P12 PASS – '" + EXAM_RESULT_NAME + "' found in list.");
+    }
+
+    @Test(priority = 13,
+          description = "TC_SL_P13 – Search non-existent Exam Result and verify empty results")
+    public void testSearchExamResultNoResult() throws InterruptedException {
+        navigateToScheduleSection("Exam Result");
+
+        WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@placeholder='search']")));
+        searchBox.clear();
+        searchBox.sendKeys("ZZ_NONEXISTENT_RESULT_QA");
+        Thread.sleep(1500);
+
+        List<WebElement> results = driver.findElements(
+                By.xpath("//td[normalize-space(text())='ZZ_NONEXISTENT_RESULT_QA']"
+                       + " | //span[normalize-space(text())='ZZ_NONEXISTENT_RESULT_QA']"));
+        Assert.assertTrue(results.isEmpty(),
+                "TC_SL_P13 FAIL – Search for non-existent exam result returned unexpected results.");
+        System.out.println("TC_SL_P13 PASS – No results shown for non-existent Exam Result.");
     }
 }

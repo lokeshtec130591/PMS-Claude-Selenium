@@ -416,16 +416,17 @@ public class CreateExamAppointmentTest {
         Thread.sleep(2000);
         dismissErrorDialog();
 
-        // Select "TX Recommended" from the Exam Result ng-select dropdown
+        // Select the QA exam result created by ScheduleLookupTest
         WebElement examResultDropdown = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//ng-select[@id='Exam Result']")));
         examResultDropdown.click();
         Thread.sleep(800);
         wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//ng-dropdown-panel//span[@class='ng-option-label' and normalize-space(text())='TX Recommended']")))
+                By.xpath("//ng-dropdown-panel//span[@class='ng-option-label' and normalize-space(text())='"
+                        + ScheduleLookupTest.EXAM_RESULT_NAME + "']")))
             .click();
         Thread.sleep(400);
-        System.out.println("TC_EXAM_02: selected Exam Result = TX Recommended.");
+        System.out.println("TC_EXAM_02: selected Exam Result = " + ScheduleLookupTest.EXAM_RESULT_NAME);
 
         // Save
         WebElement saveBtn = wait.until(ExpectedConditions.elementToBeClickable(
@@ -436,7 +437,8 @@ public class CreateExamAppointmentTest {
         Thread.sleep(2000);
         dismissErrorDialog();
 
-        System.out.println("TC_EXAM_02 PASS – Exam appointment created and result set to 'TX Recommended' for: "
+        System.out.println("TC_EXAM_02 PASS – Exam appointment created and result set to '"
+                + ScheduleLookupTest.EXAM_RESULT_NAME + "' for: "
                 + patientLastName + ", " + patientFirstName);
     }
 
