@@ -1,111 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="1" failed="1" skipped="1">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-27T23:34:16 IST" name="Default suite" finished-at="2026-07-27T23:35:12 IST" duration-ms="55560">
+  <suite started-at="2026-07-28T17:13:45 IST" name="Default suite" finished-at="2026-07-28T17:14:58 IST" duration-ms="72721">
     <groups>
     </groups>
-    <test started-at="2026-07-27T23:34:16 IST" name="Default test" finished-at="2026-07-27T23:35:12 IST" duration-ms="55560">
+    <test started-at="2026-07-28T17:13:45 IST" name="Default test" finished-at="2026-07-28T17:14:58 IST" duration-ms="72721">
       <class name="com.opms.tests.CreateExamAppointmentTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.opms.tests.CreateExamAppointmentTest@75437611]" started-at="2026-07-27T23:34:16 IST" name="setUp" finished-at="2026-07-27T23:34:34 IST" duration-ms="18070" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.opms.tests.CreateExamAppointmentTest@4be29ed9]" started-at="2026-07-28T17:13:45 IST" name="setUp" finished-at="2026-07-28T17:14:04 IST" duration-ms="18804" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testCreatePatientForExam()[pri:1, instance:com.opms.tests.CreateExamAppointmentTest@75437611]" started-at="2026-07-27T23:34:34 IST" name="testCreatePatientForExam" description="TC_EXAM_01 – Create adult patient for exam appointment" finished-at="2026-07-27T23:34:43 IST" duration-ms="8437" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testCreatePatientForExam -->
-        <test-method signature="testCreateExamAppointment()[pri:2, instance:com.opms.tests.CreateExamAppointmentTest@75437611]" started-at="2026-07-27T23:34:43 IST" name="testCreateExamAppointment" description="TC_EXAM_02 – Search patient, click Create Exam, book a &#039;QA Exam Appointment Type&#039; appointment (from ScheduleLookupTest)" finished-at="2026-07-27T23:35:11 IST" depends-on-methods="com.opms.tests.CreateExamAppointmentTest.testCreatePatientForExam" duration-ms="28791" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //div//input[contains(@id,'practiceAppointmentTypeId')] (tried for 15 second(s) with 500 milliseconds interval)
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.186, chrome: {chromedriverVersion: 150.0.7871.124 (9261fd0a595..., userDataDir: C:\Users\Owner\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51485}, goog:processID: 20468, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51485/devtoo..., se:cdpVersion: 150.0.7871.186, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 07b1d6247667833a3d0f23cc51a4650f]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div//input[contains(@id,'practiceAppointmentTypeId')] (tried for 15 second(s) with 500 milliseconds interval)
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.186, chrome: {chromedriverVersion: 150.0.7871.124 (9261fd0a595..., userDataDir: C:\Users\Owner\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51485}, goog:processID: 20468, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51485/devtoo..., se:cdpVersion: 150.0.7871.186, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 07b1d6247667833a3d0f23cc51a4650f
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at com.opms.tests.CreateExamAppointmentTest.selectAppointmentType(CreateExamAppointmentTest.java:300)
-at com.opms.tests.CreateExamAppointmentTest.bookAppointment(CreateExamAppointmentTest.java:259)
-at com.opms.tests.CreateExamAppointmentTest.testCreateExamAppointment(CreateExamAppointmentTest.java:360)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:819)
-at org.testng.TestRunner.run(TestRunner.java:619)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-at org.testng.TestNG.runSuites(TestNG.java:1134)
-at org.testng.TestNG.run(TestNG.java:1101)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method signature="testCreateExamAppointment()[pri:2, instance:com.opms.tests.CreateExamAppointmentTest@4be29ed9]" started-at="2026-07-28T17:14:04 IST" name="testCreateExamAppointment" description="TC_EXAM_02 – Search patient, click Create Exam, book a &#039;QA Exam Appointment Type&#039; appointment (from ScheduleLookupTest)" finished-at="2026-07-28T17:14:41 IST" duration-ms="36991" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateExamAppointment -->
-        <test-method signature="testCreateNonExamAppointment()[pri:3, instance:com.opms.tests.CreateExamAppointmentTest@75437611]" started-at="2026-07-27T23:35:11 IST" name="testCreateNonExamAppointment" description="TC_EXAM_03 – Book a &#039;QA Non Exam Appointment Type&#039; (non-exam) appointment for the same patient via the Schedule button (from ScheduleLookupTest)" finished-at="2026-07-27T23:35:11 IST" depends-on-methods="com.opms.tests.CreateExamAppointmentTest.testCreateExamAppointment" duration-ms="0" status="SKIP">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method com.opms.tests.CreateExamAppointmentTest.testCreateNonExamAppointment() on instance com.opms.tests.CreateExamAppointmentTest@75437611 depends on not successfully finished methods 
-[com.opms.tests.CreateExamAppointmentTest.testCreateExamAppointment() on instance com.opms.tests.CreateExamAppointmentTest@75437611]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method com.opms.tests.CreateExamAppointmentTest.testCreateNonExamAppointment() on instance com.opms.tests.CreateExamAppointmentTest@75437611 depends on not successfully finished methods 
-[com.opms.tests.CreateExamAppointmentTest.testCreateExamAppointment() on instance com.opms.tests.CreateExamAppointmentTest@75437611]
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:157)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:819)
-at org.testng.TestRunner.run(TestRunner.java:619)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-at org.testng.TestNG.runSuites(TestNG.java:1134)
-at org.testng.TestNG.run(TestNG.java:1101)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
+        <test-method signature="testCreateNonExamAppointment()[pri:3, instance:com.opms.tests.CreateExamAppointmentTest@4be29ed9]" started-at="2026-07-28T17:14:41 IST" name="testCreateNonExamAppointment" description="TC_EXAM_03 – Search patient, click Schedule button on patient dashboard, book a &#039;QA Non Exam Appointment Type&#039; non-exam appointment" finished-at="2026-07-28T17:14:57 IST" duration-ms="16563" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateNonExamAppointment -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.opms.tests.CreateExamAppointmentTest@75437611]" started-at="2026-07-27T23:35:11 IST" name="tearDown" finished-at="2026-07-27T23:35:12 IST" duration-ms="227" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.opms.tests.CreateExamAppointmentTest@4be29ed9]" started-at="2026-07-28T17:14:57 IST" name="tearDown" finished-at="2026-07-28T17:14:58 IST" duration-ms="320" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

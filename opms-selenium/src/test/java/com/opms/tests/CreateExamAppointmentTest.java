@@ -5,6 +5,7 @@ import com.opms.pages.LoginPage;
 import com.opms.utils.TestDataGenerator;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -48,8 +49,10 @@ public class CreateExamAppointmentTest {
     private Actions            actions;
     private JavascriptExecutor js;
 
-    private String patientFirstName;
-    private String patientLastName;
+    // Hardcoded test patient — reused across runs to avoid DB bloat.
+    // Uncomment TC_EXAM_01 and remove these two lines once finalised.
+    private String patientFirstName = "vzhxqqaien";
+    private String patientLastName  = "fqqmsghmsw";
 
     // ── Setup / Teardown ──────────────────────────────────────────────────────
 
@@ -243,23 +246,17 @@ public class CreateExamAppointmentTest {
         Thread.sleep(2000);
         dismissErrorDialog();
 
-        // Wait for the Patient Schedule scheduler to render, then double-click a random slot
-        // cell to open the "Appointment" popup (pre-fills patient, doctor, date/time, position).
+        // Wait for the scheduler grid to fully render, then find and click an empty slot
         wait.until(ExpectedConditions.presenceOfElementLocated(SCHEDULER_CELL_LOCATOR));
-        Thread.sleep(1000);
-        int totalCells = driver.findElements(SCHEDULER_CELL_LOCATOR).size();
-        int slotIndex = pickRandomSlotIndex(totalCells);
-        WebElement slotCell = driver.findElement(
-                By.xpath("(//td[contains(@class, 'dx-scheduler-date-table-cell')])[" + slotIndex + "]"));
-        System.out.println("Booking '" + appointmentTypeName + "' on slot " + slotIndex + " of " + totalCells);
-        actions.doubleClick(slotCell).perform();
         Thread.sleep(1500);
-        dismissErrorDialog();
+        clickEmptySchedulerSlot();
 
         selectAppointmentType(appointmentTypeName);
 
         WebElement saveBtn = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//div[contains(@class,'dx-button-default')]//span[text()='Save']")));
+                By.xpath("//div[@role='button' and contains(@class,'dx-button-default') and .//span[text()='Save']]")));
+        js.executeScript("arguments[0].scrollIntoView({block:'center'});", saveBtn);
+        Thread.sleep(300);
         js.executeScript("arguments[0].click();", saveBtn);
         Thread.sleep(2500);
         dismissErrorDialog();
@@ -267,22 +264,58 @@ public class CreateExamAppointmentTest {
     }
 
     /**
-     * Picks a random 1-based cell index, staying away from the first/last few rows (which fall
-     * outside typical business hours) and avoiding any index already used earlier in this test
-     * instance so back-to-back bookings don't target the same cell as each other.
+     * Tries scheduler cells one by one until a double-click opens a NEW appointment form
+     * (appointment type input is present but empty). If it opens an EXISTING appointment
+     * instead, presses Escape to close it and tries the next cell.
+     *
+     * This approach is reliable regardless of how DevExtreme renders appointment overlays or
+     * how the scheduler is scrolled — it directly verifies the outcome of each click.
      */
-    private int pickRandomSlotIndex(int totalCells) {
-        int margin = Math.max(5, totalCells / 20);
-        int low = margin;
-        int high = Math.max(low + 1, totalCells - margin);
-        int index;
-        int attempts = 0;
-        do {
-            index = ThreadLocalRandom.current().nextInt(low, high);
-            attempts++;
-        } while (usedSlotIndexes.contains(index) && attempts < 20);
-        usedSlotIndexes.add(index);
-        return index;
+    private void clickEmptySchedulerSlot() throws InterruptedException {
+        List<WebElement> cells = driver.findElements(SCHEDULER_CELL_LOCATOR);
+        int total = cells.size();
+        System.out.println("clickEmptySchedulerSlot: " + total + " cells in grid, looking for empty slot.");
+
+        // Shuffle the index range so we don't always start from the same cell
+        List<Integer> indexes = new ArrayList<>();
+        int margin = Math.max(3, total / 10);
+        for (int i = margin; i <= total - margin; i++) indexes.add(i);
+        java.util.Collections.shuffle(indexes, new java.util.Random());
+
+        for (int idx : indexes) {
+            if (usedSlotIndexes.contains(idx)) continue;
+            try {
+                WebElement cell = driver.findElement(
+                        By.xpath("(//td[contains(@class,'dx-scheduler-date-table-cell')])[" + idx + "]"));
+                actions.doubleClick(cell).perform();
+                Thread.sleep(1000);
+
+                // Check if a NEW appointment popup opened (type input present but empty)
+                List<WebElement> typeInputs = driver.findElements(
+                        By.xpath("//div//input[contains(@id,'practiceAppointmentTypeId')]"));
+                if (!typeInputs.isEmpty() && typeInputs.get(0).isDisplayed()) {
+                    String val = typeInputs.get(0).getAttribute("value");
+                    if (val == null || val.trim().isEmpty()) {
+                        // Empty type field → new appointment form → success
+                        usedSlotIndexes.add(idx);
+                        System.out.println("clickEmptySchedulerSlot: opened new appointment form at slot " + idx);
+                        return;
+                    }
+                }
+
+                // Type field is filled → existing appointment opened → close and retry
+                System.out.println("clickEmptySchedulerSlot: slot " + idx + " has existing appointment, retrying.");
+                new Actions(driver).sendKeys(Keys.ESCAPE).perform();
+                Thread.sleep(600);
+                dismissErrorDialog();
+
+            } catch (Exception e) {
+                System.out.println("clickEmptySchedulerSlot: slot " + idx + " error: " + e.getMessage());
+                try { new Actions(driver).sendKeys(Keys.ESCAPE).perform(); } catch (Exception ignored) {}
+                Thread.sleep(400);
+            }
+        }
+        throw new RuntimeException("clickEmptySchedulerSlot: no empty slot found after checking all " + total + " cells.");
     }
 
     /**
@@ -332,6 +365,9 @@ public class CreateExamAppointmentTest {
     // TEST SCENARIOS
     // ═══════════════════════════════════════════════════════════════════════════
 
+    // TC_EXAM_01 commented out — reusing existing patient to avoid creating new patients on every run.
+    // Uncomment and remove the hardcoded patientFirstName/patientLastName fields above when finalised.
+    /*
     @Test(priority = 1, description = "TC_EXAM_01 – Create adult patient for exam appointment")
     public void testCreatePatientForExam() throws InterruptedException {
         openAddPatientForm();
@@ -350,36 +386,96 @@ public class CreateExamAppointmentTest {
                 "TC_EXAM_01 FAIL – Patient form should close after save.");
         System.out.println("TC_EXAM_01 PASS – Patient created: " + patientLastName + ", " + patientFirstName);
     }
+    */
 
     @Test(priority = 2,
           description = "TC_EXAM_02 – Search patient, click Create Exam, book a '"
-                  + ScheduleLookupTest.APPT_TYPE_NAME + "' appointment (from ScheduleLookupTest)",
-          dependsOnMethods = "testCreatePatientForExam")
+                  + ScheduleLookupTest.APPT_TYPE_NAME + "' appointment (from ScheduleLookupTest)")
     public void testCreateExamAppointment() throws InterruptedException {
         searchAndOpenPatient(patientLastName, patientFirstName);
         bookAppointment(CREATE_EXAM_BUTTON, ScheduleLookupTest.APPT_TYPE_NAME);
+
+        // Re-open patient profile to verify "Modify Exam" button now appears
+        Thread.sleep(1500);
+        searchAndOpenPatient(patientLastName, patientFirstName);
+        Thread.sleep(2000);
+        dismissErrorDialog();
 
         boolean examCreated = !findElementsSafely(
                 By.xpath("//button[contains(normalize-space(.),'Modify Exam')]")).isEmpty();
         Assert.assertTrue(examCreated,
                 "TC_EXAM_02 FAIL – Exam appointment should be created (expected 'Modify Exam' button to appear).");
-        System.out.println("TC_EXAM_02 PASS – Exam appointment created for: "
+        System.out.println("TC_EXAM_02: Modify Exam button visible — clicking it.");
+
+        // Click Modify Exam
+        WebElement modifyExamBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[.//i[contains(@class,'fa-file-medical')] and contains(.,'Modify Exam')]")));
+        js.executeScript("arguments[0].scrollIntoView({block:'center'});", modifyExamBtn);
+        Thread.sleep(300);
+        js.executeScript("arguments[0].click();", modifyExamBtn);
+        Thread.sleep(2000);
+        dismissErrorDialog();
+
+        // Select "TX Recommended" from the Exam Result ng-select dropdown
+        WebElement examResultDropdown = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//ng-select[@id='Exam Result']")));
+        examResultDropdown.click();
+        Thread.sleep(800);
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//ng-dropdown-panel//span[@class='ng-option-label' and normalize-space(text())='TX Recommended']")))
+            .click();
+        Thread.sleep(400);
+        System.out.println("TC_EXAM_02: selected Exam Result = TX Recommended.");
+
+        // Save
+        WebElement saveBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[contains(@class,'btn-submit') and .//span[text()='Save']]")));
+        js.executeScript("arguments[0].scrollIntoView({block:'center'});", saveBtn);
+        Thread.sleep(300);
+        js.executeScript("arguments[0].click();", saveBtn);
+        Thread.sleep(2000);
+        dismissErrorDialog();
+
+        System.out.println("TC_EXAM_02 PASS – Exam appointment created and result set to 'TX Recommended' for: "
                 + patientLastName + ", " + patientFirstName);
     }
 
     @Test(priority = 3,
-          description = "TC_EXAM_03 – Book a '" + ScheduleLookupTest.APPT_TYPE_NAME_2
-                  + "' (non-exam) appointment for the same patient via the Schedule button "
-                  + "(from ScheduleLookupTest)",
-          dependsOnMethods = "testCreateExamAppointment")
+          description = "TC_EXAM_03 – Search patient, click Schedule button on patient dashboard, "
+                  + "book a '" + ScheduleLookupTest.APPT_TYPE_NAME_2 + "' non-exam appointment")
     public void testCreateNonExamAppointment() throws InterruptedException {
-        // Create Exam has already become "Modify Exam" by this point, so the general
-        // "Schedule" button is used to open the same scheduler for a second appointment.
-        bookAppointment(SCHEDULE_BUTTON, ScheduleLookupTest.APPT_TYPE_NAME_2);
+        // Re-open the patient profile (we may have navigated away after TC_EXAM_02 verification)
+        searchAndOpenPatient(patientLastName, patientFirstName);
+
+        // Click the "Schedule" button on the patient dashboard
+        WebElement scheduleBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[contains(@class,'patient-primary-button') and .//i[contains(@class,'icon-calendar')]]")));
+        js.executeScript("arguments[0].scrollIntoView({block:'center'});", scheduleBtn);
+        Thread.sleep(300);
+        js.executeScript("arguments[0].click();", scheduleBtn);
+        Thread.sleep(2500);
+        dismissErrorDialog();
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(SCHEDULER_CELL_LOCATOR));
+        Thread.sleep(1500);
+        clickEmptySchedulerSlot();
+
+        // Patient is pre-filled (opened from patient profile) — just select the appointment type
+        selectAppointmentType(ScheduleLookupTest.APPT_TYPE_NAME_2);
+
+        // Save
+        WebElement saveBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[@role='button' and contains(@class,'dx-button-default') and .//span[text()='Save']]")));
+        js.executeScript("arguments[0].scrollIntoView({block:'center'});", saveBtn);
+        Thread.sleep(300);
+        js.executeScript("arguments[0].click();", saveBtn);
+        Thread.sleep(2500);
+        dismissErrorDialog();
 
         Assert.assertFalse(isAppointmentPopupOpen(),
                 "TC_EXAM_03 FAIL – Appointment popup should close after saving the non-exam appointment.");
-        System.out.println("TC_EXAM_03 PASS – Non-exam appointment ('" + ScheduleLookupTest.APPT_TYPE_NAME_2
-                + "') created for: " + patientLastName + ", " + patientFirstName);
+        System.out.println("TC_EXAM_03 PASS – Non-exam appointment ('"
+                + ScheduleLookupTest.APPT_TYPE_NAME_2 + "') created for: "
+                + patientLastName + ", " + patientFirstName);
     }
 }

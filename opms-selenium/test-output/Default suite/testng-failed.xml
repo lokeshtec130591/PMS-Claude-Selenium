@@ -9,7 +9,6 @@
           <include name="tearDown"/>
           <include name="testCreateNonExamAppointment"/>
           <include name="testCreateExamAppointment"/>
-          <include name="testCreatePatientForExam"/>
         </methods>
       </class> <!-- com.opms.tests.CreateExamAppointmentTest -->
     </classes>
